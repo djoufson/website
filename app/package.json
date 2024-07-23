@@ -1,0 +1,24 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "This is my personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "dotnet test",
+    "start": "dotnet watch",
+    "tailwind": "npx tailwindcss -i ./styles/input.css -o ./wwwroot/app.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djoufson/website.git"
+  },
+  "author": "Djoufson CHE BENE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/djoufson/website/issues"
+  },
+  "homepage": "https://github.com/djoufson/website#readme",
+  "dependencies": {
+    "tailwindcss": "^3.4.6"
+  }
+}
