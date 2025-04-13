@@ -23,6 +23,7 @@ jobs:
       #   run: npm test
 
   deploy:
+    needs: build-and-test
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
@@ -45,6 +46,7 @@ jobs:
         host: ${{ secrets.VPS_HOST }}
         username: ${{ secrets.VPS_USERNAME }}
         key: ${{ secrets.VPS_SSH_KEY }}
+        port: ${{ secrets.VPS_PORT }}
         script: |
           cd ${{ secrets.PROJECT_PATH }}
           docker-compose -f docker-compose.prod.yml pull
