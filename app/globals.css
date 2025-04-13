@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
-.container{
-  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-[1180px];
+.container {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-[980px];
+}
+
+.link {
+  @apply text-blue-500 hover:text-blue-700;
+}
+
+@layer components {
+  .title {
+    @apply relative text-2xl font-bold mb-2 block;
+  }
+  .title::after {
+    content: "";
+    @apply absolute bottom-0 left-0 w-full h-1 bg-inherit;
+  }
 }
