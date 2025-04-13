@@ -49,5 +49,5 @@ jobs:
         port: ${{ secrets.VPS_PORT }}
         script: |
           cd ${{ secrets.PROJECT_PATH }}
-          docker-compose -f docker-compose.prod.yml pull
-          docker-compose -f docker-compose.prod.yml up -d --force-recreate
+          docker compose -f docker-compose.prod.yml pull
+          docker compose -f docker-compose.prod.yml up -d --force-recreate
