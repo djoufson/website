@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <section>
-      <div className="container flex gap-4">
+      <div className="container md:flex md:gap-4">
         <div>
           <Image
             src="/djouf.png"
@@ -12,7 +12,7 @@ export default function Home() {
             height={300}
           />
         </div>
-        <div className="w-[calc(100%-300px)]">
+        <div className="md:w-[calc(100%-300px)]">
           <h1 className="title">Hi, I am Djoufson Che</h1>
           <p className="italic text-sm">Software Engineer</p>
           <p className="mt-8">
