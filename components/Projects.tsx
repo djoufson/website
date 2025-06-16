@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useState } from "react"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
-import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target } from "lucide-react"
+import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target, Handshake } from "lucide-react"
 
 interface ProjectsProps {
   projects: Project[]
@@ -40,11 +40,17 @@ export default function Projects({ projects }: ProjectsProps) {
             <div>
               <div className="flex items-center gap-2">
                 <h3 className="font-medium">{project.title}</h3>
-                <Badge variant={project.status === 'active' ? 'default' : 'secondary'}>
+                <Badge
+                  variant={
+                    project.status === "active" ? "default" : "secondary"
+                  }
+                >
                   {project.status}
                 </Badge>
               </div>
-              <p className="text-sm text-muted-foreground">{project.description}</p>
+              <p className="text-sm text-muted-foreground">
+                {project.description}
+              </p>
             </div>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
@@ -57,31 +63,39 @@ export default function Projects({ projects }: ProjectsProps) {
         </div>
       ))}
 
-      <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+      <Dialog
+        open={!!selectedProject}
+        onOpenChange={() => setSelectedProject(null)}
+      >
         {selectedProject && (
           <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
             <DialogHeader>
               <div className="flex items-center gap-2">
                 <DialogTitle>{selectedProject.title}</DialogTitle>
-                <Badge variant={selectedProject.status === 'active' ? 'default' : 'secondary'}>
+                <Badge
+                  variant={
+                    selectedProject.status === "active"
+                      ? "default"
+                      : "secondary"
+                  }
+                >
                   {selectedProject.status}
                 </Badge>
               </div>
-              <DialogDescription>{selectedProject.description}</DialogDescription>
+              <DialogDescription>
+                {selectedProject.description}
+              </DialogDescription>
             </DialogHeader>
-            
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+
+            <div>
               {selectedProject.imageUrl ? (
-                <Image
+                <img
                   src={selectedProject.imageUrl}
                   alt={selectedProject.title}
-                  fill
-                  className="object-cover"
+                  className="object-cover aspect-video rounded-lg"
                 />
               ) : (
-                <div className="w-full h-full bg-muted flex items-center justify-center">
-                  <span className="text-muted-foreground">No image available</span>
-                </div>
+                <div></div>
               )}
             </div>
 
@@ -92,7 +106,9 @@ export default function Projects({ projects }: ProjectsProps) {
                     <Target className="w-4 h-4" />
                     Impact
                   </h4>
-                  <p className="text-sm text-muted-foreground">{selectedProject.impact}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {selectedProject.impact}
+                  </p>
                 </div>
               )}
 
@@ -102,7 +118,9 @@ export default function Projects({ projects }: ProjectsProps) {
                     <Users className="w-4 h-4" />
                     Role
                   </h4>
-                  <p className="text-sm text-muted-foreground">{selectedProject.role}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {selectedProject.role}
+                  </p>
                 </div>
               )}
 
@@ -113,99 +131,124 @@ export default function Projects({ projects }: ProjectsProps) {
                     {selectedProject.metrics.stars && (
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4" />
-                        <span className="text-sm">{selectedProject.metrics.stars} stars</span>
+                        <span className="text-sm">
+                          {selectedProject.metrics.stars} stars
+                        </span>
                       </div>
                     )}
                     {selectedProject.metrics.forks && (
                       <div className="flex items-center gap-2">
                         <GitFork className="w-4 h-4" />
-                        <span className="text-sm">{selectedProject.metrics.forks} forks</span>
+                        <span className="text-sm">
+                          {selectedProject.metrics.forks} forks
+                        </span>
                       </div>
                     )}
                     {selectedProject.metrics.downloads && (
                       <div className="flex items-center gap-2">
                         <Download className="w-4 h-4" />
-                        <span className="text-sm">{selectedProject.metrics.downloads} downloads</span>
+                        <span className="text-sm">
+                          {selectedProject.metrics.downloads} downloads
+                        </span>
+                      </div>
+                    )}
+
+                    {selectedProject.metrics.contributors && (
+                      <div className="flex items-center gap-2">
+                        <Handshake className="w-4 h-4" />
+                        <span className="text-sm">
+                          {selectedProject.metrics.contributors} contributors
+                        </span>
                       </div>
                     )}
                     {selectedProject.metrics.users && (
                       <div className="flex items-center gap-2">
                         <Users className="w-4 h-4" />
-                        <span className="text-sm">{selectedProject.metrics.users} users</span>
+                        <span className="text-sm">
+                          {selectedProject.metrics.users} users
+                        </span>
                       </div>
                     )}
                   </div>
                 </div>
               )}
 
-              {selectedProject.highlights && selectedProject.highlights.length > 0 && (
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Award className="w-4 h-4" />
-                    Key Features
-                  </h4>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                    {selectedProject.highlights.map((highlight, index) => (
-                      <li key={index}>{highlight}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {selectedProject.challenges && selectedProject.challenges.length > 0 && (
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4" />
-                    Challenges & Solutions
-                  </h4>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                    {selectedProject.challenges.map((challenge, index) => (
-                      <li key={index}>{challenge}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {selectedProject.lessons && selectedProject.lessons.length > 0 && (
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4" />
-                    Key Learnings
-                  </h4>
-                  <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
-                    {selectedProject.lessons.map((lesson, index) => (
-                      <li key={index}>{lesson}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-
-              {selectedProject.collaborators && selectedProject.collaborators.length > 0 && (
-                <div>
-                  <h4 className="font-medium mb-2 flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    Collaborators
-                  </h4>
-                  <div className="space-y-2">
-                    {selectedProject.collaborators.map((collaborator, index) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <span className="text-sm">{collaborator.name}</span>
-                        <span className="text-xs text-muted-foreground">({collaborator.role})</span>
-                        {collaborator.githubUrl && (
-                          <a
-                            href={collaborator.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-muted-foreground hover:text-foreground transition-colors"
-                          >
-                            <Github className="w-4 h-4" />
-                          </a>
-                        )}
-                      </div>
-                    ))}
+              {selectedProject.highlights &&
+                selectedProject.highlights.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Award className="w-4 h-4" />
+                      Key Features
+                    </h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                      {selectedProject.highlights.map((highlight, index) => (
+                        <li key={index}>{highlight}</li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-              )}
+                )}
+
+              {selectedProject.challenges &&
+                selectedProject.challenges.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Lightbulb className="w-4 h-4" />
+                      Challenges & Solutions
+                    </h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                      {selectedProject.challenges.map((challenge, index) => (
+                        <li key={index}>{challenge}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+              {selectedProject.lessons &&
+                selectedProject.lessons.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Lightbulb className="w-4 h-4" />
+                      Key Learnings
+                    </h4>
+                    <ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+                      {selectedProject.lessons.map((lesson, index) => (
+                        <li key={index}>{lesson}</li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+              {selectedProject.collaborators &&
+                selectedProject.collaborators.length > 0 && (
+                  <div>
+                    <h4 className="font-medium mb-2 flex items-center gap-2">
+                      <Users className="w-4 h-4" />
+                      Collaborators
+                    </h4>
+                    <div className="space-y-2">
+                      {selectedProject.collaborators.map(
+                        (collaborator, index) => (
+                          <div key={index} className="flex items-center gap-2">
+                            <span className="text-sm">{collaborator.name}</span>
+                            <span className="text-xs text-muted-foreground">
+                              ({collaborator.role})
+                            </span>
+                            {collaborator.githubUrl && (
+                              <a
+                                href={collaborator.githubUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-muted-foreground hover:text-foreground transition-colors"
+                              >
+                                <Github className="w-4 h-4" />
+                              </a>
+                            )}
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+                )}
 
               <div className="flex gap-4">
                 {selectedProject.githubUrl && (
@@ -236,5 +279,5 @@ export default function Projects({ projects }: ProjectsProps) {
         )}
       </Dialog>
     </div>
-  )
+  );
 } 

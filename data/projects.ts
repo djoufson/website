@@ -7,13 +7,13 @@ export const projects: Project[] = [
     description:
       "A community platform for .NET developers in Cameroon, fostering knowledge sharing and collaboration.",
     category: "open-source",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel", "GitHub Actions"],
-    githubUrl: "https://github.com/djoufson/dotnet-cameroon",
-    imageUrl: "/djouf.png",
+    technologies: ["Blazor SSR", "Tailwind CSS"],
+    githubUrl: "https://github.com/dotnetcameroon/website",
+    imageUrl: "/assets/dotnetcameroon_logo.png",
     liveUrl: "https://dotnet.cm",
     featured: true,
     status: "active",
-    impact: "Created a centralized platform for .NET developers in Cameroon to connect, share knowledge, and collaborate on projects. The platform has helped bridge the gap between local developers and the global .NET community.",
+    impact: "Created a centralized platform for .NET developers in Cameroon to connect and share knowledge. The platform has helped bridge the gap between local developers and the global .NET community.",
     role: "Founder & Lead Developer",
     startDate: "2023",
     challenges: [
@@ -39,43 +39,42 @@ export const projects: Project[] = [
       "Balancing feature development with community needs"
     ],
     metrics: {
-      users: 100,
-      contributors: 5
+      contributors: 3
     }
   },
-  {
-    id: "project-2",
-    title: "Project 2",
-    description: "Description of project 2",
-    category: "personal",
-    technologies: ["React", "Node.js", "MongoDB", "Express", "Docker"],
-    githubUrl: "https://github.com/djoufson/project-2",
-    featured: true,
-    status: "completed",
-    impact: "A full-stack application that demonstrates modern web development practices and serves as a learning resource for other developers.",
-    role: "Full Stack Developer",
-    startDate: "2023",
-    endDate: "2024",
-    challenges: [
-      "Implementing real-time features with WebSocket",
-      "Optimizing database queries for better performance",
-      "Setting up a robust CI/CD pipeline"
-    ],
-    highlights: [
-      "Real-time data synchronization",
-      "Responsive design for all devices",
-      "Comprehensive API documentation",
-      "Automated testing suite"
-    ],
-    lessons: [
-      "Best practices for real-time application development",
-      "Database optimization techniques",
-      "CI/CD pipeline implementation"
-    ],
-    metrics: {
-      stars: 25,
-      forks: 10
-    }
-  },
+  // {
+  //   id: "project-2",
+  //   title: "Project 2",
+  //   description: "Description of project 2",
+  //   category: "personal",
+  //   technologies: ["React", "Node.js", "MongoDB", "Express", "Docker"],
+  //   githubUrl: "https://github.com/djoufson/project-2",
+  //   featured: true,
+  //   status: "completed",
+  //   impact: "A full-stack application that demonstrates modern web development practices and serves as a learning resource for other developers.",
+  //   role: "Full Stack Developer",
+  //   startDate: "2023",
+  //   endDate: "2024",
+  //   challenges: [
+  //     "Implementing real-time features with WebSocket",
+  //     "Optimizing database queries for better performance",
+  //     "Setting up a robust CI/CD pipeline"
+  //   ],
+  //   highlights: [
+  //     "Real-time data synchronization",
+  //     "Responsive design for all devices",
+  //     "Comprehensive API documentation",
+  //     "Automated testing suite"
+  //   ],
+  //   lessons: [
+  //     "Best practices for real-time application development",
+  //     "Database optimization techniques",
+  //     "CI/CD pipeline implementation"
+  //   ],
+  //   metrics: {
+  //     stars: 25,
+  //     forks: 10
+  //   }
+  // },
   // Add more projects here
 ]; 
