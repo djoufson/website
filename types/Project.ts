@@ -16,7 +16,7 @@ export interface Project {
   achievements?: string[];
   startDate?: string;
   endDate?: string;
-  status: 'active' | 'completed' | 'archived';
+  status: 'active' | 'building' | 'completed' | 'archived';
   collaborators?: {
     name: string;
     role: string;
