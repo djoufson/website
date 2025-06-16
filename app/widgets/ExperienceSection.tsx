@@ -56,22 +56,22 @@ const experiences: JobExperience[] = [
     jobDescription: "C-Dream is a Cameroonian team of game developers",
     start: new Date(2021, 2, 1),
     end: new Date(2022, 2, 1),
-    responsibilities: ["Learnt Unity3DLearnt Unity3D"],
+    responsibilities: ["Learnt Unity3D"],
   },
 ];
 
 export default function ExperienceSection() {
   return (
-    <section className="section">
+    <section className="section py-16">
       <div className="container">
-        <h1 className="title underlined">Professional Experience</h1>
-        <ul>
+        <h2 className="text-2xl font-semibold mb-8">Professional Experience</h2>
+        <div className="space-y-6">
           {experiences.map((e) => (
-            <li key={e.id.toString()}>
+            <div key={e.id.toString()}>
               <JobExperienceCard model={e} />
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
