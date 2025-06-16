@@ -1,15 +1,30 @@
+"use client"
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 export default function NavBar() {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === '/') {
+      return pathname === path;
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <nav className="flex items-center gap-8 py-4">
-      <Link className="text-lg font-medium hover:text-blue-600 transition-colors" href="/">
+      <Link 
+        className={`text-lg font-medium hover:text-blue-600 transition-colors ${isActive('/') ? 'text-blue-600' : ''}`} 
+        href="/"
+      >
         Djoufson
       </Link>
       <div className="flex items-baseline gap-4">
         <Link 
-          className="text-sm hover:text-blue-600 transition-colors" 
+          className={`text-sm hover:text-blue-600 transition-colors ${isActive('/projects') ? 'text-blue-600' : ''}`} 
           href="/projects"
         >
           What I Build
