@@ -1,12 +1,13 @@
 # Technical Context
 
 ## Technologies Used
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **Icons**: Lucide React
-- **Animation**: Lottie
+- Next.js 14 for the framework
+- TypeScript for type safety
+- Tailwind CSS for styling
+- shadcn/ui for UI components
+- Lucide React for icons
+- Lottie for animations
+- Native image handling
 
 ## Development Setup
 - Node.js environment
@@ -18,46 +19,51 @@
 ```json
 {
   "dependencies": {
-    "next": "^14.0.0",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "typescript": "^5.0.0",
-    "tailwindcss": "^3.0.0",
-    "@radix-ui/react-dialog": "^1.0.0",
-    "lucide-react": "^0.300.0",
-    "lottie-react": "^2.0.0"
+    "next": "14.1.0",
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5",
+    "tailwindcss": "^3.3.0",
+    "lucide-react": "^0.330.0",
+    "lottie-react": "^2.4.0"
   }
 }
 ```
 
 ## Technical Constraints
 1. **Performance**
-   - Optimize image loading
-   - Minimize bundle size
+   - Image loading optimization
+   - Bundle size minimization
    - Efficient state management
+   - Native image handling
 
 2. **Accessibility**
    - ARIA labels
    - Keyboard navigation
    - Screen reader support
+   - Icon accessibility
 
 3. **Responsive Design**
    - Mobile-first approach
    - Breakpoint consistency
    - Touch-friendly interactions
+   - Flexible layouts
 
 ## Tool Usage Patterns
 1. **Component Development**
-   - Use shadcn components as base
-   - Extend with custom functionality
-   - Maintain consistent styling
+   - TypeScript interfaces
+   - Props validation
+   - Component composition
+   - Icon integration
 
 2. **State Management**
-   - React hooks for local state
-   - Props for component communication
-   - Context when needed
+   - React hooks
+   - Dialog state
+   - Navigation state
+   - Metrics tracking
 
 3. **Styling**
    - Tailwind utility classes
-   - Consistent color scheme
-   - Responsive design patterns 
+   - Responsive design
+   - Dark mode support
+   - Custom animations 
