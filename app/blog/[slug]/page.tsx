@@ -5,14 +5,13 @@ import { formatDate } from "@/lib/utils";
 import { Calendar, Clock, User } from "lucide-react";
 import { CodeBlockCopy } from "@/components/CodeBlockCopy";
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -87,8 +86,13 @@ export async function generateStaticParams() {
 }
 
 // Generate metadata for each blog post
-export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = await getPostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
