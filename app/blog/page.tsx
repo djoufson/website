@@ -11,7 +11,7 @@ export default async function BlogPage() {
         <div>
           <h1 className="text-3xl font-semibold mb-4">Blog</h1>
           <p className="text-muted-foreground leading-relaxed">
-            Here you can read my thoughts on technology, software development,
+            Here you can read my thoughts on technology, software engineering,
             and other topics I&apos;m passionate about.
           </p>
         </div>
