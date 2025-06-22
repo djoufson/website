@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { Calendar, Clock, User } from "lucide-react";
+import { CodeBlockCopy } from "@/components/CodeBlockCopy";
 
 interface BlogPostPageProps {
   params: {
@@ -73,6 +74,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           className="prose prose-neutral dark:prose-invert max-w-none"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
+        <CodeBlockCopy />
       </div>
     </article>
   );
