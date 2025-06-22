@@ -1,6 +1,6 @@
 import { projects } from "@/data/projects";
 import Projects from "@/components/Projects";
-import ProjectsAnimation from "@/components/ProjectsAnimation";
+import LottieAnimation from "@/components/LottieAnimation";
 
 export default function ProjectsPage() {
   const openSourceProjects = projects.filter(p => p.category === 'open-source');
@@ -17,7 +17,7 @@ export default function ProjectsPage() {
             as a software engineer.
           </p>
         </div>
-        <ProjectsAnimation />
+        <LottieAnimation animationPath="/animations/coding-animation-hands.json" />
       </div>
       
       {openSourceProjects.length > 0 && (
