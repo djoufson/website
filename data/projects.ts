@@ -210,5 +210,102 @@ export const projects: Project[] = [
       contributors: 1,
     },
   },
+  {
+    id: "cloud-native-architecture",
+    title: "Cloud Native Architecture Thesis",
+    description:
+      "A comprehensive research about how to apply Cloud Native principles to build large and complex applications hosted in Microsoft Azure. Real world example on an online consultation platform built with C# .NET",
+    category: "academic",
+    technologies: ["Azure", "GitHub Actions", "Jira"],
+    featured: true,
+    imageUrl: "/assets/azure.png",
+    status: "completed",
+    impact:
+      "Showcased how Cloud Native architecture can enhance software development building, robustness and confident deployments",
+    role: "Lead Researcher",
+    startDate: "2023",
+    endDate: "2024",
+    challenges: [
+      "Designing scalable microservices architectures for Azure",
+      "Implementing CI/CD pipelines with GitHub Actions",
+      "Managing complex distributed systems in cloud environments",
+      "Optimizing cost and performance in Azure services",
+    ],
+    achievements: [
+      "Completed Engineering Degree thesis with distinction",
+      "Presented a comprehensive way to understand Cloud Native concepts",
+      "Created a robust application",
+    ],
+    highlights: [
+      "Comprehensive analysis of Azure cloud-native services",
+      "Implementation of automated CI/CD pipelines",
+      "High observability with Open Telemetry",
+      "Cost optimization strategies for Azure deployments",
+      "Security best practices for cloud-native applications",
+    ],
+    lessons: [
+      "Advanced cloud-native architecture principles",
+      "Azure service integration and optimization",
+      "DevOps practices with GitHub Actions",
+      "Agile project management with JIRA",
+    ],
+    metrics: {
+      contributors: 1,
+    },
+    downloads: [
+      {
+        name: "Master's Thesis - Cloud Native Architecture",
+        url: "/documents/thesis.pdf",
+        type: "pdf",
+        description: "Complete master's thesis on cloud-native architecture",
+      },
+      {
+        name: "Project Specifications",
+        url: "/documents/alice-specifications.pdf",
+        type: "zip",
+        description:
+          "The requirements of Alice, the illustrative project of this Architecture",
+      },
+      {
+        name: "Azure Cloud Architecture",
+        url: "/documents/alice-cloud-architecture.pdf",
+        type: "pdf",
+        description: "Azure Developer Conference presentation slides",
+      },
+    ],
+  },
+  {
+    id: "booky",
+    title: "Microservices Orchestration - Booky",
+    description:
+      "Booky is a theoretical and practical exploration of distributed systems design patterns, focusing on fault tolerance and scalability in microservices architectures.",
+    category: "academic",
+    technologies: ["Kubernetes", "Docker", "Aspire", ".NET"],
+    featured: true,
+    imageUrl: "/assets/cards.jpg",
+    status: "completed",
+    githubUrl: "https://github.com/djoufson/booky",
+    role: "Principal Investigator",
+    startDate: "2022",
+    endDate: "2023",
+    challenges: [
+      "Understanding deployment process of Microservices",
+      "Understanding concepts like containerization, orchestration, auto scalability",
+      "Design complex systems with loosely coupling strategies",
+    ],
+    achievements: [
+      "Setup a complete Kubernetes cluster",
+      "Alternatively setup an easy to run Aspire orchestration system",
+      "Leverage Aspire Dashboard for observability with Open Telemetry standards",
+    ],
+    lessons: [
+      "Advanced distributed systems concepts",
+      "Academic research and writing skills",
+      "Performance optimization in distributed environments",
+    ],
+    metrics: {
+      contributors: 1,
+    },
+  },
   // Add more projects here
 ];

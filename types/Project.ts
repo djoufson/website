@@ -1,4 +1,4 @@
-export type ProjectCategory = 'open-source' | 'personal';
+export type ProjectCategory = 'open-source' | 'personal' | 'academic';
 
 export interface Project {
   id: string;
@@ -17,6 +17,12 @@ export interface Project {
   startDate?: string;
   endDate?: string;
   status: 'active' | 'building' | 'completed' | 'archived';
+  downloads?: {
+    name: string;
+    url: string;
+    type: 'pdf' | 'doc' | 'ppt' | 'zip' | 'other';
+    description?: string;
+  }[];
   collaborators?: {
     name: string;
     role: string;

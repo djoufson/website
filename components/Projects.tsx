@@ -5,7 +5,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useState } from "react"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
-import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target, Handshake } from "lucide-react"
+import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target, Handshake, Paperclip } from "lucide-react"
 
 interface ProjectsProps {
   projects: Project[]
@@ -249,6 +249,51 @@ export default function Projects({ projects }: ProjectsProps) {
                     </div>
                   </div>
                 )}
+
+              {selectedProject.downloads && selectedProject.downloads.length > 0 && (
+                <div>
+                  <h4 className="font-medium mb-2 flex items-center gap-2">
+                    <Download className="w-4 h-4" />
+                    Downloads
+                  </h4>
+                  <div className="space-y-2">
+                    {selectedProject.downloads.map((download, index) => (
+                      <a
+                        key={index}
+                        href={download.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 p-2 rounded-md border hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex-shrink-0">
+                          {download.type === 'pdf' && (
+                            <Paperclip className="w-4 h-4" />
+                          )}
+                          {download.type === 'doc' && (
+                            <Paperclip className="w-4 h-4" />
+                          )}
+                          {download.type === 'ppt' && (
+                            <Paperclip className="w-4 h-4" />
+                          )}
+                          {download.type === 'zip' && (
+                            <Paperclip className="w-4 h-4" />
+                          )}
+                          {download.type === 'other' && (
+                            <Paperclip className="w-4 h-4" />
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="text-sm font-medium">{download.name}</div>
+                          {download.description && (
+                            <div className="text-xs text-muted-foreground">{download.description}</div>
+                          )}
+                        </div>
+                        <Download className="w-4 h-4 text-muted-foreground" />
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="flex gap-4">
                 {selectedProject.githubUrl && (

@@ -5,6 +5,7 @@ import LottieAnimation from "@/components/LottieAnimation";
 export default function ProjectsPage() {
   const openSourceProjects = projects.filter(p => p.category === 'open-source');
   const personalProjects = projects.filter(p => p.category === 'personal');
+  const academicProjects = projects.filter(p => p.category === 'academic');
 
   return (
     <div className="container py-16">
@@ -12,7 +13,7 @@ export default function ProjectsPage() {
         <div>
           <h1 className="text-3xl font-semibold mb-4">Projects</h1>
           <p className="text-muted-foreground leading-relaxed">
-            A collection of my work, from open-source contributions to personal projects. 
+            A collection of my work, from open-source contributions to personal projects and academic research. 
             Each project represents a unique challenge and learning opportunity in my journey 
             as a software engineer.
           </p>
@@ -32,6 +33,21 @@ export default function ProjectsPage() {
             </p>
           </div>
           <Projects projects={openSourceProjects} />
+        </section>
+      )}
+
+      {academicProjects.length > 0 && (
+        <section className="mb-16">
+          <div className="max-w-2xl mb-8">
+            <h2 className="text-xl font-medium mb-4">Academic Research</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              These projects represent my academic journey and research contributions. They 
+              demonstrate my ability to tackle complex theoretical problems, conduct rigorous 
+              analysis, and contribute to the advancement of knowledge in computer science 
+              and software engineering.
+            </p>
+          </div>
+          <Projects projects={academicProjects} />
         </section>
       )}
 
