@@ -7,7 +7,7 @@ tags: ["C#", ".NET"]
 banner: "/assets/the-world-of-delegates.webp"
 ---
 
-# The World of Delegates in C#
+# The World of Delegates in C\#
 
 If you are not aware of delegates, I bet you use them without even knowing. Delegates are a must-know topic in our industry, and play a critical role in our everyday .NET applications. In this article, we will dive really deep into this topic, from the very basics to an acceptable level.
 
@@ -140,7 +140,8 @@ internal class Program
 ```
 
 **Output:**
-```
+
+```txt
 Doing homeworks
 Cooking homeworks
 ```
@@ -151,7 +152,7 @@ Anyway, I don't know for you, but I think we are still far from the nice Linq sy
 
 Microsoft then thought of an easier way to perform the same behaviour, and that is `Action<T>`, `Func<T,TResult>` and `Predicate<T>`. All of them are an easier way to declare delegates, and they are pretty simple to memorize.
 
-### Action<T>
+### Action\<T>
 
 This is the easiest one, and it just represents a delegate that takes a `T` type parameter and returns nothing. An `Action<string> Del` could then be translated to a `delegate void Del(string s)`.
 
@@ -165,11 +166,12 @@ For example the `Func<string,bool> Del` is the same as `delegate bool Del(string
 
 Same as the previous example, there are 17 Func delegates as well
 
-### Predicate<T>
+### Predicate\<T>
 
 There comes the easiest one, the `Predicate`. This one is used to reference methods that have lot of parameters and returns a bool.
 
 The following terms are equal:
+
 - `Predicate<string> Del`
 - `Func<string,bool> Del`
 - `delegate bool Del(string s)`
@@ -238,7 +240,7 @@ internal class Person
 
 And as expected, the output is
 
-```
+```txt
 John: 20
 Andrew: 23
 Jane: 31
@@ -253,6 +255,7 @@ That is the world of delegates ‼️
 I am Djoufson CHE, a passionate Cameroonian .NET developer and Open Source enthusiast. I recently joined the [.NET Foundation](https://dotnetfoundation.org) community, and as a member, it is a privilege for me to act for the growth of this one, and to share my little but non-less expertise in those topics.
 
 Follow me on:
+
 - **GitHub:** [Djoufson](https://github.com/Djoufson)
 - **Twitter:** [@djouf_legran](https://twitter.com/djouf_legran)
 - **LinkedIn:** [djoufson](https://linkedin.com/in/djoufson)

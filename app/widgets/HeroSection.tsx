@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, Pencil } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -17,7 +17,9 @@ export default function HeroSection() {
             />
           </div>
           <div className="md:w-[calc(100%-300px)] mt-8 md:mt-0">
-            <h1 className="text-3xl font-semibold mb-3">Hi, I am Djoufson Che</h1>
+            <h1 className="text-3xl font-semibold mb-3">
+              Hi, I am Djoufson Che
+            </h1>
             <p className="text-muted-foreground mb-6">Software Engineer</p>
             <p className="text-base leading-relaxed mb-8">
               Experienced backend engineer, Founder of{" "}
@@ -54,6 +56,14 @@ export default function HeroSection() {
                 title="Email"
               >
                 <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://medium.com/@djouflegran"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                title="Medium Blog"
+              >
+                <Pencil className="w-5 h-5" />
               </a>
             </div>
           </div>
