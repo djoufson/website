@@ -103,6 +103,9 @@ export async function generateMetadata({
   return {
     title: post.title,
     description: post.excerpt || `Read ${post.title} and more on our blog.`,
+    openGraph: {
+      images: [post.banner || "/assets/default-banner.png"],
+    },
     authors: post.author ? [{ name: post.author }] : undefined,
   };
 }
