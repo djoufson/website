@@ -4,6 +4,7 @@ import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
 import { Calendar, Clock, User } from "lucide-react";
 import { CodeBlockCopy } from "@/components/CodeBlockCopy";
+import { Metadata } from "next";
 
 export default async function BlogPostPage({
   params,
@@ -90,21 +91,53 @@ export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
     return {
       title: "Post Not Found",
+      description: "The requested blog post could not be found.",
     };
   }
 
+  // Create absolute URL for the image
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://djoufson.com";
+  const bannerUrl = post.banner
+    ? post.banner.startsWith("http")
+      ? post.banner
+      : `${baseUrl}${post.banner}`
+    : `${baseUrl}/assets/default-banner.png`;
+
   return {
     title: post.title,
-    description: post.excerpt || `Read ${post.title} and more on our blog.`,
+    description:
+      post.excerpt || `Read ${post.title} and discover insights on our blog.`,
     openGraph: {
-      images: [post.banner || "/assets/default-banner.png"],
+      title: post.title,
+      description:
+        post.excerpt || `Read ${post.title} and discover insights on our blog.`,
+      type: "article",
+      url: `${baseUrl}/blog/${slug}`,
+      images: [
+        {
+          url: bannerUrl,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+      siteName: "Djoufson | Blog",
+      publishedTime: post.date,
+      authors: post.author ? [post.author] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description:
+        post.excerpt || `Read ${post.title} and discover insights on our blog.`,
+      images: [bannerUrl],
     },
     authors: post.author ? [{ name: post.author }] : undefined,
   };
