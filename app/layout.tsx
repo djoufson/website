@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Djoufson's Amazing World 🌍",
@@ -16,12 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body>
-        <Header/>
-        <main>
-          {children}
-        </main>
-        <Footer/>
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
