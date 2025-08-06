@@ -3,7 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
 import GoogleAnalytics from "@/components/google/GoogleAnalytics";
-import GoogleAdSense from "@/components/google/GoogleAddSense";
+import GoogleAdSense from "@/components/google/GoogleAdSense";
 
 export const metadata: Metadata = {
   title: "Djoufson's Amazing World 🌍",
