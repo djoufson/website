@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
-import GoogleAnalytics from "@/components/analytics/GoogleAnalytics";
+import GoogleAnalytics from "@/components/google/GoogleAnalytics";
+import GoogleAdSense from "@/components/google/GoogleAddSense";
 
 export const metadata: Metadata = {
   title: "Djoufson's Amazing World 🌍",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleAnalytics />
+        <GoogleAdSense />
       </head>
       <body>
         <Header />
