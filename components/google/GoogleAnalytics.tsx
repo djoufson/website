@@ -2,7 +2,7 @@ import Script from "next/script";
 
 export default function GoogleAnalytics() {
   return (
-    <div>
+    <>
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-120LEXYK97"
         async
@@ -16,6 +16,6 @@ export default function GoogleAnalytics() {
         gtag('config', 'G-120LEXYK97');
         `}
       </Script>
-    </div>
+    </>
   );
 }

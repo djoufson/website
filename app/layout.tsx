@@ -4,6 +4,8 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import GoogleAnalytics from "@/components/google/GoogleAnalytics";
 import GoogleAdSense from "@/components/google/GoogleAdSense";
+import BackToTop from "@/components/BackToTop";
+import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
   title: "Djoufson's Amazing World 🌍",
@@ -16,15 +18,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <GoogleAnalytics />
         <GoogleAdSense />
       </head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );

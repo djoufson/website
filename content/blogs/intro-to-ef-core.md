@@ -122,7 +122,7 @@ Entities/
 
 The content of this class should look like:
 
-```csharp
+```cs
 namespace Ef_Intro.Entities;
 public class Product
 {
@@ -153,7 +153,7 @@ Entities/
 
 and fill it with the following content
 
-```csharp
+```cs
 using Ef_Intro.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -203,7 +203,7 @@ Now that we have a running database, we can go in our Program.cs file, and write
 
 The `Program.cs` file should look like:
 
-```csharp
+```cs
 using Ef_Intro.Data;
 using Ef_Intro.Entities;
 
