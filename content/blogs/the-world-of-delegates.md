@@ -21,7 +21,7 @@ First of all, we must at least know what we are talking about. Since the early d
 
 In addition, we can pass them to methods arguments, or return them from methods as well. This is the way we build robust reusable pieces of software. What if I tell you that, we can not just store values inside variables, but also **METHODS** 🙀!! Isn't it awesome? That is basically what delegates are.
 
-According to the Microsoft official documentation available [here](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/delegates/),
+According to the Microsoft official documentation available [here](https://learn.microsoft.com/en-us/dotnet/cs/programming-guide/delegates/),
 
 > A delegate is a type that represents references to methods with a particular parameter list and return type.
 
@@ -31,14 +31,14 @@ As mentioned above, delegates are a way to reference a method or a group of meth
 
 This allows us to apply an Inversion Of Control, enabling lower defined methods invoke higher defined methods. You may think: "🤔 What the heck is he talking about? I never met a need of such a thing"… Well you are wrong 😄. Take a look at the sample below:
 
-```csharp
+```cs
 using System.Linq;
 var adults = persons.Where(p => p.Age > 18);
 ```
 
 Aren't you familiar with this kind of syntax? Let me tell you that you could write it this way as well
 
-```csharp
+```cs
 using System.Linq;
 var adults = persons.Where(CheckAgeRequirement);
 
@@ -58,7 +58,7 @@ To understand how to use delegates, we must understand how to write them first. 
 
 Since a delegate holds a reference to a method, it can not reference every method, we must properly define which signature is allowed. The syntax is as follows
 
-```csharp
+```cs
 public delegate void DoDelegate(string something);
 ```
 
@@ -66,7 +66,7 @@ Notice that a delegate can be declared at namespace scope, class scope and metho
 
 For our specific example, to this `DoDelegate` we will only be able to assign methods with the following signature:
 
-```csharp
+```cs
 void MethodName(string s);
 ```
 
@@ -74,7 +74,7 @@ void MethodName(string s);
 
 We will now use the delegate we just created above, by creating a Do method with the appropriate parameters.
 
-```csharp
+```cs
 private static void Do(string something)
 {
     Console.WriteLine($"Doing {something}");
@@ -83,7 +83,7 @@ private static void Do(string something)
 
 Inside the Main method, we write the code below to assign the Do method to an instance of our DoDelegate.
 
-```csharp
+```cs
 namespace Demo;
 
 public delegate void DoDelegate(string something);
@@ -104,7 +104,7 @@ public class Program
 
 The delegate instance is now associated to the method, but how to call the referenced method then? Well, there are two ways, the oldest one being to call the `Invoke()` method on the delegate instance and passing in the appropriate arguments, and the second one being just with parenthesis, and it is what we will do:
 
-```csharp
+```cs
 doDel("homeworks"); // because this delegate accepts a single string to be passed as argument
 ```
 
@@ -112,7 +112,7 @@ doDel("homeworks"); // because this delegate accepts a single string to be passe
 
 There is something cool about delegates, is that you can concatenate them… Literally 😅. Let's see if we take the previous example, we can turn it to something like this
 
-```csharp
+```cs
 namespace Demo;
 
 public delegate void DoDelegate(string something);
@@ -184,7 +184,7 @@ Consider we want to build a filtering api over `IEnumerable<T>` type, that enabl
 
 First we need to create an extension method that will be applied on every `IEnumerable<T>` implementation. To achieve that, we will create a `ListExtensions` static class in a separate file, and we fill it with the following content:
 
-```csharp
+```cs
 namespace Demo;
 
 public static class ListExtensions
@@ -208,7 +208,7 @@ Simple, right? 😄
 
 Let's try it in our `Main` method.
 
-```csharp
+```cs
 namespace Demo;
 
 internal class Program

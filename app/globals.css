@@ -4,8 +4,8 @@
 /* @custom-variant dark (&:is(.dark *)); */
 /* Add to your existing globals.css */
 
-/* Prism.js syntax highlighting theme */
-@import 'prism-themes/themes/prism-material-dark.css';
+/* Highlight.js syntax highlighting theme */
+@import 'highlight.js/styles/github-dark.css';
 
 /* Custom prose styles */
 /* blog-content.css */
@@ -58,12 +58,19 @@
   @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
 }
 
+/* Code blocks with syntax highlighting */
 .prose pre {
-  @apply bg-gray-900 text-white text-sm p-4 rounded-md overflow-x-auto my-6;
+  @apply text-sm p-4 rounded-md overflow-x-auto my-6;
 }
 
-.prose code {
-  @apply text-pink-600 bg-transparent px-1 py-0.5 rounded font-mono text-sm;
+/* Inline code (not inside pre blocks) */
+.prose :not(pre) > code {
+  @apply text-pink-600 bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded font-mono text-sm;
+}
+
+/* Ensure highlighted code blocks don't get inline code styling */
+.prose pre code {
+  @apply bg-transparent text-inherit px-0 py-0;
 }
 
 .prose img {
