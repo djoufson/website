@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import React from 'react'
+import { ThemeToggle } from './theme-toggle'
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -22,19 +23,20 @@ export default function NavBar() {
   ]
 
   return (
-    <nav className="flex items-center gap-8 py-4">
+    <nav className="flex items-center justify-between py-4">
       <Link
-        className={`text-lg font-medium hover:text-blue-600 transition-colors ${
-          isActive("/") ? "text-blue-600" : ""
+        className={`text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+          isActive("/") ? "text-blue-600 dark:text-blue-400" : ""
         }`}
         href="/"
       >
         Djoufson
       </Link>
-      <div className="flex items-baseline gap-4">
+      <div className="flex items-center gap-6">
+        <div className="flex items-baseline gap-4">
         <Link
-          className={`text-sm hover:text-blue-600 transition-colors ${
-            isActive("/projects") ? "text-blue-600" : ""
+          className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+            isActive("/projects") ? "text-blue-600 dark:text-blue-400" : ""
           }`}
           href="/projects"
         >
@@ -42,8 +44,8 @@ export default function NavBar() {
         </Link>
 
         <Link
-          className={`text-sm hover:text-blue-600 transition-colors ${
-            isActive("/blog") ? "text-blue-600" : ""
+          className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+            isActive("/blog") ? "text-blue-600 dark:text-blue-400" : ""
           }`}
           href="/blog"
         >
@@ -61,6 +63,8 @@ export default function NavBar() {
             Soon
           </span>
         </div>
+        </div>
+        <ThemeToggle />
       </div>
     </nav>
   );

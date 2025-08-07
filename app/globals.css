@@ -4,8 +4,74 @@
 /* @custom-variant dark (&:is(.dark *)); */
 /* Add to your existing globals.css */
 
-/* Highlight.js syntax highlighting theme */
-@import 'highlight.js/styles/github-dark.css';
+/* Highlight.js syntax highlighting theme - responsive to dark mode */
+@import 'highlight.js/styles/github.css';
+
+/* Light mode overrides for highlight.js */
+.hljs {
+  background: transparent !important;
+  color: #1f2937 !important;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-subst {
+  color: #991b1b !important;
+}
+
+.hljs-string,
+.hljs-doctag {
+  color: #059669 !important;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-selector-id {
+  color: #7c3aed !important;
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #6b7280 !important;
+}
+
+.hljs-number,
+.hljs-literal {
+  color: #1d4ed8 !important;
+}
+
+/* Dark mode overrides for highlight.js */
+.dark .hljs {
+  background: transparent !important;
+  color: #e6edf3 !important;
+}
+
+.dark .hljs-keyword,
+.dark .hljs-selector-tag,
+.dark .hljs-subst {
+  color: #ff7b72 !important;
+}
+
+.dark .hljs-string,
+.dark .hljs-doctag {
+  color: #a5c9ea !important;
+}
+
+.dark .hljs-title,
+.dark .hljs-section,
+.dark .hljs-selector-id {
+  color: #79c0ff !important;
+}
+
+.dark .hljs-comment,
+.dark .hljs-quote {
+  color: #8b949e !important;
+}
+
+.dark .hljs-number,
+.dark .hljs-literal {
+  color: #79c0ff !important;
+}
 
 /* Custom prose styles */
 /* blog-content.css */
@@ -31,15 +97,15 @@
 }
 
 .prose h6 {
-  @apply text-sm font-medium mt-4 mb-2 text-gray-600;
+  @apply text-sm font-medium mt-4 mb-2 text-gray-600 dark:text-gray-400;
 }
 
 .prose p {
-  @apply text-base leading-relaxed mb-5 text-gray-800;
+  @apply text-base leading-relaxed mb-5 text-foreground;
 }
 
 .prose a {
-  @apply text-blue-600 underline hover:text-blue-800 transition-colors;
+  @apply text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300 transition-colors;
 }
 
 .prose ul {
@@ -55,17 +121,17 @@
 }
 
 .prose blockquote {
-  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
+  @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic text-gray-600 dark:text-gray-400 my-6;
 }
 
 /* Code blocks with syntax highlighting */
 .prose pre {
-  @apply text-sm p-4 rounded-md overflow-x-auto my-6;
+  @apply text-sm p-4 rounded-lg overflow-x-auto my-6 bg-transparent border border-gray-200 dark:border-gray-700;
 }
 
 /* Inline code (not inside pre blocks) */
 .prose :not(pre) > code {
-  @apply text-pink-600 bg-gray-100 dark:bg-gray-800 px-1 py-0.5 rounded font-mono text-sm;
+  @apply text-pink-600 dark:text-pink-400 bg-transparent px-2 py-1 rounded-md font-mono text-sm border border-gray-200 dark:border-gray-700;
 }
 
 /* Ensure highlighted code blocks don't get inline code styling */
@@ -82,15 +148,15 @@
 }
 
 .prose th {
-  @apply border-b-2 border-gray-300 px-4 py-2 font-semibold;
+  @apply border-b-2 border-gray-300 dark:border-gray-600 px-4 py-2 font-semibold;
 }
 
 .prose td {
-  @apply border-b border-gray-200 px-4 py-2;
+  @apply border-b border-gray-200 dark:border-gray-700 px-4 py-2;
 }
 
 .prose hr {
-  @apply my-8 border-gray-200;
+  @apply my-8 border-gray-200 dark:border-gray-700;
 }
 
 .container {
