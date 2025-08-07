@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import GoogleAnalytics from "@/components/google/GoogleAnalytics";
 import GoogleAdSense from "@/components/google/GoogleAdSense";
+import BackToTop from "@/components/BackToTop";
 
 export const metadata: Metadata = {
   title: "Djoufson's Amazing World 🌍",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );
