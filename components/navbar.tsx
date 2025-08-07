@@ -2,11 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React from 'react'
+import React, { useState } from 'react'
 import { ThemeToggle } from './theme-toggle'
+import { Menu, X } from 'lucide-react'
 
 export default function NavBar() {
   const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -17,55 +19,104 @@ export default function NavBar() {
 
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/projects', label: 'Projects' },
+    { href: '/projects', label: 'What I Build' },
     { href: '/blog', label: 'Blog' },
     { href: '/community', label: 'Community', comingSoon: true },
-  ]
+  ];
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   return (
-    <nav className="flex items-center justify-between py-4">
-      <Link
-        className={`text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-          isActive("/") ? "text-blue-600 dark:text-blue-400" : ""
-        }`}
-        href="/"
-      >
-        Djoufson
-      </Link>
-      <div className="flex items-center gap-6">
-        <div className="flex items-baseline gap-4">
+    <>
+      <nav className="flex items-center justify-between py-4">
+        {/* Logo */}
         <Link
-          className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-            isActive("/projects") ? "text-blue-600 dark:text-blue-400" : ""
+          className={`text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+            isActive("/") ? "text-blue-600 dark:text-blue-400" : ""
           }`}
-          href="/projects"
+          href="/"
         >
-          What I Build
+          Djoufson
         </Link>
 
-        <Link
-          className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-            isActive("/blog") ? "text-blue-600 dark:text-blue-400" : ""
-          }`}
-          href="/blog"
-        >
-          Blog
-        </Link>
-        <div className="relative">
-          <Link
-            className="text-sm text-muted-foreground cursor-not-allowed"
-            href="#"
-            title="Coming Soon"
+        {/* Desktop Menu */}
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-baseline gap-4">
+            {links.map((link) => (
+              link.comingSoon ? (
+                <div key={link.href} className="relative">
+                  <Link
+                    className="text-sm text-muted-foreground cursor-not-allowed"
+                    href="#"
+                    title="Coming Soon"
+                  >
+                    {link.label}
+                  </Link>
+                  <span className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 bg-muted text-muted-foreground rounded-full">
+                    Soon
+                  </span>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+                    isActive(link.href) ? "text-blue-600 dark:text-blue-400" : ""
+                  }`}
+                  href={link.href}
+                >
+                  {link.label}
+                </Link>
+              )
+            ))}
+          </div>
+          <ThemeToggle />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            onClick={toggleMobileMenu}
+            className="p-2 hover:bg-muted rounded-md transition-colors"
+            aria-label="Toggle menu"
           >
-            Community
-          </Link>
-          <span className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 bg-muted text-muted-foreground rounded-full">
-            Soon
-          </span>
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
         </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden bg-card border-t border-border">
+          <div className="px-4 py-4 space-y-4">
+            {links.map((link) => (
+              link.comingSoon ? (
+                <div key={link.href} className="relative">
+                  <div className="text-sm text-muted-foreground py-2">
+                    {link.label}
+                    <span className="ml-2 text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-full">
+                      Soon
+                    </span>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.href}
+                  className={`block text-sm py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
+                    isActive(link.href) ? "text-blue-600 dark:text-blue-400" : ""
+                  }`}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
+            ))}
+          </div>
         </div>
-        <ThemeToggle />
-      </div>
-    </nav>
+      )}
+    </>
   );
 }
