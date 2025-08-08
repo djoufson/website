@@ -33,8 +33,8 @@ export default function NavBar() {
       <nav className="flex items-center justify-between py-4">
         {/* Logo */}
         <Link
-          className={`text-lg font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-            isActive("/") ? "text-blue-600 dark:text-blue-400" : ""
+          className={`text-lg font-medium custom-blue-link ${
+            isActive("/") ? "custom-blue-link-active" : ""
           }`}
           href="/"
         >
@@ -61,8 +61,8 @@ export default function NavBar() {
               ) : (
                 <Link
                   key={link.href}
-                  className={`text-sm hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-                    isActive(link.href) ? "text-blue-600 dark:text-blue-400" : ""
+                  className={`text-sm custom-blue-link ${
+                    isActive(link.href) ? "custom-blue-link-active" : ""
                   }`}
                   href={link.href}
                 >
@@ -104,8 +104,8 @@ export default function NavBar() {
               ) : (
                 <Link
                   key={link.href}
-                  className={`block text-sm py-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors ${
-                    isActive(link.href) ? "text-blue-600 dark:text-blue-400" : ""
+                  className={`block text-sm py-2 custom-blue-link ${
+                    isActive(link.href) ? "custom-blue-link-active" : ""
                   }`}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}

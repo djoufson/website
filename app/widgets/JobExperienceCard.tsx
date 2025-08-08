@@ -9,7 +9,7 @@ export default function JobExperienceCard({ model }: JobExperienceProps) {
       <div className="flex-1">
         <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4 mb-3">
           <a
-            className="inline-flex items-center gap-2 text-foreground hover:text-blue-600 transition-colors"
+            className="inline-flex items-center gap-2 text-foreground custom-blue-link"
             target="_blank"
             href={model.website}
           >
