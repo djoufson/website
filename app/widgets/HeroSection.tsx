@@ -24,7 +24,7 @@ export default function HeroSection() {
             <p className="text-base leading-relaxed mb-8">
               Experienced backend engineer, Founder of{" "}
               <a
-                className="text-blue-600 hover:text-blue-700 transition-colors"
+                className="custom-blue-link-active"
                 title=".NET Cameroon Website"
                 target="_blank"
                 href="https://dotnet.cm"

@@ -10,7 +10,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="group relative">
-      <div className="flex flex-col h-full p-6 bg-card rounded-lg border border-border hover:border-blue-600/50 transition-colors">
+      <div className="flex flex-col h-full p-6 bg-card rounded-lg border project-card-border">
         {project.imageUrl && (
           <div className="relative w-full h-48 mb-4 overflow-hidden rounded-md">
             <Image
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </div>
         )}
         <div className="flex-1">
-          <h3 className="text-lg font-medium mb-2 group-hover:text-blue-600 transition-colors">
+          <h3 className="text-lg font-medium mb-2 transition-colors">
             {project.title}
           </h3>
           <p className="text-muted-foreground text-sm mb-4">
