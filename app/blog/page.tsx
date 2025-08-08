@@ -35,5 +35,29 @@ export default async function BlogPage() {
 
 export const metadata = {
   title: "Blog",
-  description: "Read the latest blog posts and articles.",
+  description: "Technical blog posts about software development, web technologies, .NET, React, TypeScript, and programming best practices. Learn from real-world experiences and tutorials.",
+  keywords: [
+    "Technical Blog",
+    "Software Development", 
+    "Programming Tutorials",
+    "Web Development",
+    "React",
+    "Next.js",
+    ".NET",
+    "C#",
+    "TypeScript",
+    "JavaScript",
+    "Entity Framework",
+    "Best Practices"
+  ],
+  openGraph: {
+    title: "Technical Blog | Djoufson Che Bene",
+    description: "Technical blog posts about software development, web technologies, and programming best practices.",
+    url: "https://djoufson.com/blog",
+    type: "website",
+  },
+  twitter: {
+    title: "Technical Blog | Djoufson Che Bene",
+    description: "Technical blog posts about software development, web technologies, and programming best practices.",
+  },
 };

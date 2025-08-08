@@ -1,6 +1,35 @@
 import { projects } from "@/data/projects";
 import Projects from "@/components/Projects";
 import LottieAnimation from "@/components/LottieAnimation";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research. Built with React, Next.js, .NET, TypeScript, and modern web technologies.",
+  keywords: [
+    "Portfolio",
+    "Software Projects",
+    "Open Source",
+    "Web Applications",
+    "React Projects",
+    "Next.js Applications", 
+    ".NET Applications",
+    "TypeScript Projects",
+    "Full Stack Projects",
+    "Academic Research",
+    "Personal Projects"
+  ],
+  openGraph: {
+    title: "Projects | Djoufson Che Bene",
+    description: "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research.",
+    url: "https://djoufson.com/projects",
+    type: "website",
+  },
+  twitter: {
+    title: "Projects | Djoufson Che Bene",
+    description: "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research.",
+  },
+};
 
 export default function ProjectsPage() {
   const openSourceProjects = projects.filter(p => p.category === 'open-source');
