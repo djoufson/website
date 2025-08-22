@@ -20,13 +20,13 @@ export const metadata: Metadata = {
     "Personal Projects"
   ],
   openGraph: {
-    title: "Projects | Djoufson Che Bene",
+    title: "Projects",
     description: "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research.",
     url: "https://djoufson.com/projects",
     type: "website",
   },
   twitter: {
-    title: "Projects | Djoufson Che Bene",
+    title: "Projects",
     description: "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research.",
   },
 };

@@ -51,13 +51,13 @@ export const metadata = {
     "Best Practices"
   ],
   openGraph: {
-    title: "Technical Blog | Djoufson Che Bene",
+    title: "Technical Blog",
     description: "Technical blog posts about software development, web technologies, and programming best practices.",
     url: "https://djoufson.com/blog",
     type: "website",
   },
   twitter: {
-    title: "Technical Blog | Djoufson Che Bene",
+    title: "Technical Blog",
     description: "Technical blog posts about software development, web technologies, and programming best practices.",
   },
 };

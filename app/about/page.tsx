@@ -14,13 +14,13 @@ export const metadata: Metadata = {
     "Software Development Experience"
   ],
   openGraph: {
-    title: "About | Djoufson Che Bene",
+    title: "About",
     description: "Learn more about Djoufson Che Bene, a passionate Full Stack Developer and Software Engineer.",
     url: "https://djoufson.com/about",
     type: "profile",
   },
   twitter: {
-    title: "About | Djoufson Che Bene",
+    title: "About",
     description: "Learn more about Djoufson Che Bene, a passionate Full Stack Developer and Software Engineer.",
   },
 };

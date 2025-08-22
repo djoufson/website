@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://djoufson.com'),
   title: {
     default: "Djoufson Che Bene - Full Stack Developer & Software Engineer",
-    template: "%s | Djoufson Che Bene"
+    template: "%s"
   },
   description: "Full Stack Developer and Software Engineer passionate about building modern web applications with React, Next.js, .NET, and cloud technologies. Explore my projects, read my technical blog, and connect with me.",
   keywords: [
