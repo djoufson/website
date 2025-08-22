@@ -19,6 +19,7 @@ export default function NavBar() {
 
   const links = [
     { href: '/', label: 'Home' },
+    { href: '/about', label: 'About' },
     { href: '/projects', label: 'What I Build' },
     { href: '/blog', label: 'Blog' },
     { href: '/community', label: 'Community', comingSoon: true },
