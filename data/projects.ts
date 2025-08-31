@@ -307,5 +307,56 @@ export const projects: Project[] = [
       contributors: 1,
     },
   },
+  {
+    id: "git-report",
+    title: "Git Report",
+    description:
+      "A Go CLI tool designed to analyze git commit history across local branches and export comprehensive commit data to CSV format for reporting and analysis.",
+    category: "open-source",
+    technologies: ["Go"],
+    githubUrl: "https://github.com/djoufson/git-report",
+    imageUrl: "/assets/git-report.jpg",
+    featured: true,
+    status: "active",
+    impact:
+      "Provides developers and teams with an automated way to generate detailed git commit reports across multiple branches, enabling better project analysis and developer performance tracking.",
+    role: "Core Maintainer",
+    startDate: "2025",
+    challenges: [
+      "Efficiently parsing git log data across multiple branches",
+      "Handling different git repository structures and configurations",
+      "Creating flexible filtering options for dates and authors",
+      "Ensuring cross-platform compatibility"
+    ],
+    achievements: [
+      "Built a robust CLI tool with comprehensive error handling",
+      "Implemented multi-branch analysis capability",
+      "Created flexible CSV export functionality"
+    ],
+    highlights: [
+      "Scans all local git branches automatically",
+      "Flexible date range and author filtering",
+      "Detailed CSV export with commit statistics",
+      "Support for analyzing multiple repositories",
+      "Clear error messages and user-friendly CLI interface"
+    ],
+    lessons: [
+      "Advanced Go CLI development patterns",
+      "Git internals and log parsing techniques",
+      "Cross-platform Go application development",
+      "CSV data export optimization"
+    ],
+    downloads: [
+      {
+        name: "Download it here",
+        url: "https://github.com/djoufson/git-report/releases",
+        type: "other",
+        description: "Download the latest release binaries for your platform"
+      }
+    ],
+    metrics: {
+      contributors: 1,
+    },
+  },
   // Add more projects here
 ];
