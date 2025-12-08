@@ -282,7 +282,7 @@ export const projects: Project[] = [
     category: "academic",
     technologies: ["Kubernetes", "Docker", "Aspire", ".NET"],
     featured: true,
-    imageUrl: "/assets/cards.jpg",
+    imageUrl: "/assets/microservices.png",
     status: "completed",
     githubUrl: "https://github.com/djoufson/booky",
     role: "Principal Investigator",
