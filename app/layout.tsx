@@ -7,6 +7,7 @@ import GoogleAdSense from "@/components/google/GoogleAdSense";
 import BackToTop from "@/components/BackToTop";
 import { ThemeProvider } from "@/components/theme-provider";
 import StructuredData from "@/components/StructuredData";
+import AdvertisingBanner from "@/components/AdvertisingBanner";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://djoufson.com'),
@@ -98,6 +99,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
+          <AdvertisingBanner />
           <main>{children}</main>
           <Footer />
           <BackToTop />
