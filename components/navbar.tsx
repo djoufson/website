@@ -17,12 +17,12 @@ export default function NavBar() {
     return pathname.startsWith(path);
   };
 
-  const links = [
+  const links: Array<{ href: string; label: string; comingSoon?: boolean }> = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
     { href: '/projects', label: 'What I Build' },
     { href: '/blog', label: 'Blog' },
-    { href: '/community', label: 'Community', comingSoon: true },
+    { href: '/community', label: 'Community' },
   ];
 
   const toggleMobileMenu = () => {
