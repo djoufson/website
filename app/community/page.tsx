@@ -5,6 +5,7 @@ import { Users, Mic, Heart, Award, Github, ExternalLink, Calendar, MapPin } from
 import Image from 'next/image';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
+import LottieAnimation from "@/components/LottieAnimation";
 
 interface Event {
   id: number;
@@ -111,28 +112,30 @@ export default function Community() {
 
   return (
     <div className="container py-16">
-      {/* Hero Section */}
-      <div className="max-w-3xl mb-16">
-        <div className="flex items-center gap-3 mb-6">
-          <Users className="w-8 h-8 text-blue-500" />
-          <h1 className="text-3xl font-semibold">Community Engagement</h1>
+      {/* Banner Section */}
+      <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <h1 className="text-3xl font-semibold mb-4">Community Engagement</h1>
+          <p className="text-muted-foreground leading-relaxed">
+            Building communities, empowering developers, and fostering collaboration through
+            meetups, speaking engagements, and mentorship. Community is at the heart of what I do.
+          </p>
         </div>
-        <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-          Building communities, empowering developers, and fostering collaboration through
-          meetups, speaking engagements, and mentorship. Community is at the heart of what I do.
-        </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          {communityStats.map((stat) => {
-            const IconComponent = stat.icon;
-            return (
-              <div key={stat.label} className="bg-muted/50 rounded-lg p-4 text-center">
-                <IconComponent className="w-5 h-5 mx-auto mb-2 text-blue-500" />
-                <div className="text-2xl font-semibold mb-1">{stat.value}</div>
-                <div className="text-xs text-muted-foreground">{stat.label}</div>
-              </div>
-            );
-          })}
-        </div>
+        <LottieAnimation animationPath="/animations/community.json" />
+      </div>
+
+      {/* Stats Section */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16">
+        {communityStats.map((stat) => {
+          const IconComponent = stat.icon;
+          return (
+            <div key={stat.label} className="bg-muted/50 rounded-lg p-4 text-center">
+              <IconComponent className="w-5 h-5 mx-auto mb-2 text-blue-500" />
+              <div className="text-2xl font-semibold mb-1">{stat.value}</div>
+              <div className="text-xs text-muted-foreground">{stat.label}</div>
+            </div>
+          );
+        })}
       </div>
 
       {/* Community Building Section */}
@@ -181,50 +184,66 @@ export default function Community() {
         </p>
 
         {/* Events List */}
-        <div className="space-y-4">
+        <div className="space-y-8">
           {speakingAndEvents.map((event) => (
-            <div
+            <article
               key={event.id}
-              className="flex flex-col sm:flex-row sm:items-center gap-4 p-4 rounded-lg border hover:bg-muted/50 cursor-pointer transition-colors"
+              className="group rounded-lg border transition-shadow duration-300 cursor-pointer"
               onClick={() => setSelectedEvent(event)}
             >
-              <div className="relative w-full sm:w-16 h-32 sm:h-16 rounded-md overflow-hidden flex-shrink-0">
-                <Image
-                  src={event.thumbnail}
-                  alt={event.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1 min-w-0 space-y-2">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h3 className="font-medium">{event.title}</h3>
-                    <Badge variant={event.status === "ongoing" ? "default" : "secondary"}>
+              <div className="flex flex-col md:flex-row overflow-hidden rounded-lg">
+                <div className="relative h-48 md:h-auto w-full md:w-[300px] flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={event.thumbnail}
+                    alt={event.title}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+
+                <div className="p-6 flex flex-col w-full">
+                  {/* Status Badge */}
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    <Badge
+                      variant={event.status === "ongoing" ? "default" : "secondary"}
+                    >
                       {event.status}
                     </Badge>
+                    {event.frequency && (
+                      <span className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-md">
+                        {event.frequency}
+                      </span>
+                    )}
+                    {event.year && (
+                      <span className="px-2 py-1 text-xs bg-primary/10 text-primary rounded-md">
+                        {event.year}
+                      </span>
+                    )}
                   </div>
-                  <p className="text-sm text-muted-foreground">
+
+                  <h2 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {event.title}
+                  </h2>
+
+                  <p className="text-muted-foreground mb-4 line-clamp-3 text-sm">
                     {event.shortDescription}
                   </p>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {event.frequency && (
-                    <Badge variant="secondary" className="text-xs">
-                      {event.frequency}
-                    </Badge>
-                  )}
-                  {event.year && (
-                    <Badge variant="secondary" className="text-xs">
-                      {event.year}
-                    </Badge>
-                  )}
-                  <Badge variant="outline" className="text-xs">
-                    {event.role}
-                  </Badge>
+
+                  <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-4 border-t border-dashed w-full">
+                    <div className="flex items-center gap-2">
+                      <Mic className="h-4 w-4" />
+                      <span>{event.role}</span>
+                    </div>
+                    {event.location && (
+                      <div className="flex items-center gap-2">
+                        <MapPin className="h-4 w-4" />
+                        <span>{event.location.split(',')[0]}</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </section>
