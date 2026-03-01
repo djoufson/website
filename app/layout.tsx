@@ -74,7 +74,7 @@ export const metadata: Metadata = {
     images: ['/assets/djouf.png'],
   },
   verification: {
-    google: process.env.GOOGLE_SITE_VERIFICATION,
+    // google: process.env.GOOGLE_SITE_VERIFICATION,
   },
   category: 'technology',
   alternates: {

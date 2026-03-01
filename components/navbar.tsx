@@ -24,7 +24,7 @@ export default function NavBar() {
     { href: '/projects', label: 'What I Build' },
     { href: '/blog', label: 'Blog' },
     { href: '/community', label: 'Community' },
-    // { href: '/contact', label: 'Contact' },
+    { href: '/contact', label: 'Contact' },
   ];
 
   const toggleMobileMenu = () => {
