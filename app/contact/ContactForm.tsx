@@ -6,7 +6,7 @@ import { Send, CheckCircle, AlertCircle } from "lucide-react";
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID ?? 'xnjbyzbg';
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
