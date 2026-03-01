@@ -10,11 +10,9 @@ I founded .NET Cameroon with a simple goal: create a space where .NET developers
 
 The platform is built with **Blazor SSR** and **Tailwind CSS**, keeping the stack within the .NET ecosystem we advocate for. Key features include:
 
-- **Community Forum** — A space for developers to ask questions, share solutions, and discuss .NET topics
+- **Community Forums** — (WhatsApp, Discord) A space for developers to ask questions, share solutions, and discuss .NET topics
 - **Event Management** — Tools to organize and promote meetups, workshops, and conferences
-- **Resource Library** — Curated learning materials for developers at all levels
 - **Job Board** — Local opportunities specifically for .NET developers
-- **Blog** — Community news, tutorials, and event recaps
 
 ## Growing the Community
 

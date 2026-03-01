@@ -15,17 +15,6 @@ The system is built as a cross-platform solution:
 - **Web** — Next.js frontend for browser-based access
 - **Real-time** — SignalR for in-app messaging and call signaling
 
-```csharp
-// Example: Real-time notification hub
-public class ConsultationHub : Hub
-{
-    public async Task NotifyDoctor(string doctorId, string message)
-    {
-        await Clients.User(doctorId).SendAsync("NewConsultation", message);
-    }
-}
-```
-
 ## Current Status
 
 Alice Care is actively being built. The core features — user registration, doctor profiles, appointment booking, and real-time messaging — are functional. Audio/video call integration across both mobile and web clients is the current focus area.

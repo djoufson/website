@@ -24,22 +24,84 @@ Using **Docker** for containerization and **Kubernetes** for orchestration, the 
 The implementation of automated pipelines for continuous integration and deployment:
 
 ```yaml
-# Simplified CI/CD pipeline
-name: Deploy to Azure
+# Simplified CI workflow
+name: Build and Test
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - master
+      - development
+      - feature
+
 jobs:
-  build-and-deploy:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 8.x
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build the API Project
+      run: |
+        dotnet build src/Api --configuration Release --no-restore
+
+    - name: Run tests
+      run: dotnet test
+```
+
+```yaml
+# Simplified CD workflow
+name: Deploy to Production
+
+on:
+  workflow_run:
+    workflows: ["Build and Test"]
+    types:
+      - completed
+    branches:
+      - main
+
+jobs:
+  deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Build and push container
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push Docker images
         run: |
-          docker build -t app:${{ github.sha }} .
-          docker push acr.azurecr.io/app:${{ github.sha }}
-      - name: Deploy to AKS
-        run: kubectl set image deployment/app app=acr.azurecr.io/app:${{ github.sha }}
+          docker build -t djoufson/alice-api -f src/Api/Dockerfile .
+          docker push djoufson/alice-api:latest
+
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USERNAME }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT }}
+          script: |
+            cd ${{ secrets.PROJECT_PATH }}
+            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            docker compose -f docker-compose.prod.yml pull
+            docker compose -f docker-compose.prod.yml up -d --force-recreate
 ```
 
 ### Observability
