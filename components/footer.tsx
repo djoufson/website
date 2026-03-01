@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Twitter } from 'lucide-react';
+import { Github, Linkedin, Twitter, Rss } from 'lucide-react';
 
 export default function Footer() {
   const socialLinks = [
@@ -20,6 +20,12 @@ export default function Footer() {
       href: 'https://x.com/djouf_legran',
       icon: Twitter,
       title: "Djoufson Che Bene's Twitter/X"
+    },
+    {
+      name: 'RSS Feed',
+      href: '/feed.xml',
+      icon: Rss,
+      title: "RSS Feed"
     }
   ];
 

@@ -5,7 +5,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import { useState } from "react"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
-import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target, Handshake, Paperclip } from "lucide-react"
+import Link from "next/link"
+import { ExternalLink, Github, Users, Star, GitFork, Download, Calendar, Award, Lightbulb, Target, Handshake, Paperclip, ArrowRight } from "lucide-react"
 
 interface ProjectsProps {
   projects: Project[]
@@ -295,7 +296,14 @@ export default function Projects({ projects }: ProjectsProps) {
                 </div>
               )}
 
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
+                <Link
+                  href={`/projects/${selectedProject.id}`}
+                  className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  View details
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
                 {selectedProject.githubUrl && (
                   <a
                     href={selectedProject.githubUrl}

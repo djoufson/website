@@ -5,7 +5,13 @@ import { remark } from "remark";
 import remarkRehype from "remark-rehype";
 import rehypeHighlight from "rehype-highlight";
 import rehypeStringify from "rehype-stringify";
+import rehypeSlug from "rehype-slug";
 
+export interface Heading {
+  id: string;
+  text: string;
+  level: number;
+}
 
 const postsDirectory = path.join(process.cwd(), "content/blogs");
 
@@ -59,6 +65,7 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
     // Process markdown to HTML with syntax highlighting
     const processedContent = await remark()
       .use(remarkRehype)
+      .use(rehypeSlug)
       .use(rehypeHighlight, {
         aliases: {
           cs: 'csharp',
@@ -93,7 +100,6 @@ export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 
 // Get all blog posts metadata (for listing page)
 export async function getAllPosts(): Promise<BlogPostMeta[]> {
-  debugger;
   const slugs = getAllPostSlugs();
   const posts = await Promise.all(
     slugs.map(async (slug) => {
@@ -109,4 +115,37 @@ export async function getAllPosts(): Promise<BlogPostMeta[]> {
   return posts
     .filter((post): post is BlogPostMeta => post !== null)
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+}
+
+// Get adjacent posts (previous and next) for navigation
+export async function getAdjacentPosts(slug: string): Promise<{
+  prev: BlogPostMeta | null;
+  next: BlogPostMeta | null;
+}> {
+  const posts = await getAllPosts();
+  const index = posts.findIndex((p) => p.slug === slug);
+
+  if (index === -1) return { prev: null, next: null };
+
+  return {
+    prev: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  };
+}
+
+// Extract headings from rendered HTML for table of contents
+export function extractHeadings(html: string): Heading[] {
+  const headings: Heading[] = [];
+  const regex = /<h([23])\s+id="([^"]*)"[^>]*>(.*?)<\/h[23]>/g;
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    headings.push({
+      level: parseInt(match[1]),
+      id: match[2],
+      text: match[3].replace(/<[^>]*>/g, ""),
+    });
+  }
+
+  return headings;
 }

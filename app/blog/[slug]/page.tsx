@@ -1,9 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getPostBySlug, getAllPostSlugs } from "@/lib/blog";
+import { getPostBySlug, getAllPostSlugs, getAdjacentPosts, extractHeadings } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
-import { Calendar, Clock, User } from "lucide-react";
+import { Calendar, Clock, User, ArrowLeft, ArrowRight, List } from "lucide-react";
 import { CodeBlockCopy } from "@/components/CodeBlockCopy";
+import ShareButtons from "@/components/ShareButtons";
 import { Metadata } from "next";
 
 export default async function BlogPostPage({
@@ -17,6 +19,10 @@ export default async function BlogPostPage({
   if (!post) {
     notFound();
   }
+
+  const { prev, next } = await getAdjacentPosts(slug);
+  const headings = extractHeadings(post.content);
+  const baseUrl = "https://djoufson.com";
 
   return (
     <article className="container max-w-4xl py-16">
@@ -56,7 +62,7 @@ export default async function BlogPostPage({
           </div>
 
           {post.tags && post.tags.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-2">
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
               {post.tags.map((tag) => (
                 <span
                   key={tag}
@@ -67,7 +73,36 @@ export default async function BlogPostPage({
               ))}
             </div>
           )}
+
+          <div className="flex justify-center">
+            <ShareButtons title={post.title} url={`${baseUrl}/blog/${slug}`} />
+          </div>
         </header>
+
+        {/* Table of Contents */}
+        {headings.length >= 2 && (
+          <nav className="mb-8 p-4 rounded-lg bg-muted/50 border">
+            <div className="flex items-center gap-2 mb-3">
+              <List className="w-4 h-4" />
+              <h2 className="text-sm font-medium">Table of Contents</h2>
+            </div>
+            <ul className="space-y-1.5">
+              {headings.map((heading) => (
+                <li
+                  key={heading.id}
+                  className={heading.level === 3 ? "ml-4" : ""}
+                >
+                  <a
+                    href={`#${heading.id}`}
+                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    {heading.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )}
 
         {/* Content */}
         <div
@@ -75,6 +110,34 @@ export default async function BlogPostPage({
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
         <CodeBlockCopy />
+
+        {/* Previous/Next Navigation */}
+        {(prev || next) && (
+          <nav className="mt-12 pt-8 border-t flex justify-between gap-4">
+            {prev ? (
+              <Link
+                href={`/blog/${prev.slug}`}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors max-w-[45%]"
+              >
+                <ArrowLeft className="w-4 h-4 flex-shrink-0" />
+                <span className="truncate">{prev.title}</span>
+              </Link>
+            ) : (
+              <div />
+            )}
+            {next ? (
+              <Link
+                href={`/blog/${next.slug}`}
+                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors max-w-[45%] ml-auto text-right"
+              >
+                <span className="truncate">{next.title}</span>
+                <ArrowRight className="w-4 h-4 flex-shrink-0" />
+              </Link>
+            ) : (
+              <div />
+            )}
+          </nav>
+        )}
       </div>
     </article>
   );
