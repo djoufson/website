@@ -1,15 +1,17 @@
 "use client"
 
-import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { Link, usePathname } from '@/i18n/routing'
 import React, { useState } from 'react'
+import { useTranslations } from 'next-intl'
 import { ThemeToggle } from './theme-toggle'
+import LanguageSwitcher from './LanguageSwitcher'
 import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
 
 export default function NavBar() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const t = useTranslations('Navigation');
 
   const isActive = (path: string) => {
     if (path === '/') {
@@ -19,12 +21,12 @@ export default function NavBar() {
   };
 
   const links: Array<{ href: string; label: string; comingSoon?: boolean }> = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/projects', label: 'What I Build' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/community', label: 'Community' },
-    { href: '/contact', label: 'Contact' },
+    { href: '/', label: t('home') },
+    { href: '/about', label: t('about') },
+    { href: '/projects', label: t('projects') },
+    { href: '/blog', label: t('blog') },
+    { href: '/community', label: t('community') },
+    { href: '/contact', label: t('contact') },
   ];
 
   const toggleMobileMenu = () => {
@@ -53,12 +55,12 @@ export default function NavBar() {
                   <Link
                     className="text-sm text-muted-foreground cursor-not-allowed"
                     href="#"
-                    title="Coming Soon"
+                    title={t('soon')}
                   >
                     {link.label}
                   </Link>
                   <span className="absolute -top-2 -right-2 text-[10px] px-1.5 py-0.5 bg-muted text-muted-foreground rounded-full">
-                    Soon
+                    {t('soon')}
                   </span>
                 </div>
               ) : (
@@ -74,11 +76,15 @@ export default function NavBar() {
               )
             ))}
           </div>
-          <ThemeToggle />
+          <div className="flex items-center gap-2">
+            <LanguageSwitcher />
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-2">
+          <LanguageSwitcher />
           <ThemeToggle />
           <button
             onClick={toggleMobileMenu}
@@ -107,7 +113,7 @@ export default function NavBar() {
                     <div className="text-sm text-muted-foreground py-2">
                       {link.label}
                       <span className="ml-2 text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-full">
-                        Soon
+                        {t('soon')}
                       </span>
                     </div>
                   </div>

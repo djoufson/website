@@ -1,7 +1,12 @@
+"use client"
+
 import React from 'react';
 import { Github, Linkedin, Twitter, Rss } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+
   const socialLinks = [
     {
       name: 'Github',
@@ -22,10 +27,10 @@ export default function Footer() {
       title: "Djoufson Che Bene's Twitter/X"
     },
     {
-      name: 'RSS Feed',
+      name: t('rssFeed'),
       href: '/feed.xml',
       icon: Rss,
-      title: "RSS Feed"
+      title: t('rssFeed')
     }
   ];
 
@@ -60,7 +65,7 @@ export default function Footer() {
         {/* Mobile Layout */}
         <div className="md:hidden space-y-6">
           <div className="flex flex-col space-y-4">
-            <h3 className="text-sm font-semibold">Connect with me</h3>
+            <h3 className="text-sm font-semibold">{t('connectWithMe')}</h3>
             <div className="flex flex-col space-y-3">
               {socialLinks.map((link) => {
                 const IconComponent = link.icon;
@@ -80,7 +85,7 @@ export default function Footer() {
               })}
             </div>
           </div>
-          
+
           <div className="pt-4 border-t border-border text-center">
             <div className="text-sm text-muted-foreground">
               &copy; Djoufson {new Date().getFullYear()}

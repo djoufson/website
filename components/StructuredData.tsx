@@ -1,4 +1,4 @@
-export default function StructuredData() {
+export default function StructuredData({ locale = "en" }: { locale?: string }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
@@ -26,7 +26,7 @@ export default function StructuredData() {
         },
         "knowsAbout": [
           "JavaScript",
-          "TypeScript", 
+          "TypeScript",
           "React",
           "Next.js",
           "Node.js",
@@ -92,7 +92,7 @@ export default function StructuredData() {
         "publisher": {
           "@id": "https://djoufson.com/#person"
         },
-        "inLanguage": "en-US"
+        "inLanguage": locale === "fr" ? "fr-FR" : "en-US"
       }
     ]
   };

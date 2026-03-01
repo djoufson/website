@@ -1,0 +1,196 @@
+{
+  "Metadata": {
+    "home": {
+      "title": "Home",
+      "description": "Welcome to Djoufson Che Bene's portfolio. Full Stack Developer specializing in React, Next.js, .NET, and modern web technologies. Discover my projects, experience, and technical insights."
+    },
+    "about": {
+      "title": "About",
+      "description": "Learn more about Djoufson Che Bene, a passionate Full Stack Developer and Software Engineer. Discover my background, experience, skills in React, Next.js, .NET, and journey in software development."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Get in touch with Djoufson Che Bene. Reach out for collaboration, speaking engagements, or just to say hello."
+    },
+    "community": {
+      "title": "Community Engagement",
+      "description": "Discover Djoufson Che Bene's community engagement, speaking engagements at conferences, workshops, and developer advocacy."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Technical blog posts about software development, web technologies, .NET, React, TypeScript, and programming best practices."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research."
+    }
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "What I Build",
+    "blog": "Blog",
+    "community": "Community",
+    "contact": "Contact",
+    "soon": "Soon"
+  },
+  "Footer": {
+    "connectWithMe": "Connect with me",
+    "rssFeed": "RSS Feed"
+  },
+  "Hero": {
+    "greeting": "Hi, I am Djoufson Che",
+    "role": "Software Engineer",
+    "bio": "Experienced backend engineer, Founder of <link>.NET Cameroon</link>. Advocate for open source and developer growth through community.",
+    "avatarAlt": "Djoufson's Avatar",
+    "githubTitle": "GitHub Profile",
+    "linkedinTitle": "LinkedIn Profile",
+    "emailTitle": "Email",
+    "mediumTitle": "Medium Blog"
+  },
+  "Experience": {
+    "heading": "Professional Experience",
+    "present": "Present",
+    "at": "at"
+  },
+  "FeaturedProjects": {
+    "heading": "Featured Projects",
+    "viewAll": "View all"
+  },
+  "LatestPosts": {
+    "heading": "Latest Posts",
+    "readMore": "Read more"
+  },
+  "CommunityTeaser": {
+    "heading": "Community",
+    "description": "As the founder of .NET Cameroon, I'm passionate about building developer communities, organizing meetups, and sharing knowledge through speaking engagements.",
+    "members": "1000+ community members",
+    "events": "5+ events organized",
+    "learnMore": "Learn more about my community work"
+  },
+  "About": {
+    "heading": "About Me",
+    "paragraph1": "I'm a passionate Full Stack Developer and Software Engineer with a deep love for creating meaningful digital experiences. My journey in software development has been driven by curiosity, continuous learning, and the desire to solve real-world problems through innovative technology solutions.",
+    "paragraph2": "With expertise spanning from frontend frameworks like React and Next.js to backend technologies including .NET and Node.js, and mobile development with Flutter and .NET MAUI, I enjoy working across the entire technology stack. I believe in writing clean, maintainable code and building applications that not only function well but also provide exceptional user experiences across web and mobile platforms.",
+    "paragraph3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing. I'm always excited to collaborate on innovative projects and connect with fellow developers in the community.",
+    "coreTechnologies": "Core Technologies",
+    "focusAreas": "Focus Areas",
+    "focusWebDev": "Full Stack Web Development",
+    "focusMobile": "Cross-Platform Mobile Development",
+    "focusFrontend": "Modern Frontend Architecture",
+    "focusApi": "API Design & Development",
+    "focusCloud": "Cloud Solutions & DevOps",
+    "focusWriting": "Technical Writing & Mentoring",
+    "letsConnect": "Let's Connect"
+  },
+  "Contact": {
+    "heading": "Get in Touch",
+    "description": "Have a question, want to collaborate, or just want to say hello? Feel free to reach out through the form below or connect with me on social media.",
+    "otherWays": "Other ways to connect"
+  },
+  "ContactForm": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "your@email.com",
+    "subject": "Subject",
+    "subjectPlaceholder": "What is this about?",
+    "message": "Message",
+    "messagePlaceholder": "Your message...",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "successTitle": "Message sent!",
+    "successMessage": "Thank you for reaching out. I'll get back to you as soon as possible.",
+    "sendAnother": "Send another message",
+    "errorMessage": "Something went wrong. Please try again."
+  },
+  "Community": {
+    "heading": "Community Engagement",
+    "description": "Building communities, empowering developers, and fostering collaboration through meetups, speaking engagements, and mentorship. Community is at the heart of what I do.",
+    "stats": {
+      "members": "Community Members",
+      "events": "Events Organized",
+      "speaking": "Speaking Engagements",
+      "yearsActive": "Years Active"
+    },
+    "building": {
+      "heading": "Community Building",
+      "paragraph1": "I founded <link>.NET Cameroon</link> to create a thriving ecosystem for .NET developers in Cameroon. The platform serves as a hub for knowledge sharing, networking, and collaborative growth.",
+      "paragraph2": "Through regular meetups, workshops, and online engagement, we've built a community of over 100 developers who learn from each other, share experiences, and grow together.",
+      "impactHeading": "Community Impact",
+      "impact1": "Organized the first .NET meetup in Cameroon",
+      "impact2": "Built a growing community of 100+ developers",
+      "impact3": "Created a centralized platform for collaboration",
+      "impact4": "Established a job board for local opportunities",
+      "impact5": "Mentored junior developers in their career growth"
+    },
+    "speaking": {
+      "heading": "Speaking & Events",
+      "description": "I actively share knowledge through speaking engagements, workshops, and community events. From organizing local meetups to presenting at conferences, I'm passionate about helping developers learn and grow."
+    },
+    "dialog": {
+      "about": "About",
+      "highlights": "Highlights",
+      "gallery": "Gallery"
+    },
+    "getInvolved": {
+      "heading": "Let's Build Together",
+      "description": "I'm always excited to collaborate on interesting projects, speak at events, or mentor developers. Whether you want to join the .NET Cameroon community, invite me to speak at your event, or just chat about tech, feel free to reach out!",
+      "followGithub": "Follow on GitHub",
+      "joinCommunity": "Join .NET Cameroon",
+      "getInTouch": "Get in Touch"
+    }
+  },
+  "Blog": {
+    "heading": "Blog",
+    "description": "Here you can read my thoughts on technology, software engineering, and other topics I'm passionate about.",
+    "all": "All",
+    "noPostsForTag": "No posts found for \"{tag}\".",
+    "noPosts": "No blog posts found.",
+    "tableOfContents": "Table of Contents",
+    "share": "Share:",
+    "noImage": "No Image"
+  },
+  "Projects": {
+    "heading": "Projects",
+    "description": "A collection of my work, from open-source contributions to personal projects and academic research. Each project represents a unique challenge and learning opportunity in my journey as a software engineer.",
+    "all": "All",
+    "openSource": "Open Source",
+    "personal": "Personal",
+    "academic": "Academic",
+    "noMatch": "No projects match the selected filters.",
+    "noImage": "No image",
+    "backToProjects": "Back to Projects",
+    "impact": "Impact",
+    "keyFeatures": "Key Features",
+    "gallery": "Gallery",
+    "challenges": "Challenges",
+    "achievements": "Achievements",
+    "keyLearnings": "Key Learnings",
+    "collaborators": "Collaborators",
+    "downloads": "Downloads",
+    "viewOnGithub": "View on GitHub",
+    "visitWebsite": "Visit Website",
+    "present": "Present"
+  },
+  "Error": {
+    "title500": "Something went wrong",
+    "message500": "An unexpected error occurred. Please try again.",
+    "tryAgain": "Try again",
+    "title404": "Page not found",
+    "message404": "The page you're looking for doesn't exist or has been moved.",
+    "backToHome": "Back to Home",
+    "blogNotFound": "Blog post not found",
+    "blogNotFoundMessage": "The blog post you're looking for doesn't exist or has been removed.",
+    "backToBlog": "Back to Blog",
+    "blogLoadFailed": "Failed to load blog post",
+    "blogLoadFailedMessage": "Something went wrong while loading this blog post.",
+    "projectLoadFailed": "Failed to load project",
+    "projectLoadFailedMessage": "Something went wrong while loading this project.",
+    "backToProjects": "Back to Projects"
+  },
+  "LanguageSwitcher": {
+    "en": "English",
+    "fr": "French"
+  }
+}

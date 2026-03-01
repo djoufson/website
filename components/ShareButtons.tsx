@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { Twitter, Linkedin, Link2, Check } from "lucide-react";
 
 interface ShareButtonsProps {
@@ -10,6 +11,7 @@ interface ShareButtonsProps {
 
 export default function ShareButtons({ title, url }: ShareButtonsProps) {
   const [copied, setCopied] = useState(false);
+  const t = useTranslations("Blog");
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(url);
@@ -22,7 +24,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="text-sm text-muted-foreground">Share:</span>
+      <span className="text-sm text-muted-foreground">{t("share")}</span>
       <a
         href={twitterUrl}
         target="_blank"

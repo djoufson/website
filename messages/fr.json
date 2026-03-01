@@ -1,0 +1,196 @@
+{
+  "Metadata": {
+    "home": {
+      "title": "Accueil",
+      "description": "Bienvenue sur le portfolio de Djoufson Che Bene. Développeur Full Stack spécialisé en React, Next.js, .NET et technologies web modernes. Découvrez mes projets, mon expérience et mes articles techniques."
+    },
+    "about": {
+      "title": "À propos",
+      "description": "Découvrez Djoufson Che Bene, un Développeur Full Stack et Ingénieur Logiciel passionné. Découvrez mon parcours, mon expérience et mes compétences en React, Next.js, .NET."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contactez Djoufson Che Bene. Pour une collaboration, des conférences ou simplement pour dire bonjour."
+    },
+    "community": {
+      "title": "Engagement Communautaire",
+      "description": "Découvrez l'engagement communautaire de Djoufson Che Bene, ses conférences, ateliers et son travail d'advocacy développeur."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Articles techniques sur le développement logiciel, les technologies web, .NET, React, TypeScript et les bonnes pratiques de programmation."
+    },
+    "projects": {
+      "title": "Projets",
+      "description": "Explorez mon portfolio de projets logiciels incluant des contributions open-source, des applications personnelles et des recherches académiques."
+    }
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "about": "À propos",
+    "projects": "Réalisations",
+    "blog": "Blog",
+    "community": "Communauté",
+    "contact": "Contact",
+    "soon": "Bientôt"
+  },
+  "Footer": {
+    "connectWithMe": "Me suivre",
+    "rssFeed": "Flux RSS"
+  },
+  "Hero": {
+    "greeting": "Salut, je suis Djoufson Che",
+    "role": "Ingénieur Logiciel",
+    "bio": "Ingénieur backend expérimenté, Fondateur de <link>.NET Cameroon</link>. Défenseur de l'open source et de la croissance des développeurs à travers la communauté.",
+    "avatarAlt": "Avatar de Djoufson",
+    "githubTitle": "Profil GitHub",
+    "linkedinTitle": "Profil LinkedIn",
+    "emailTitle": "Email",
+    "mediumTitle": "Blog Medium"
+  },
+  "Experience": {
+    "heading": "Expérience Professionnelle",
+    "present": "Présent",
+    "at": "chez"
+  },
+  "FeaturedProjects": {
+    "heading": "Projets Phares",
+    "viewAll": "Voir tout"
+  },
+  "LatestPosts": {
+    "heading": "Derniers Articles",
+    "readMore": "Lire plus"
+  },
+  "CommunityTeaser": {
+    "heading": "Communauté",
+    "description": "En tant que fondateur de .NET Cameroon, je suis passionné par la construction de communautés de développeurs, l'organisation de meetups et le partage de connaissances lors de conférences.",
+    "members": "1000+ membres de la communauté",
+    "events": "5+ événements organisés",
+    "learnMore": "En savoir plus sur mon travail communautaire"
+  },
+  "About": {
+    "heading": "À propos de moi",
+    "paragraph1": "Je suis un Développeur Full Stack et Ingénieur Logiciel passionné, avec un profond amour pour la création d'expériences numériques significatives. Mon parcours dans le développement logiciel a été guidé par la curiosité, l'apprentissage continu et le désir de résoudre des problèmes réels grâce à des solutions technologiques innovantes.",
+    "paragraph2": "Avec une expertise allant des frameworks frontend comme React et Next.js aux technologies backend incluant .NET et Node.js, et le développement mobile avec Flutter et .NET MAUI, j'aime travailler sur l'ensemble de la stack technologique. Je crois en l'écriture de code propre et maintenable, et en la construction d'applications qui fonctionnent bien tout en offrant des expériences utilisateur exceptionnelles sur web et mobile.",
+    "paragraph3": "Quand je ne code pas, vous me trouverez en train d'explorer de nouvelles technologies, de contribuer à des projets open-source ou de partager mes connaissances à travers l'écriture technique. Je suis toujours enthousiaste à l'idée de collaborer sur des projets innovants et de me connecter avec d'autres développeurs de la communauté.",
+    "coreTechnologies": "Technologies Principales",
+    "focusAreas": "Domaines d'Expertise",
+    "focusWebDev": "Développement Web Full Stack",
+    "focusMobile": "Développement Mobile Multi-Plateforme",
+    "focusFrontend": "Architecture Frontend Moderne",
+    "focusApi": "Conception et Développement d'API",
+    "focusCloud": "Solutions Cloud et DevOps",
+    "focusWriting": "Rédaction Technique et Mentorat",
+    "letsConnect": "Restons en Contact"
+  },
+  "Contact": {
+    "heading": "Me Contacter",
+    "description": "Une question, envie de collaborer ou simplement dire bonjour ? N'hésitez pas à me contacter via le formulaire ci-dessous ou à me suivre sur les réseaux sociaux.",
+    "otherWays": "Autres moyens de contact"
+  },
+  "ContactForm": {
+    "name": "Nom",
+    "namePlaceholder": "Votre nom",
+    "email": "Email",
+    "emailPlaceholder": "votre@email.com",
+    "subject": "Objet",
+    "subjectPlaceholder": "De quoi s'agit-il ?",
+    "message": "Message",
+    "messagePlaceholder": "Votre message...",
+    "send": "Envoyer le message",
+    "sending": "Envoi en cours...",
+    "successTitle": "Message envoyé !",
+    "successMessage": "Merci de m'avoir contacté. Je vous répondrai dans les plus brefs délais.",
+    "sendAnother": "Envoyer un autre message",
+    "errorMessage": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "Community": {
+    "heading": "Engagement Communautaire",
+    "description": "Construire des communautés, autonomiser les développeurs et favoriser la collaboration à travers des meetups, des conférences et du mentorat. La communauté est au cœur de ce que je fais.",
+    "stats": {
+      "members": "Membres de la Communauté",
+      "events": "Événements Organisés",
+      "speaking": "Conférences",
+      "yearsActive": "Années d'Activité"
+    },
+    "building": {
+      "heading": "Construction Communautaire",
+      "paragraph1": "J'ai fondé <link>.NET Cameroon</link> pour créer un écosystème florissant pour les développeurs .NET au Cameroun. La plateforme sert de hub pour le partage de connaissances, le réseautage et la croissance collaborative.",
+      "paragraph2": "À travers des meetups réguliers, des ateliers et de l'engagement en ligne, nous avons construit une communauté de plus de 100 développeurs qui apprennent les uns des autres, partagent leurs expériences et grandissent ensemble.",
+      "impactHeading": "Impact Communautaire",
+      "impact1": "Organisation du premier meetup .NET au Cameroun",
+      "impact2": "Construction d'une communauté de plus de 100 développeurs",
+      "impact3": "Création d'une plateforme centralisée de collaboration",
+      "impact4": "Mise en place d'un tableau d'offres d'emploi locales",
+      "impact5": "Mentorat de développeurs juniors dans leur évolution de carrière"
+    },
+    "speaking": {
+      "heading": "Conférences et Événements",
+      "description": "Je partage activement mes connaissances à travers des conférences, des ateliers et des événements communautaires. De l'organisation de meetups locaux à la présentation lors de conférences, je suis passionné par l'aide aux développeurs pour apprendre et grandir."
+    },
+    "dialog": {
+      "about": "À propos",
+      "highlights": "Points Forts",
+      "gallery": "Galerie"
+    },
+    "getInvolved": {
+      "heading": "Construisons Ensemble",
+      "description": "Je suis toujours enthousiaste à l'idée de collaborer sur des projets intéressants, de parler lors d'événements ou de mentorer des développeurs. Que vous souhaitiez rejoindre la communauté .NET Cameroon, m'inviter à parler lors de votre événement ou simplement discuter de tech, n'hésitez pas à me contacter !",
+      "followGithub": "Suivre sur GitHub",
+      "joinCommunity": "Rejoindre .NET Cameroon",
+      "getInTouch": "Me Contacter"
+    }
+  },
+  "Blog": {
+    "heading": "Blog",
+    "description": "Ici vous pouvez lire mes réflexions sur la technologie, l'ingénierie logicielle et d'autres sujets qui me passionnent.",
+    "all": "Tout",
+    "noPostsForTag": "Aucun article trouvé pour \"{tag}\".",
+    "noPosts": "Aucun article de blog trouvé.",
+    "tableOfContents": "Table des matières",
+    "share": "Partager :",
+    "noImage": "Pas d'image"
+  },
+  "Projects": {
+    "heading": "Projets",
+    "description": "Une collection de mes travaux, des contributions open-source aux projets personnels et recherches académiques. Chaque projet représente un défi unique et une opportunité d'apprentissage dans mon parcours d'ingénieur logiciel.",
+    "all": "Tout",
+    "openSource": "Open Source",
+    "personal": "Personnel",
+    "academic": "Académique",
+    "noMatch": "Aucun projet ne correspond aux filtres sélectionnés.",
+    "noImage": "Pas d'image",
+    "backToProjects": "Retour aux Projets",
+    "impact": "Impact",
+    "keyFeatures": "Fonctionnalités Clés",
+    "gallery": "Galerie",
+    "challenges": "Défis",
+    "achievements": "Réalisations",
+    "keyLearnings": "Apprentissages Clés",
+    "collaborators": "Collaborateurs",
+    "downloads": "Téléchargements",
+    "viewOnGithub": "Voir sur GitHub",
+    "visitWebsite": "Visiter le Site",
+    "present": "Présent"
+  },
+  "Error": {
+    "title500": "Une erreur s'est produite",
+    "message500": "Une erreur inattendue s'est produite. Veuillez réessayer.",
+    "tryAgain": "Réessayer",
+    "title404": "Page introuvable",
+    "message404": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backToHome": "Retour à l'accueil",
+    "blogNotFound": "Article introuvable",
+    "blogNotFoundMessage": "L'article que vous recherchez n'existe pas ou a été supprimé.",
+    "backToBlog": "Retour au Blog",
+    "blogLoadFailed": "Échec du chargement de l'article",
+    "blogLoadFailedMessage": "Une erreur s'est produite lors du chargement de cet article.",
+    "projectLoadFailed": "Échec du chargement du projet",
+    "projectLoadFailedMessage": "Une erreur s'est produite lors du chargement de ce projet.",
+    "backToProjects": "Retour aux Projets"
+  },
+  "LanguageSwitcher": {
+    "en": "Anglais",
+    "fr": "Français"
+  }
+}

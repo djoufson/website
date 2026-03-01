@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { BlogPostMeta } from "@/lib/blog";
 import { formatDate } from "@/lib/utils";
@@ -6,9 +6,10 @@ import { Calendar, User } from "lucide-react";
 
 interface BlogCardProps {
   post: BlogPostMeta;
+  locale?: string;
 }
 
-export function BlogCard({ post }: BlogCardProps) {
+export function BlogCard({ post, locale = "en" }: BlogCardProps) {
   return (
     <article className="group rounded-lg border transition-shadow duration-300">
       <Link
@@ -57,7 +58,7 @@ export function BlogCard({ post }: BlogCardProps) {
           <div className="flex items-center justify-between text-sm text-muted-foreground mt-auto pt-4 border-t border-dashed w-full">
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
-              <time dateTime={post.date}>{formatDate(post.date)}</time>
+              <time dateTime={post.date}>{formatDate(post.date, locale)}</time>
             </div>
             {post.author && (
               <div className="flex items-center gap-2">

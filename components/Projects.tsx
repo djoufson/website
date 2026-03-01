@@ -1,7 +1,7 @@
 import { Project } from "@/types/Project"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
-import Link from "next/link"
+import { Link } from "@/i18n/routing"
 import { shimmerBlurDataURL } from "@/lib/image"
 
 interface ProjectsProps {

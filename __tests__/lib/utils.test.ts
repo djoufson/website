@@ -15,6 +15,19 @@ describe("formatDate", () => {
     expect(result).toContain("25");
     expect(result).toContain("2023");
   });
+
+  it("formats date in French when locale is fr", () => {
+    const result = formatDate("2024-01-15", "fr");
+    expect(result).toContain("janvier");
+    expect(result).toContain("15");
+    expect(result).toContain("2024");
+  });
+
+  it("defaults to English locale", () => {
+    const defaultResult = formatDate("2024-06-01");
+    const explicitEnResult = formatDate("2024-06-01", "en");
+    expect(defaultResult).toBe(explicitEnResult);
+  });
 });
 
 describe("cn", () => {
