@@ -13,6 +13,12 @@ export const projects: Project[] = [
     liveUrl: "https://dotnet.cm",
     featured: true,
     status: "active",
+    contentSlug: "dotnet-cameroon",
+    gallery: [
+      "/assets/events/net-conf-2025/netconf-2025.jpg",
+      "/assets/events/net-conf-2024/image-1.jpeg",
+      "/assets/events/infinite-days/infinite-days.jpeg",
+    ],
     impact:
       "Created a centralized platform for .NET developers in Cameroon to connect and share knowledge. The platform has helped bridge the gap between local developers and the global .NET community.",
     role: "Founder & Lead Developer",
@@ -157,6 +163,7 @@ export const projects: Project[] = [
     liveUrl: "https://alice.djoufson.com",
     imageUrl: "/assets/alice.png",
     status: "building",
+    contentSlug: "alice",
     impact:
       "A mobile - web cross-platform platform that solves the problem of time care quality online consultations",
     role: "Founder & Maintainer",
@@ -220,6 +227,7 @@ export const projects: Project[] = [
     featured: true,
     imageUrl: "/assets/azure.png",
     status: "completed",
+    contentSlug: "cloud-native-architecture",
     impact:
       "Showcased how Cloud Native architecture can enhance software development building, robustness and confident deployments",
     role: "Lead Researcher",

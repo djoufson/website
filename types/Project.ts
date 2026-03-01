@@ -37,4 +37,6 @@ export interface Project {
   };
   highlights?: string[];
   lessons?: string[];
+  gallery?: string[];
+  contentSlug?: string;
 } 
