@@ -3,6 +3,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: { canonical: "/about" },
   description: "Learn more about Djoufson Che Bene, a passionate Full Stack Developer and Software Engineer. Discover my background, experience, skills in React, Next.js, .NET, and journey in software development.",
   keywords: [
     "About Djoufson",

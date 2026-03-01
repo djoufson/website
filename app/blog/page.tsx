@@ -13,6 +13,7 @@ export default async function BlogPage() {
 
 export const metadata = {
   title: "Blog",
+  alternates: { canonical: "/blog" },
   description: "Technical blog posts about software development, web technologies, .NET, React, TypeScript, and programming best practices. Learn from real-world experiences and tutorials.",
   keywords: [
     "Technical Blog",

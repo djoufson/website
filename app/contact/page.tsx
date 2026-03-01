@@ -4,6 +4,7 @@ import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description: "Get in touch with Djoufson Che Bene. Reach out for collaboration, speaking engagements, or just to say hello.",
   openGraph: {
     title: "Contact - Djoufson Che Bene",

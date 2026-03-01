@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import React, { useState } from 'react'
 import { ThemeToggle } from './theme-toggle'
 import { Menu, X } from 'lucide-react'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export default function NavBar() {
   const pathname = usePathname();
@@ -90,35 +91,43 @@ export default function NavBar() {
       </nav>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-card border-t border-border">
-          <div className="px-4 py-4 space-y-4">
-            {links.map((link) => (
-              link.comingSoon ? (
-                <div key={link.href} className="relative">
-                  <div className="text-sm text-muted-foreground py-2">
-                    {link.label}
-                    <span className="ml-2 text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-full">
-                      Soon
-                    </span>
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeInOut" }}
+            className="md:hidden bg-card border-t border-border overflow-hidden"
+          >
+            <div className="px-4 py-4 space-y-4">
+              {links.map((link) => (
+                link.comingSoon ? (
+                  <div key={link.href} className="relative">
+                    <div className="text-sm text-muted-foreground py-2">
+                      {link.label}
+                      <span className="ml-2 text-[10px] px-2 py-0.5 bg-muted text-muted-foreground rounded-full">
+                        Soon
+                      </span>
+                    </div>
                   </div>
-                </div>
-              ) : (
-                <Link
-                  key={link.href}
-                  className={`block text-sm py-2 custom-blue-link ${
-                    isActive(link.href) ? "custom-blue-link-active" : ""
-                  }`}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </Link>
-              )
-            ))}
-          </div>
-        </div>
-      )}
+                ) : (
+                  <Link
+                    key={link.href}
+                    className={`block text-sm py-2 custom-blue-link ${
+                      isActive(link.href) ? "custom-blue-link-active" : ""
+                    }`}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

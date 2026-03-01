@@ -5,6 +5,7 @@ import { projects } from "@/data/projects";
 import { getProjectContent } from "@/lib/projects";
 import { Badge } from "@/components/ui/badge";
 import { CodeBlockCopy } from "@/components/CodeBlockCopy";
+import { shimmerBlurDataURL } from "@/lib/image";
 import { Metadata } from "next";
 import {
   Github,
@@ -57,6 +58,7 @@ export async function generateMetadata({
       description: project.description,
       images: project.imageUrl ? [project.imageUrl] : undefined,
     },
+    alternates: { canonical: `/projects/${id}` },
   };
 }
 
@@ -151,6 +153,8 @@ export default async function ProjectDetailPage({
             alt={project.title}
             fill
             className="object-cover"
+            placeholder="blur"
+            blurDataURL={shimmerBlurDataURL}
           />
         </div>
       )}
@@ -236,6 +240,8 @@ export default async function ProjectDetailPage({
                   alt={`${project.title} - Screenshot ${i + 1}`}
                   fill
                   className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={shimmerBlurDataURL}
                 />
               </div>
             ))}

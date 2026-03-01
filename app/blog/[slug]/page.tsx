@@ -6,6 +6,7 @@ import { formatDate } from "@/lib/utils";
 import { Calendar, Clock, User, ArrowLeft, ArrowRight, List } from "lucide-react";
 import { CodeBlockCopy } from "@/components/CodeBlockCopy";
 import ShareButtons from "@/components/ShareButtons";
+import { shimmerBlurDataURL } from "@/lib/image";
 import { Metadata } from "next";
 
 export default async function BlogPostPage({
@@ -34,6 +35,8 @@ export default async function BlogPostPage({
               alt={post.title}
               fill
               className="rounded-lg object-cover"
+              placeholder="blur"
+              blurDataURL={shimmerBlurDataURL}
             />
           </div>
         )}
@@ -203,5 +206,6 @@ export async function generateMetadata({
       images: [bannerUrl],
     },
     authors: post.author ? [{ name: post.author }] : undefined,
+    alternates: { canonical: `/blog/${slug}` },
   };
 }

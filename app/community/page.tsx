@@ -3,6 +3,7 @@ import CommunityContent from "./CommunityContent";
 
 export const metadata: Metadata = {
   title: "Community Engagement",
+  alternates: { canonical: "/community" },
   description: "Discover Djoufson Che Bene's community engagement, speaking engagements at conferences, workshops, and developer advocacy. Founder of .NET Cameroon, organizing tech meetups and empowering developers across Africa.",
   keywords: [
     "Community Engagement",

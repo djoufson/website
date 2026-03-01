@@ -2,6 +2,7 @@ import { Project } from "@/types/Project"
 import Image from "next/image"
 import { Badge } from "./ui/badge"
 import Link from "next/link"
+import { shimmerBlurDataURL } from "@/lib/image"
 
 interface ProjectsProps {
   projects: Project[]
@@ -23,6 +24,8 @@ export default function Projects({ projects }: ProjectsProps) {
                 alt={project.title}
                 fill
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL={shimmerBlurDataURL}
               />
             ) : (
               <div className="w-full h-full bg-muted flex items-center justify-center">
