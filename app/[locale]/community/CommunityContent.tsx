@@ -4,12 +4,32 @@ import { useState } from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { ExternalLink, Github, Users, Calendar, Award, Mic, MapPin, Heart } from "lucide-react"
+import { ExternalLink, Github, Users, Calendar, Award, Mic, MapPin, Heart, Youtube } from "lucide-react"
 import LottieAnimation from "@/components/LottieAnimation"
 import { Event } from "@/types/Event"
 import { speakingAndEvents } from "@/data/events"
 import { shimmerBlurDataURL } from "@/lib/image"
 import { useTranslations } from "next-intl"
+
+function getYoutubeEmbedUrl(url: string): string | null {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, "");
+    let id: string | null = null;
+    if (host === "youtu.be") {
+      id = parsed.pathname.slice(1);
+    } else if (host.endsWith("youtube.com") || host.endsWith("youtube-nocookie.com")) {
+      if (parsed.pathname === "/watch") {
+        id = parsed.searchParams.get("v");
+      } else if (parsed.pathname.startsWith("/embed/") || parsed.pathname.startsWith("/shorts/")) {
+        id = parsed.pathname.split("/")[2] ?? null;
+      }
+    }
+    return id ? `https://www.youtube-nocookie.com/embed/${id}` : null;
+  } catch {
+    return null;
+  }
+}
 
 export default function CommunityContent() {
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
@@ -174,18 +194,18 @@ export default function CommunityContent() {
               <DialogDescription>{selectedEvent.role}</DialogDescription>
             </DialogHeader>
 
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-              <Image
-                src={selectedEvent.thumbnail}
-                alt={selectedEvent.title}
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL={shimmerBlurDataURL}
-              />
-            </div>
-
             <div className="space-y-6">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src={selectedEvent.thumbnail}
+                  alt={selectedEvent.title}
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={shimmerBlurDataURL}
+                />
+              </div>
+
               {/* Meta Info */}
               {(selectedEvent.location || selectedEvent.startDate || selectedEvent.frequency || selectedEvent.year) && (
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
@@ -244,6 +264,34 @@ export default function CommunityContent() {
                       {link.label}
                     </a>
                   ))}
+                </div>
+              )}
+
+              {/* Videos */}
+              {selectedEvent.videos && selectedEvent.videos.length > 0 && (
+                <div>
+                  <h4 className="font-medium mb-3 flex items-center gap-2">
+                    <Youtube className="w-4 h-4" />
+                    {t('dialog.videos')}
+                  </h4>
+                  <div className="space-y-4">
+                    {selectedEvent.videos.map((video, idx) => {
+                      const embedUrl = getYoutubeEmbedUrl(video);
+                      if (!embedUrl) return null;
+                      return (
+                        <div key={idx} className="relative aspect-video rounded-lg overflow-hidden bg-muted">
+                          <iframe
+                            src={embedUrl}
+                            title={`${selectedEvent.title} - Video ${idx + 1}`}
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                            loading="lazy"
+                            className="absolute inset-0 w-full h-full border-0"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
 

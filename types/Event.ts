@@ -10,6 +10,7 @@ export interface Event {
   startDate?: string;
   thumbnail: string;
   gallery?: string[];
+  videos?: string[];
   highlights?: string[];
   links?: { label: string; url: string }[];
   status: "ongoing" | "completed" | "upcoming";
