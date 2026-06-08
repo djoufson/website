@@ -33,15 +33,15 @@ export interface BannerConfig {
  */
 export const activeBanners: BannerConfig[] = [
   {
-    id: 'dotnet-conf-2025',
-    title: '.NET Conf Cameroon 2025',
-    description: 'Join us for the biggest .NET conference in Cameroon',
-    date: 'December 20, 2025',
-    location: 'Serena Hotel, Douala',
-    link: 'https://dotnet.cm/dotnet-conf-2025',
+    id: '10000-codeurs',
+    title: "10000 Codeurs's 4th Forum in Cameroon",
+    description: 'Join us for an inspiring event and meet experts',
+    date: 'June 18, 2026',
+    // location: 'Serena Hotel, Douala',
+    link: 'https://docs.google.com/forms/d/e/1FAIpQLSfpv5gQVvvFjUa77Cg6ydbvKng38PEHNk09aUkMMubTG7H2jw/viewform',
     linkText: 'Register Now',
-    startDate: new Date('2024-12-01'),
-    endDate: new Date('2025-12-21'),
+    startDate: new Date('2025-12-01'),
+    endDate: new Date('2026-06-19'),
     bgGradient: 'from-purple-600 via-violet-600 to-indigo-600',
     icon: '🚀'
   }
