@@ -174,18 +174,18 @@ export default function CommunityContent() {
               <DialogDescription>{selectedEvent.role}</DialogDescription>
             </DialogHeader>
 
-            <div className="relative w-full aspect-video rounded-lg overflow-hidden">
-              <Image
-                src={selectedEvent.thumbnail}
-                alt={selectedEvent.title}
-                fill
-                className="object-cover"
-                placeholder="blur"
-                blurDataURL={shimmerBlurDataURL}
-              />
-            </div>
-
             <div className="space-y-6">
+              <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+                <Image
+                  src={selectedEvent.thumbnail}
+                  alt={selectedEvent.title}
+                  fill
+                  className="object-cover"
+                  placeholder="blur"
+                  blurDataURL={shimmerBlurDataURL}
+                />
+              </div>
+
               {/* Meta Info */}
               {(selectedEvent.location || selectedEvent.startDate || selectedEvent.frequency || selectedEvent.year) && (
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
