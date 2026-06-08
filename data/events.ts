@@ -111,6 +111,7 @@ export const speakingAndEvents: Event[] = [
       "/assets/events/infinite-days/image-10.jpeg",
       "/assets/events/infinite-days/image-11.jpeg",
     ],
+    videos: ["https://youtu.be/pTMKz5mv81Q"],
     status: "completed",
     highlights: [
       "Explored emerging technologies and their practical applications",
