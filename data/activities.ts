@@ -15,6 +15,7 @@ export const activities: Activity[] = [
     description:
       "We're bringing the first pan-African edition of .NET Conf to the continent. Expect tracks on .NET 10, cloud-native architecture, and stories from African .NET teams. Currently lining up speakers and partners — reach out if you want to get involved.",
     location: "Cameroon",
+    image: "/assets/events/net-conf-2025/netconf-2025.jpg",
     link: {
       href: "https://dotnet.cm",
       label: "Follow along on .NET Cameroon",
