@@ -48,6 +48,16 @@
     "emailTitle": "Email",
     "mediumTitle": "Medium Blog"
   },
+  "Activity": {
+    "heading": "What I'm up to",
+    "subtitle": "Recent updates, ongoing work, and what's coming next.",
+    "status": {
+      "upcoming": "Upcoming",
+      "ongoing": "Building",
+      "shipped": "Shipped",
+      "note": "Update"
+    }
+  },
   "Experience": {
     "heading": "Professional Experience",
     "present": "Present",

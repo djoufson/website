@@ -48,6 +48,16 @@
     "emailTitle": "Email",
     "mediumTitle": "Blog Medium"
   },
+  "Activity": {
+    "heading": "Ce qui se passe",
+    "subtitle": "Mises à jour récentes, travaux en cours, et ce qui arrive bientôt.",
+    "status": {
+      "upcoming": "À venir",
+      "ongoing": "En cours",
+      "shipped": "Lancé",
+      "note": "Note"
+    }
+  },
   "Experience": {
     "heading": "Expérience Professionnelle",
     "present": "Présent",
