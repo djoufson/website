@@ -110,13 +110,13 @@ function ActivityCard({
       </div>
 
       {item.image && (
-        <div className="relative w-full md:w-32 md:h-20 h-32 flex-shrink-0 rounded-md overflow-hidden border">
+        <div className="relative w-full md:w-56 md:h-36 h-48 flex-shrink-0 rounded-md overflow-hidden border">
           <Image
             src={item.image}
             alt={item.title}
             fill
             className="object-cover"
-            sizes="(max-width: 768px) 100vw, 128px"
+            sizes="(max-width: 768px) 100vw, 224px"
           />
         </div>
       )}
