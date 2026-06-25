@@ -41,7 +41,7 @@ export const activeBanners: BannerConfig[] = [
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSfpv5gQVvvFjUa77Cg6ydbvKng38PEHNk09aUkMMubTG7H2jw/viewform',
     linkText: 'Register Now',
     startDate: new Date('2025-12-01'),
-    endDate: new Date('2026-06-19'),
+    endDate: new Date('2026-07-19'),
     bgGradient: 'from-purple-600 via-violet-600 to-indigo-600',
     icon: '🚀'
   }
