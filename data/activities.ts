@@ -21,5 +21,20 @@ export const activities: Activity[] = [
       label: "Submit a Session",
       external: true,
     },
+  },
+  {
+    id: "building-utauro",
+    date: "2026-12-11",
+    when: "In progress",
+    status: "ongoing",
+    tag: "Building",
+    title: "Building Utauro",
+    description:
+      "I'm currently building Utauro — a local-first, privacy-focused macOS app that automatically tracks how you spend time on your Mac. No timers or manual tagging: it quietly records app and document usage, then breaks your day down into meaningful activity categories, all stored on-device. Waitlist is open.",
+    link: {
+      href: "https://utauro.app",
+      label: "Join The Waitlist",
+      external: true,
+    },
   }
 ];
