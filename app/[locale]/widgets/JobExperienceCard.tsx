@@ -101,11 +101,6 @@ function RoleEntry({
             {translations.current}
           </span>
         )}
-        {showTimeline && isLatest && role.end && (
-          <span className="text-[11px] uppercase tracking-wide font-medium px-1.5 py-0.5 rounded bg-foreground/10 text-foreground">
-            {translations.promoted}
-          </span>
-        )}
         <span className="text-sm text-muted-foreground">
           {formatMonthYear(role.start, locale)} -{" "}
           {role.end ? formatMonthYear(role.end, locale) : translations.present}
@@ -129,6 +124,5 @@ export interface JobExperienceProps {
   translations: {
     present: string;
     current: string;
-    promoted: string;
   };
 }

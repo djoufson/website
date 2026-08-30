@@ -20,7 +20,6 @@ export default async function ExperienceSection() {
                 translations={{
                   present: t('present'),
                   current: t('current'),
-                  promoted: t('promoted'),
                 }}
               />
             </div>
