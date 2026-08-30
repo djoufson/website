@@ -61,7 +61,8 @@
   "Experience": {
     "heading": "Professional Experience",
     "present": "Present",
-    "at": "at"
+    "at": "at",
+    "current": "Current"
   },
   "FeaturedProjects": {
     "heading": "Featured Projects",

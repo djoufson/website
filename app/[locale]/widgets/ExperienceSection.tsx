@@ -1,10 +1,11 @@
 import React from "react";
 import JobExperienceCard from "./JobExperienceCard";
 import { experiences } from "@/data/experiences";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export default async function ExperienceSection() {
   const t = await getTranslations('Experience');
+  const locale = await getLocale();
 
   return (
     <section className="section py-16">
@@ -15,7 +16,11 @@ export default async function ExperienceSection() {
             <div key={e.id.toString()}>
               <JobExperienceCard
                 model={e}
-                translations={{ at: t('at'), present: t('present') }}
+                locale={locale}
+                translations={{
+                  present: t('present'),
+                  current: t('current'),
+                }}
               />
             </div>
           ))}

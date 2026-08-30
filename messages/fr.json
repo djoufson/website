@@ -61,7 +61,8 @@
   "Experience": {
     "heading": "Expérience Professionnelle",
     "present": "Présent",
-    "at": "chez"
+    "at": "chez",
+    "current": "Actuel"
   },
   "FeaturedProjects": {
     "heading": "Projets Phares",
