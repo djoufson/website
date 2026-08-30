@@ -19,10 +19,11 @@ export default function StructuredData({ locale = "en" }: { locale?: string }) {
           "https://linkedin.com/in/djoufson",
           "https://x.com/djouf_legran"
         ],
-        "jobTitle": "Full Stack Developer",
+        "jobTitle": "Software Engineer",
         "worksFor": {
           "@type": "Organization",
-          "name": "Freelance"
+          "name": "Africa Global Logistics",
+          "url": "https://www.aglgroup.com"
         },
         "knowsAbout": [
           "JavaScript",
