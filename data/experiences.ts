@@ -29,21 +29,27 @@ export const experiences: JobExperience[] = [
     roles: [
       {
         jobTitle: "Software Engineer II",
-        start: new Date(2025, 8, 1),
+        start: new Date(2026, 1, 1),
         end: new Date(2026, 6, 1),
         responsibilities: [
-          "Led the design of enterprise level backend systems",
-          "Mentored junior engineers and reviewed technical designs",
+          "Led the implementation of products end to end",
+          "Designed complex architectures and workflows",
+          "Managed team members and owned the quality of the outcome",
+          "Managed deadlines and client communication",
+          "Mentored interns"
         ],
       },
       {
         jobTitle: "Software Engineer",
-        start: new Date(2025, 2, 1),
-        end: new Date(2025, 8, 1),
+        start: new Date(2025, 1, 1),
+        end: new Date(2026, 1, 1),
         responsibilities: [
-          "Building enterprise level backend systems",
-          "Exchanging with customers to ensure the solutions we provide fit their needs",
-          "Writing technical documents and requirements papers",
+          "Explored a wide range of topics, from frontend to backend, AI and design",
+          "Maintained legacy .NET applications",
+          "Built real-world projects with Next.js",
+          "Designed a complete website in Figma",
+          "Adopted agent-based workflows with modern AI tools",
+          "Wrote technical documents",
         ],
       },
     ],
