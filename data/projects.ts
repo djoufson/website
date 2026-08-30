@@ -2,6 +2,43 @@ import { Project } from "@/types/Project";
 
 export const projects: Project[] = [
   {
+    id: "utauro",
+    title: "Utauro",
+    description:
+      "A local-first activity tracking app for macOS that helps you understand how you spend your time.",
+    category: "personal",
+    technologies: ["Swift", "macOS"],
+    liveUrl: "https://utauro.app",
+    imageUrl: "/assets/utauro.png",
+    featured: true,
+    status: "building",
+    impact:
+      "Gives users clear, private insights into their daily activity without sending their data to the cloud, thanks to a local-first architecture.",
+    role: "Founder & Lead Developer",
+    startDate: "2026",
+    challenges: [
+      "Designing a performant local-first data model for activity tracking",
+      "Building a native, privacy-respecting experience on macOS",
+      "Turning raw activity data into meaningful insights",
+    ],
+    highlights: [
+      "Local-first activity tracking that keeps your data on your device",
+      "Native macOS experience",
+      "Meaningful insights into how you spend your time",
+    ],
+    downloads: [
+      {
+        name: "Join the waitlist",
+        url: "https://utauro.app",
+        type: "other",
+        description: "Sign up to get early access to Utauro",
+      },
+    ],
+    metrics: {
+      contributors: 1,
+    },
+  },
+  {
     id: "dotnet-cameroon",
     title: ".NET Cameroon",
     description:

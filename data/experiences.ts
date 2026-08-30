@@ -2,6 +2,20 @@ import { JobExperience } from "@/types/JobExperience";
 
 export const experiences: JobExperience[] = [
   {
+    id: 0,
+    company: "Africa Global Logistics",
+    website: "https://www.aglgroup.com",
+    logo: "/assets/agl.png",
+    jobTitle: "Software Engineer",
+    jobDescription:
+      "A leading logistics operator in Africa, providing integrated transport, port, and supply chain solutions across the continent",
+    start: new Date(2026, 6, 1),
+    responsibilities: [
+      "Building and maintaining software solutions to support logistics operations",
+      "Collaborating with cross-functional teams to deliver reliable systems",
+    ],
+  },
+  {
     id: 1,
     company: "ST Digital",
     website: "https://st.digital",
@@ -10,6 +24,7 @@ export const experiences: JobExperience[] = [
     jobDescription:
       "A digital services company aiming to lead in digital transformation and cloud services",
     start: new Date(2025, 2, 1),
+    end: new Date(2026, 6, 1),
     responsibilities: [
       "Building enterprise level backend systems",
       "Exchanging with customers to ensure the solutions we provide fit their needs",
