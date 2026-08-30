@@ -6,7 +6,7 @@ export interface JobRole {
 };
 
 export interface JobExperience {
-  id: Number,
+  id: number,
   company: string,
   website: string,
   logo: string,

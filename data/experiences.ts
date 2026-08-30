@@ -10,11 +10,15 @@ export const experiences: JobExperience[] = [
       "A leading logistics operator in Africa, providing integrated transport, port, and supply chain solutions across the continent",
     roles: [
       {
-        jobTitle: "Software Engineer",
+        jobTitle: "Senior Software Engineer",
         start: new Date(2026, 6, 1),
         responsibilities: [
-          "Building and maintaining software solutions to support logistics operations",
-          "Collaborating with cross-functional teams to deliver reliable systems",
+          "Own features from design to delivery with a high degree of autonomy",
+          "Turn business needs into clear technical solutions across the domain",
+          "Lead the implementation of new services for internal needs",
+          "Migrate legacy software to modern microservices",
+          "Maintain and evolve existing microservices",
+          "Enforce quality on deliverables, where the impact of the systems is critical",
         ],
       },
     ],
