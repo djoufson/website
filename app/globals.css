@@ -214,6 +214,24 @@
   border-color: var(--custom-blue);
 }
 
+/* Digital art gallery: always-dark, immersive scope (see /art).
+   Overrides the site's theme tokens locally so the gallery reads as a distinct,
+   curated space regardless of the visitor's light/dark preference. */
+.art-scope {
+  --art-bg: #0b0b0b;
+  --art-fg: #f5f5f5;
+  --art-muted: #a0a0a0;
+  --art-accent: var(--custom-blue);
+  background-color: var(--art-bg);
+  color: var(--art-fg);
+}
+
+/* Discourage casual image saving within the gallery. */
+.art-scope img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 @layer components {
   .title {
     @apply relative text-2xl font-bold mb-2 block;
