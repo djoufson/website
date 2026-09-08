@@ -23,12 +23,17 @@
     "projects": {
       "title": "Projets",
       "description": "Explorez mon portfolio de projets logiciels incluant des contributions open-source, des applications personnelles et des recherches académiques."
+    },
+    "art": {
+      "title": "Art Numérique & Illustration",
+      "description": "Une galerie d'œuvres numériques, d'illustrations, de designs de personnages et d'explorations créatives par Djoufson Che."
     }
   },
   "Navigation": {
     "home": "Accueil",
     "about": "À propos",
     "projects": "Réalisations",
+    "art": "Art",
     "blog": "Blog",
     "community": "Communauté",
     "contact": "Contact",
@@ -40,7 +45,7 @@
   },
   "Hero": {
     "greeting": "Salut, je suis Djoufson Che",
-    "role": "Ingénieur Logiciel",
+    "role": "Ingénieur Logiciel · Bâtisseur de Communauté · Artiste Numérique",
     "bio": "Ingénieur backend expérimenté, Fondateur de <link>.NET Cameroon</link>. Défenseur de l'open source et de la croissance des développeurs à travers la communauté.",
     "avatarAlt": "Avatar de Djoufson",
     "githubTitle": "Profil GitHub",
@@ -84,6 +89,7 @@
     "paragraph1": "Je suis un Développeur Full Stack et Ingénieur Logiciel passionné, avec un profond amour pour la création d'expériences numériques significatives. Mon parcours dans le développement logiciel a été guidé par la curiosité, l'apprentissage continu et le désir de résoudre des problèmes réels grâce à des solutions technologiques innovantes.",
     "paragraph2": "Avec une expertise allant des frameworks frontend comme React et Next.js aux technologies backend incluant .NET et Node.js, et le développement mobile avec Flutter et .NET MAUI, j'aime travailler sur l'ensemble de la stack technologique. Je crois en l'écriture de code propre et maintenable, et en la construction d'applications qui fonctionnent bien tout en offrant des expériences utilisateur exceptionnelles sur web et mobile.",
     "paragraph3": "Quand je ne code pas, vous me trouverez en train d'explorer de nouvelles technologies, de contribuer à des projets open-source ou de partager mes connaissances à travers l'écriture technique. Je suis toujours enthousiaste à l'idée de collaborer sur des projets innovants et de me connecter avec d'autres développeurs de la communauté.",
+    "paragraph4": "Au-delà de l'ingénierie logicielle, je crée des œuvres numériques. Le dessin me permet d'explorer la créativité, la narration, la composition et l'expression visuelle. Il complète mon travail technique et me donne un autre médium à travers lequel je construis et communique des idées. Vous pouvez explorer ma galerie dans la section Art.",
     "coreTechnologies": "Technologies Principales",
     "focusAreas": "Domaines d'Expertise",
     "focusWebDev": "Développement Web Full Stack",
@@ -184,6 +190,44 @@
     "viewOnGithub": "Voir sur GitHub",
     "visitWebsite": "Visiter le Site",
     "present": "Présent"
+  },
+  "Art": {
+    "hero": {
+      "eyebrow": "Galerie",
+      "title": "Art Numérique & Illustration",
+      "description": "Une collection d'œuvres numériques, d'illustrations, de designs de personnages et d'explorations créatives.",
+      "cta": "Explorer la Galerie"
+    },
+    "featured": {
+      "heading": "Œuvres en Vedette"
+    },
+    "gallery": {
+      "heading": "Galerie Complète"
+    },
+    "filters": {
+      "all": "Tout"
+    },
+    "categories": {
+      "characterArt": "Design de Personnage",
+      "fanArt": "Fan Art",
+      "portraits": "Portraits",
+      "illustrations": "Illustrations",
+      "personalProjects": "Projets Personnels"
+    },
+    "empty": "Aucune œuvre ne correspond à ce filtre.",
+    "detail": {
+      "metaSuffix": "Art Numérique",
+      "backToGallery": "Retour à la Galerie",
+      "year": "Année",
+      "category": "Catégorie",
+      "medium": "Médium",
+      "tools": "Outils Utilisés",
+      "inspiration": "Inspiration",
+      "process": "Processus de Création",
+      "commissionPrompt": "Cette œuvre est disponible pour une commande dans une direction similaire.",
+      "commissionCta": "Me contacter",
+      "copyright": "Toutes les œuvres sont protégées par le droit d'auteur et ne peuvent être reproduites, redistribuées ou utilisées commercialement sans autorisation."
+    }
   },
   "Error": {
     "title500": "Une erreur s'est produite",
