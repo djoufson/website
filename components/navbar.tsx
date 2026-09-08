@@ -24,6 +24,7 @@ export default function NavBar() {
     { href: '/', label: t('home') },
     { href: '/about', label: t('about') },
     { href: '/projects', label: t('projects') },
+    { href: '/art', label: t('art') },
     { href: '/blog', label: t('blog') },
     { href: '/community', label: t('community') },
     { href: '/contact', label: t('contact') },

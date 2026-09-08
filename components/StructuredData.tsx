@@ -19,7 +19,7 @@ export default function StructuredData({ locale = "en" }: { locale?: string }) {
           "https://linkedin.com/in/djoufson",
           "https://x.com/djouf_legran"
         ],
-        "jobTitle": "Software Engineer",
+        "jobTitle": ["Software Engineer", "Community Builder", "Digital Artist"],
         "worksFor": {
           "@type": "Organization",
           "name": "Africa Global Logistics",
@@ -35,7 +35,10 @@ export default function StructuredData({ locale = "en" }: { locale?: string }) {
           "C#",
           "Web Development",
           "Full Stack Development",
-          "Software Engineering"
+          "Software Engineering",
+          "Digital Art",
+          "Illustration",
+          "Character Design"
         ],
         "alumniOf": {
           "@type": "EducationalOrganization",

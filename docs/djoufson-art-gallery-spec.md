@@ -239,13 +239,16 @@ Artwork must remain the focus.
 
 ## Storage
 
-Preferred:
+**V1 (implemented):** images are committed under `public/assets/art/` as
+self-owned placeholders/artwork. This keeps the feature fully self-contained and
+matches how the rest of the site references imagery (`public/assets/...`).
 
-Azure Blob Storage
-or
-Cloudflare R2
+**Future:** migrate masters to Azure Blob Storage or Cloudflare R2 and swap each
+`Artwork.imageUrl` for a remote URL, registering a remote loader/`remotePatterns`
+in `next.config.ts`. No other code changes are required — the data model already
+isolates the image source behind `imageUrl`.
 
-Images should not be committed to the repository.
+Originals (PSD / Clip Studio / Procreate masters) are never committed or exposed.
 
 ---
 
@@ -473,22 +476,24 @@ Frontend:
 - Framer Motion
 
 Content:
-- MDX
-or
-- Content Collections
+- Typed data file (`data/artworks.ts` + `types/Artwork.ts`) — matches the
+  existing `data/projects.ts` pattern used across the site. (MDX / Content
+  Collections were considered but rejected to stay consistent with the codebase.)
 
 Storage:
-- Azure Blob Storage
-or
-- Cloudflare R2
+- `public/assets/art/` for V1 (Azure Blob Storage or Cloudflare R2 in future)
 
 Optimization:
-- next/image
+- next/image (blur placeholders, responsive `sizes`, lazy loading)
+
+i18n:
+- next-intl (`/art` and `/fr/art`), matching the rest of the site
+
+Animations:
+- Framer Motion (already a project dependency)
 
 Analytics:
-- Plausible
-or
-- Umami
+- Existing Google Analytics setup (reused; Plausible/Umami not adopted)
 
 ---
 
