@@ -1,12 +1,15 @@
 import { Artwork } from "@/types/Artwork";
 
 /**
- * Digital art gallery pieces.
+ * Digital art posts.
  *
  * Images currently live under public/assets/art/ as self-owned placeholders.
- * When real artwork is ready, swap `imageUrl` for a remote (R2 / Azure Blob)
- * URL and configure the remote loader in next.config.ts — nothing else here
- * needs to change. Keep `width`/`height` accurate so the gallery never shifts.
+ * When real artwork is ready, swap each `images[].src` for a remote (R2 / Azure
+ * Blob) URL and configure the remote loader in next.config.ts — nothing else
+ * here changes. Keep `width`/`height` accurate so nothing shifts while loading.
+ *
+ * A post can hold multiple images (versions of the same piece); the first image
+ * is the cover shown in the gallery grid.
  */
 export const artworks: Artwork[] = [
   {
@@ -14,13 +17,25 @@ export const artworks: Artwork[] = [
     slug: "straw-hat-captain",
     title: "Straw Hat Captain",
     description:
-      "A tribute piece exploring bold silhouettes and warm dusk lighting, painted digitally over several evenings.",
+      "A tribute piece exploring bold silhouettes and warm dusk lighting, painted digitally over several evenings. I worked through a few passes before landing on the final mood.",
     category: "fan-art",
-    year: 2025,
+    date: "2025-06-18",
+    images: [
+      { src: "/assets/art/straw-hat-captain.jpg", width: 800, height: 1100, caption: "Final" },
+      {
+        src: "/assets/art/straw-hat-captain-sketch.jpg",
+        width: 800,
+        height: 1100,
+        caption: "Sketch",
+      },
+      {
+        src: "/assets/art/straw-hat-captain-colors.jpg",
+        width: 800,
+        height: 1100,
+        caption: "Color pass",
+      },
+    ],
     toolsUsed: ["Procreate", "Clip Studio Paint"],
-    imageUrl: "/assets/art/straw-hat-captain.jpg",
-    width: 800,
-    height: 1100,
     featured: true,
     commissionable: true,
     medium: "Digital painting",
@@ -35,11 +50,9 @@ export const artworks: Artwork[] = [
     title: "Neon Samurai",
     description: "Character concept blending traditional armor with a neon-soaked cyberpunk mood.",
     category: "character-art",
-    year: 2025,
+    date: "2025-02-03",
+    images: [{ src: "/assets/art/neon-samurai.jpg", width: 900, height: 900 }],
     toolsUsed: ["Procreate", "Photoshop"],
-    imageUrl: "/assets/art/neon-samurai.jpg",
-    width: 900,
-    height: 900,
     featured: true,
     commissionable: true,
     medium: "Digital illustration",
@@ -52,11 +65,9 @@ export const artworks: Artwork[] = [
     title: "Quiet Morning",
     description: "A calm portrait study focused on soft skin tones and gentle window light.",
     category: "portraits",
-    year: 2024,
+    date: "2024-11-09",
+    images: [{ src: "/assets/art/quiet-morning.jpg", width: 800, height: 1000 }],
     toolsUsed: ["Procreate"],
-    imageUrl: "/assets/art/quiet-morning.jpg",
-    width: 800,
-    height: 1000,
     featured: false,
     commissionable: true,
     medium: "Digital portrait",
@@ -67,11 +78,9 @@ export const artworks: Artwork[] = [
     title: "City of Dreams",
     description: "A wide environmental illustration imagining a coastal metropolis at blue hour.",
     category: "illustrations",
-    year: 2025,
+    date: "2025-04-27",
+    images: [{ src: "/assets/art/city-of-dreams.jpg", width: 1200, height: 800 }],
     toolsUsed: ["Photoshop", "Blender"],
-    imageUrl: "/assets/art/city-of-dreams.jpg",
-    width: 1200,
-    height: 800,
     featured: true,
     commissionable: false,
     medium: "Digital illustration",
@@ -82,13 +91,20 @@ export const artworks: Artwork[] = [
     id: "5",
     slug: "the-wanderer",
     title: "The Wanderer",
-    description: "Full-body character design for a traveler carrying stories from far-off places.",
+    description:
+      "Full-body character design for a traveler carrying stories from far-off places. Shown from lineart through to the finished render.",
     category: "character-art",
-    year: 2024,
+    date: "2024-08-15",
+    images: [
+      { src: "/assets/art/the-wanderer.jpg", width: 800, height: 1200, caption: "Final" },
+      {
+        src: "/assets/art/the-wanderer-lineart.jpg",
+        width: 800,
+        height: 1200,
+        caption: "Lineart",
+      },
+    ],
     toolsUsed: ["Clip Studio Paint"],
-    imageUrl: "/assets/art/the-wanderer.jpg",
-    width: 800,
-    height: 1200,
     featured: true,
     commissionable: true,
     medium: "Character design",
@@ -100,11 +116,9 @@ export const artworks: Artwork[] = [
     description:
       "A portrait bathed in late-afternoon warmth, studying how sunlight wraps around form.",
     category: "portraits",
-    year: 2025,
+    date: "2025-05-11",
+    images: [{ src: "/assets/art/golden-hour.jpg", width: 900, height: 1100 }],
     toolsUsed: ["Procreate"],
-    imageUrl: "/assets/art/golden-hour.jpg",
-    width: 900,
-    height: 1100,
     featured: false,
     commissionable: true,
     medium: "Digital portrait",
@@ -115,11 +129,9 @@ export const artworks: Artwork[] = [
     title: "Mecha Dawn",
     description: "Fan illustration of a towering machine powering up against a pale morning sky.",
     category: "fan-art",
-    year: 2024,
+    date: "2024-10-02",
+    images: [{ src: "/assets/art/mecha-dawn.jpg", width: 1200, height: 900 }],
     toolsUsed: ["Photoshop"],
-    imageUrl: "/assets/art/mecha-dawn.jpg",
-    width: 1200,
-    height: 900,
     featured: true,
     commissionable: false,
     medium: "Digital illustration",
@@ -128,13 +140,15 @@ export const artworks: Artwork[] = [
     id: "8",
     slug: "forest-spirit",
     title: "Forest Spirit",
-    description: "An illustration exploring folklore, layered foliage, and dappled green light.",
+    description:
+      "An illustration exploring folklore, layered foliage, and dappled green light — from tonal study to final.",
     category: "illustrations",
-    year: 2025,
+    date: "2025-01-20",
+    images: [
+      { src: "/assets/art/forest-spirit.jpg", width: 900, height: 1200, caption: "Final" },
+      { src: "/assets/art/forest-spirit-study.jpg", width: 900, height: 1200, caption: "Study" },
+    ],
     toolsUsed: ["Procreate", "Clip Studio Paint"],
-    imageUrl: "/assets/art/forest-spirit.jpg",
-    width: 900,
-    height: 1200,
     featured: true,
     commissionable: true,
     medium: "Digital illustration",
@@ -146,11 +160,9 @@ export const artworks: Artwork[] = [
     title: "Self Reflection",
     description: "A personal experiment with muted palettes and quiet, introspective composition.",
     category: "personal-projects",
-    year: 2024,
+    date: "2024-07-06",
+    images: [{ src: "/assets/art/self-reflection.jpg", width: 800, height: 800 }],
     toolsUsed: ["Procreate"],
-    imageUrl: "/assets/art/self-reflection.jpg",
-    width: 800,
-    height: 800,
     featured: false,
     commissionable: false,
     medium: "Personal study",
@@ -161,11 +173,9 @@ export const artworks: Artwork[] = [
     title: "Abstract Flow",
     description: "A non-representational piece playing with movement, gradients, and color rhythm.",
     category: "personal-projects",
-    year: 2025,
+    date: "2025-03-30",
+    images: [{ src: "/assets/art/abstract-flow.jpg", width: 1200, height: 700 }],
     toolsUsed: ["Photoshop"],
-    imageUrl: "/assets/art/abstract-flow.jpg",
-    width: 1200,
-    height: 700,
     featured: false,
     commissionable: false,
     medium: "Abstract digital art",
