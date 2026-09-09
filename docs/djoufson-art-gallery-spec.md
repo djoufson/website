@@ -441,22 +441,38 @@ Not required for V1.
 
 Design data model with future support.
 
-Artwork model:
+Artwork model (implemented — each artwork is a *post* that may hold several
+images, e.g. sketch → final versions of the same piece):
 
 ```ts
-{
+interface ArtworkImage {
+  src: string;
+  width: number;
+  height: number;
+  alt?: string;
+  caption?: string; // "Sketch", "Color pass", "Final", …
+}
+
+interface Artwork {
   id: string;
   slug: string;
   title: string;
   description: string;
   category: string;
-  year: number;
+  date: string; // ISO YYYY-MM-DD
+  images: ArtworkImage[]; // first image is the grid cover
   toolsUsed: string[];
-  imageUrl: string;
   featured: boolean;
-  commissionable: boolean;
+  commissionable: boolean; // reserved for the future commission workflow
+  medium?: string;
+  inspiration?: string;
+  process?: string;
 }
 ```
+
+Post detail is a fullscreen, theme-aware viewer (`/art/[slug]`): the artwork
+fills the stage with a details panel alongside it, navigable entirely by
+keyboard (← / → across images then posts, Esc to close) and shareable by URL.
 
 Future features:
 
