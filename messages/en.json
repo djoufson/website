@@ -193,16 +193,8 @@
   },
   "Art": {
     "hero": {
-      "eyebrow": "Gallery",
       "title": "Digital Art & Illustration",
-      "description": "A collection of digital artwork, illustrations, character designs, and creative explorations.",
-      "cta": "Explore Gallery"
-    },
-    "featured": {
-      "heading": "Featured Works"
-    },
-    "gallery": {
-      "heading": "Full Gallery"
+      "description": "A collection of digital artwork, illustrations, character designs, and creative explorations. Select any piece to view it up close."
     },
     "filters": {
       "all": "All"
@@ -215,15 +207,24 @@
       "personalProjects": "Personal Projects"
     },
     "empty": "No artworks match this filter.",
+    "imagesLabel": "{count} images",
+    "viewer": {
+      "close": "Close",
+      "previous": "Previous",
+      "next": "Next",
+      "image": "Image",
+      "share": "Share",
+      "copied": "Link copied",
+      "backToGallery": "Back to gallery",
+      "imageCount": "{current} of {total}",
+      "announce": "{title}, image {current} of {total}"
+    },
     "detail": {
       "metaSuffix": "Digital Art",
-      "backToGallery": "Back to Gallery",
-      "year": "Year",
-      "category": "Category",
       "medium": "Medium",
-      "tools": "Tools Used",
+      "tools": "Tools",
       "inspiration": "Inspiration",
-      "process": "Creation Process",
+      "process": "Process",
       "commissionPrompt": "This piece is available for commission-style work in a similar direction.",
       "commissionCta": "Get in touch",
       "copyright": "All artworks are copyright protected and may not be reproduced, redistributed, or used commercially without permission."

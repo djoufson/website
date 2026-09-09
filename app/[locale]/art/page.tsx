@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getAllArtworks, getFeaturedArtworks, getUsedCategories } from "@/lib/art";
+import { getAllArtworks, getUsedCategories } from "@/lib/art";
 import ArtGalleryContent from "./ArtGalleryContent";
 
 export async function generateMetadata({
@@ -46,11 +46,5 @@ export default async function ArtGalleryPage({ params }: { params: Promise<{ loc
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return (
-    <ArtGalleryContent
-      artworks={getAllArtworks()}
-      featured={getFeaturedArtworks()}
-      categories={getUsedCategories()}
-    />
-  );
+  return <ArtGalleryContent artworks={getAllArtworks()} categories={getUsedCategories()} />;
 }

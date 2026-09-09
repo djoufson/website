@@ -193,16 +193,8 @@
   },
   "Art": {
     "hero": {
-      "eyebrow": "Galerie",
       "title": "Art Numérique & Illustration",
-      "description": "Une collection d'œuvres numériques, d'illustrations, de designs de personnages et d'explorations créatives.",
-      "cta": "Explorer la Galerie"
-    },
-    "featured": {
-      "heading": "Œuvres en Vedette"
-    },
-    "gallery": {
-      "heading": "Galerie Complète"
+      "description": "Une collection d'œuvres numériques, d'illustrations, de designs de personnages et d'explorations créatives. Sélectionnez une œuvre pour la voir de près."
     },
     "filters": {
       "all": "Tout"
@@ -215,15 +207,24 @@
       "personalProjects": "Projets Personnels"
     },
     "empty": "Aucune œuvre ne correspond à ce filtre.",
+    "imagesLabel": "{count} images",
+    "viewer": {
+      "close": "Fermer",
+      "previous": "Précédent",
+      "next": "Suivant",
+      "image": "Image",
+      "share": "Partager",
+      "copied": "Lien copié",
+      "backToGallery": "Retour à la galerie",
+      "imageCount": "{current} sur {total}",
+      "announce": "{title}, image {current} sur {total}"
+    },
     "detail": {
       "metaSuffix": "Art Numérique",
-      "backToGallery": "Retour à la Galerie",
-      "year": "Année",
-      "category": "Catégorie",
       "medium": "Médium",
-      "tools": "Outils Utilisés",
+      "tools": "Outils",
       "inspiration": "Inspiration",
-      "process": "Processus de Création",
+      "process": "Processus",
       "commissionPrompt": "Cette œuvre est disponible pour une commande dans une direction similaire.",
       "commissionCta": "Me contacter",
       "copyright": "Toutes les œuvres sont protégées par le droit d'auteur et ne peuvent être reproduites, redistribuées ou utilisées commercialement sans autorisation."

@@ -1,9 +1,8 @@
 import { setRequestLocale } from "next-intl/server";
 
 /**
- * Scopes the gallery's immersive, always-dark palette (spec: #0B0B0B / #F5F5F5)
- * regardless of the site's light/dark theme. The `.art-scope` class defines the
- * gallery CSS variables in globals.css.
+ * The gallery follows the site's light/dark theme. The immersive experience
+ * lives in the fullscreen post viewer (/art/[slug]), not in a forced palette.
  */
 export default async function ArtLayout({
   children,
@@ -15,5 +14,5 @@ export default async function ArtLayout({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <div className="art-scope">{children}</div>;
+  return children;
 }

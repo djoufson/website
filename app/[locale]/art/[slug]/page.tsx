@@ -2,8 +2,8 @@ import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { CATEGORY_LABEL_KEY, getAllArtworks, getArtworkBySlug } from "@/lib/art";
-import ArtworkDetailContent from "./ArtworkDetailContent";
+import { CATEGORY_LABEL_KEY, getAdjacentSlugs, getAllArtworks, getArtworkBySlug } from "@/lib/art";
+import ArtworkViewer from "./ArtworkViewer";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -24,7 +24,8 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations({ locale, namespace: "Art" });
-  const imageUrl = `https://djoufson.com${artwork.imageUrl}`;
+  const cover = artwork.images[0];
+  const imageUrl = `https://djoufson.com${cover.src}`;
   const url =
     locale === "fr" ? `https://djoufson.com/fr/art/${slug}` : `https://djoufson.com/art/${slug}`;
   const title = `${artwork.title} — ${t("detail.metaSuffix")}`;
@@ -41,14 +42,7 @@ export async function generateMetadata({
       description: artwork.description,
       url,
       type: "article",
-      images: [
-        {
-          url: imageUrl,
-          width: artwork.width,
-          height: artwork.height,
-          alt: artwork.title,
-        },
-      ],
+      images: [{ url: imageUrl, width: cover.width, height: cover.height, alt: artwork.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -59,7 +53,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ArtworkDetailPage({
+export default async function ArtworkPostPage({
   params,
 }: {
   params: Promise<{ locale: string; slug: string }>;
@@ -74,8 +68,9 @@ export default async function ArtworkDetailPage({
 
   const t = await getTranslations({ locale, namespace: "Art" });
   const categoryLabel = t(`categories.${CATEGORY_LABEL_KEY[artwork.category]}`);
+  const { prev, next } = getAdjacentSlugs(slug);
 
-  // VisualArtwork structured data for rich results.
+  // VisualArtwork structured data for rich results (all images included).
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "VisualArtwork",
@@ -85,15 +80,12 @@ export default async function ArtworkDetailPage({
       name: "Djoufson Che Bene",
       url: "https://djoufson.com",
     },
-    image: `https://djoufson.com${artwork.imageUrl}`,
-    dateCreated: String(artwork.year),
+    image: artwork.images.map((img) => `https://djoufson.com${img.src}`),
+    dateCreated: artwork.date,
     description: artwork.description,
     artMedium: artwork.medium,
     artform: categoryLabel,
-    copyrightHolder: {
-      "@type": "Person",
-      name: "Djoufson Che Bene",
-    },
+    copyrightHolder: { "@type": "Person", name: "Djoufson Che Bene" },
     copyrightNotice:
       "All artworks are copyright protected and may not be reproduced, redistributed, or used commercially without permission.",
     url: `https://djoufson.com/art/${slug}`,
@@ -105,7 +97,12 @@ export default async function ArtworkDetailPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <ArtworkDetailContent artwork={artwork} categoryLabel={categoryLabel} />
+      <ArtworkViewer
+        artwork={artwork}
+        categoryLabel={categoryLabel}
+        prevSlug={prev}
+        nextSlug={next}
+      />
     </>
   );
 }
