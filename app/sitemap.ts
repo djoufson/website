@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { getAllPostSlugs } from "@/lib/blog";
 import { projects } from "@/data/projects";
+import { getAllArtworks } from "@/lib/art";
 
 const locales = ["en", "fr"] as const;
 
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "", priority: 1, changeFrequency: "monthly" as const },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/projects", priority: 0.9, changeFrequency: "monthly" as const },
+    { path: "/art", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/blog", priority: 0.8, changeFrequency: "weekly" as const },
     { path: "/community", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.6, changeFrequency: "yearly" as const },
@@ -39,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Blog post pages (English only — blog content is English-only)
+  // Blog post pages (English only - blog content is English-only)
   const blogPages = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -47,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  // Project detail pages (both locales — UI labels are translated)
+  // Project detail pages (both locales - UI labels are translated)
   const projectPages = locales.flatMap((locale) =>
     projects.map((project) => ({
       url: getUrl(`/projects/${project.id}`, locale),
@@ -62,5 +64,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  return [...staticPages, ...blogPages, ...projectPages];
+  // Artwork detail pages (both locales - UI labels are translated)
+  const artPages = locales.flatMap((locale) =>
+    getAllArtworks().map((artwork) => ({
+      url: getUrl(`/art/${artwork.slug}`, locale),
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((l) => [l, getUrl(`/art/${artwork.slug}`, l)])
+        ),
+      },
+    }))
+  );
+
+  return [...staticPages, ...blogPages, ...projectPages, ...artPages];
 }

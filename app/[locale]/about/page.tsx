@@ -28,6 +28,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
             <p>{t('paragraph1')}</p>
             <p>{t('paragraph2')}</p>
             <p>{t('paragraph3')}</p>
+            <p>{t('paragraph4')}</p>
           </div>
         </div>
         <div className="space-y-8">

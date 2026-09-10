@@ -13,7 +13,7 @@ export const activities: Activity[] = [
     tag: "Organizing",
     title: "Hosting .NET Conf Africa",
     description:
-      "We're bringing the first pan-African edition of .NET Conf to the continent. Expect tracks on .NET, cloud-native architecture, and stories from African .NET teams. Currently lining up speakers and partners — reach out if you want to get involved.",
+      "We're bringing the first pan-African edition of .NET Conf to the continent. Expect tracks on .NET, cloud-native architecture, and stories from African .NET teams. Currently lining up speakers and partners - reach out if you want to get involved.",
     location: "Johannesburg, South Africa",
     image: "/assets/events/net-conf-africa-2026/banner.jpg",
     link: {
@@ -30,7 +30,7 @@ export const activities: Activity[] = [
     tag: "Building",
     title: "Building Utauro",
     description:
-      "I'm currently building Utauro — a local-first, privacy-focused macOS app that automatically tracks how you spend time on your Mac. No timers or manual tagging: it quietly records app and document usage, then breaks your day down into meaningful activity categories, all stored on-device. Waitlist is open.",
+      "I'm currently building Utauro - a local-first, privacy-focused macOS app that automatically tracks how you spend time on your Mac. No timers or manual tagging: it quietly records app and document usage, then breaks your day down into meaningful activity categories, all stored on-device. Waitlist is open.",
     link: {
       href: "https://utauro.app",
       label: "Join The Waitlist",

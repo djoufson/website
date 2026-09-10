@@ -23,15 +23,22 @@
     "projects": {
       "title": "Projects",
       "description": "Explore my portfolio of software projects including open-source contributions, personal applications, and academic research."
+    },
+    "art": {
+      "title": "Digital Art & Illustration",
+      "description": "A curated gallery of digital artwork, illustrations, character designs, and creative explorations by Djoufson Che."
     }
   },
   "Navigation": {
     "home": "Home",
     "about": "About",
     "projects": "What I Build",
+    "art": "Art",
     "blog": "Blog",
     "community": "Community",
     "contact": "Contact",
+    "work": "Work",
+    "more": "More",
     "soon": "Soon"
   },
   "Footer": {
@@ -40,7 +47,7 @@
   },
   "Hero": {
     "greeting": "Hi, I am Djoufson Che",
-    "role": "Software Engineer",
+    "role": "Software Engineer · Community Builder · Digital Artist",
     "bio": "Experienced backend engineer, Founder of <link>.NET Cameroon</link>. Advocate for open source and developer growth through community.",
     "avatarAlt": "Djoufson's Avatar",
     "githubTitle": "GitHub Profile",
@@ -84,6 +91,7 @@
     "paragraph1": "I'm a passionate Full Stack Developer and Software Engineer with a deep love for creating meaningful digital experiences. My journey in software development has been driven by curiosity, continuous learning, and the desire to solve real-world problems through innovative technology solutions.",
     "paragraph2": "With expertise spanning from frontend frameworks like React and Next.js to backend technologies including .NET and Node.js, and mobile development with Flutter and .NET MAUI, I enjoy working across the entire technology stack. I believe in writing clean, maintainable code and building applications that not only function well but also provide exceptional user experiences across web and mobile platforms.",
     "paragraph3": "When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or sharing my knowledge through technical writing. I'm always excited to collaborate on innovative projects and connect with fellow developers in the community.",
+    "paragraph4": "Beyond software engineering, I create digital artwork. Drawing allows me to explore creativity, storytelling, composition, and visual expression. It complements my technical work and gives me another medium through which I build and communicate ideas. You can explore my gallery in the Art section.",
     "coreTechnologies": "Core Technologies",
     "focusAreas": "Focus Areas",
     "focusWebDev": "Full Stack Web Development",
@@ -184,6 +192,45 @@
     "viewOnGithub": "View on GitHub",
     "visitWebsite": "Visit Website",
     "present": "Present"
+  },
+  "Art": {
+    "hero": {
+      "title": "Digital Art & Illustration",
+      "description": "A collection of digital artwork, illustrations, character designs, and creative explorations. Select any piece to view it up close."
+    },
+    "filters": {
+      "all": "All"
+    },
+    "categories": {
+      "characterArt": "Character Art",
+      "fanArt": "Fan Art",
+      "portraits": "Portraits",
+      "illustrations": "Illustrations",
+      "personalProjects": "Personal Projects"
+    },
+    "empty": "No artworks match this filter.",
+    "imagesLabel": "{count} images",
+    "viewer": {
+      "close": "Close",
+      "previous": "Previous",
+      "next": "Next",
+      "image": "Image",
+      "share": "Share",
+      "copied": "Link copied",
+      "backToGallery": "Back to gallery",
+      "imageCount": "{current} of {total}",
+      "announce": "{title}, image {current} of {total}"
+    },
+    "detail": {
+      "metaSuffix": "Digital Art",
+      "medium": "Medium",
+      "tools": "Tools",
+      "inspiration": "Inspiration",
+      "process": "Process",
+      "commissionPrompt": "This piece is available for commission-style work in a similar direction.",
+      "commissionCta": "Get in touch",
+      "copyright": "All artworks are copyright protected and may not be reproduced, redistributed, or used commercially without permission."
+    }
   },
   "Error": {
     "title500": "Something went wrong",
