@@ -16,7 +16,7 @@ interface ArtworkViewerProps {
 
 /**
  * Fullscreen, theme-aware post viewer: the artwork fills the stage on the left,
- * with details on the right. Navigable entirely by keyboard —
+ * with details on the right. Navigable entirely by keyboard -
  * ← / → step through the images then across posts, Esc returns to the gallery.
  */
 export default function ArtworkViewer({
@@ -116,7 +116,7 @@ export default function ArtworkViewer({
             <ProtectedImage
               key={active.src}
               src={active.src}
-              alt={active.alt ?? `${artwork.title}${active.caption ? ` — ${active.caption}` : ""}`}
+              alt={active.alt ?? `${artwork.title}${active.caption ? ` - ${active.caption}` : ""}`}
               fill
               priority
               watermark

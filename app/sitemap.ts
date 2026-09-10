@@ -41,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Blog post pages (English only — blog content is English-only)
+  // Blog post pages (English only - blog content is English-only)
   const blogPages = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),
@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  // Project detail pages (both locales — UI labels are translated)
+  // Project detail pages (both locales - UI labels are translated)
   const projectPages = locales.flatMap((locale) =>
     projects.map((project) => ({
       url: getUrl(`/projects/${project.id}`, locale),
@@ -64,7 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Artwork detail pages (both locales — UI labels are translated)
+  // Artwork detail pages (both locales - UI labels are translated)
   const artPages = locales.flatMap((locale) =>
     getAllArtworks().map((artwork) => ({
       url: getUrl(`/art/${artwork.slug}`, locale),

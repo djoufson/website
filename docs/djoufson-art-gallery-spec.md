@@ -245,7 +245,7 @@ matches how the rest of the site references imagery (`public/assets/...`).
 
 **Future:** migrate masters to Azure Blob Storage or Cloudflare R2 and swap each
 `Artwork.imageUrl` for a remote URL, registering a remote loader/`remotePatterns`
-in `next.config.ts`. No other code changes are required — the data model already
+in `next.config.ts`. No other code changes are required - the data model already
 isolates the image source behind `imageUrl`.
 
 Originals (PSD / Clip Studio / Procreate masters) are never committed or exposed.
@@ -441,7 +441,7 @@ Not required for V1.
 
 Design data model with future support.
 
-Artwork model (implemented — each artwork is a *post* that may hold several
+Artwork model (implemented - each artwork is a *post* that may hold several
 images, e.g. sketch → final versions of the same piece):
 
 ```ts
@@ -492,7 +492,7 @@ Frontend:
 - Framer Motion
 
 Content:
-- Typed data file (`data/artworks.ts` + `types/Artwork.ts`) — matches the
+- Typed data file (`data/artworks.ts` + `types/Artwork.ts`) - matches the
   existing `data/projects.ts` pattern used across the site. (MDX / Content
   Collections were considered but rejected to stay consistent with the codebase.)
 

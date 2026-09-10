@@ -9,7 +9,7 @@ export type ArtworkCategory =
 export interface ArtworkImage {
   /** Public path (max 2200px delivery). */
   src: string;
-  /** Intrinsic pixels — required so the viewer/grid reserve space (no layout shift). */
+  /** Intrinsic pixels - required so the viewer/grid reserve space (no layout shift). */
   width: number;
   height: number;
   /** Optional descriptive alt; falls back to the post title. */

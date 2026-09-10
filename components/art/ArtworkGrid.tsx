@@ -12,7 +12,7 @@ interface ArtworkGridProps {
 
 /**
  * Uniform, full-width grid of posts. Fixed-size cells with the image contained
- * (never cropped) and lots of surrounding whitespace — no borders, no rounded
+ * (never cropped) and lots of surrounding whitespace - no borders, no rounded
  * corners, nothing that competes with the artwork itself.
  */
 export default function ArtworkGrid({ artworks }: ArtworkGridProps) {

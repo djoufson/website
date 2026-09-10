@@ -28,7 +28,7 @@ export async function generateMetadata({
   const imageUrl = `https://djoufson.com${cover.src}`;
   const url =
     locale === "fr" ? `https://djoufson.com/fr/art/${slug}` : `https://djoufson.com/art/${slug}`;
-  const title = `${artwork.title} — ${t("detail.metaSuffix")}`;
+  const title = `${artwork.title} - ${t("detail.metaSuffix")}`;
 
   return {
     title,

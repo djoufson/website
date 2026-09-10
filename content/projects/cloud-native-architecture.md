@@ -106,7 +106,7 @@ jobs:
 
 ### Observability
 
-Implementing comprehensive observability using **OpenTelemetry** standards across all services — distributed tracing, structured logging, and metrics collection to understand system behavior in production.
+Implementing comprehensive observability using **OpenTelemetry** standards across all services - distributed tracing, structured logging, and metrics collection to understand system behavior in production.
 
 ## Key Findings
 

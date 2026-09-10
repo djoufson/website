@@ -14,9 +14,9 @@ export const artworks: Artwork[] = [
     slug: "kambeul",
     title: "Kambeul",
     description:
-      "A cool, laid-back portrait — sunglasses on, an earbud in — set against sharp red-and-white graphic shapes.",
+      "A cool, laid-back portrait - sunglasses on, an earbud in - set against sharp red-and-white graphic shapes.",
     category: "portraits",
-    date: "2025-07-02",
+    date: "2021-07-02",
     images: [{ src: "/assets/art/kambeul.webp", width: 1556, height: 2200 }],
     toolsUsed: ["Adobe Illustrator"],
     featured: true,
@@ -30,7 +30,7 @@ export const artworks: Artwork[] = [
     description:
       "A relaxed, laughing self-portrait framed by loose magenta and yellow brush shapes, with a ghosted second face behind.",
     category: "portraits",
-    date: "2025-05-20",
+    date: "2021-05-20",
     images: [{ src: "/assets/art/djouf.webp", width: 2200, height: 2200 }],
     toolsUsed: ["Adobe Illustrator"],
     featured: false,
@@ -44,7 +44,7 @@ export const artworks: Artwork[] = [
     description:
       "A black panther rendered in deep blacks, its green eyes and faint markings glowing out of the shadow.",
     category: "illustrations",
-    date: "2025-04-10",
+    date: "2021-04-10",
     images: [{ src: "/assets/art/panther.webp", width: 2200, height: 2200 }],
     toolsUsed: ["Procreate"],
     featured: true,
@@ -58,7 +58,7 @@ export const artworks: Artwork[] = [
     description:
       "A portrait of the artist Hatik, carried from a loose line sketch through a tonal study to the final coloured version.",
     category: "fan-art",
-    date: "2025-02-15",
+    date: "2021-02-15",
     images: [
       { src: "/assets/art/hatik-red.webp", width: 1500, height: 1500, caption: "Colour" },
       { src: "/assets/art/hatik-bw.webp", width: 1500, height: 1500, caption: "Line sketch" },
@@ -78,7 +78,7 @@ export const artworks: Artwork[] = [
     description:
       "A side-profile portrait with a cel-shaded finish and a green rim light picking out the features against a flat grey backdrop.",
     category: "portraits",
-    date: "2024-12-05",
+    date: "2021-12-05",
     images: [{ src: "/assets/art/berka.webp", width: 1400, height: 1400 }],
     toolsUsed: ["Procreate"],
     featured: true,
@@ -92,7 +92,7 @@ export const artworks: Artwork[] = [
     description:
       "Fan illustration of the Brooklyn point guard mid-drive, painted with a glitchy ribbon motif streaking behind him.",
     category: "fan-art",
-    date: "2024-10-18",
+    date: "2021-10-18",
     images: [{ src: "/assets/art/irvin.webp", width: 2200, height: 2200 }],
     toolsUsed: ["Adobe Photoshop"],
     featured: false,
@@ -106,7 +106,7 @@ export const artworks: Artwork[] = [
     description:
       "A tiger portrait, its fur and whiskers built up stroke by stroke against a soft green blur.",
     category: "illustrations",
-    date: "2024-08-22",
+    date: "2021-08-22",
     images: [{ src: "/assets/art/tiger.webp", width: 720, height: 711 }],
     toolsUsed: ["Procreate"],
     featured: false,
@@ -118,9 +118,9 @@ export const artworks: Artwork[] = [
     slug: "warren",
     title: "Warren in Red",
     description:
-      "A portrait worked almost entirely in reds — light and shadow carved out with warm and cool tones over a single hue.",
+      "A portrait worked almost entirely in reds - light and shadow carved out with warm and cool tones over a single hue.",
     category: "portraits",
-    date: "2024-06-14",
+    date: "2021-06-14",
     images: [{ src: "/assets/art/warren.webp", width: 1400, height: 1400 }],
     toolsUsed: ["Procreate"],
     featured: false,
@@ -132,9 +132,9 @@ export const artworks: Artwork[] = [
     slug: "wizzy",
     title: "Wizzy",
     description:
-      "An original character design — a grinning, mohawked performer with headphones and a mic, drawn in a bold graffiti-cartoon style.",
+      "An original character design - a grinning, mohawked performer with headphones and a mic, drawn in a bold graffiti-cartoon style.",
     category: "character-art",
-    date: "2024-03-09",
+    date: "2021-03-09",
     images: [{ src: "/assets/art/wizzy.webp", width: 2200, height: 2200 }],
     toolsUsed: ["Adobe Illustrator"],
     featured: true,
@@ -146,7 +146,7 @@ export const artworks: Artwork[] = [
     slug: "pixel-dreams",
     title: "Pixel Dreams",
     description:
-      "A pixel-art self-portrait at the laptop, badged with my +C Dreams handle — a small love letter to retro games.",
+      "A pixel-art self-portrait at the laptop, badged with my +C Dreams handle - a small love letter to retro games.",
     category: "personal-projects",
     date: "2023-11-25",
     images: [{ src: "/assets/art/djoufson.webp", width: 2200, height: 2200 }],

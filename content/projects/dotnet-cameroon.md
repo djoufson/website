@@ -4,15 +4,15 @@ When I started my journey with .NET in Cameroon, I quickly realized there was no
 
 ## The Vision
 
-I founded .NET Cameroon with a simple goal: create a space where .NET developers in Cameroon can connect, learn, and grow together. The platform needed to be more than just a website — it had to be a living community hub.
+I founded .NET Cameroon with a simple goal: create a space where .NET developers in Cameroon can connect, learn, and grow together. The platform needed to be more than just a website - it had to be a living community hub.
 
 ## How It Works
 
 The platform is built with **Blazor SSR** and **Tailwind CSS**, keeping the stack within the .NET ecosystem we advocate for. Key features include:
 
-- **Community Forums** — (WhatsApp, Discord) A space for developers to ask questions, share solutions, and discuss .NET topics
-- **Event Management** — Tools to organize and promote meetups, workshops, and conferences
-- **Job Board** — Local opportunities specifically for .NET developers
+- **Community Forums** - (WhatsApp, Discord) A space for developers to ask questions, share solutions, and discuss .NET topics
+- **Event Management** - Tools to organize and promote meetups, workshops, and conferences
+- **Job Board** - Local opportunities specifically for .NET developers
 
 ## Growing the Community
 

@@ -20,7 +20,7 @@ interface ProtectedImageProps {
 
 /**
  * next/image wrapper for artwork with light casual-theft deterrence: disabled
- * drag + context menu and an optional corner watermark. Deterrence only — the
+ * drag + context menu and an optional corner watermark. Deterrence only - the
  * copyright notice on the post carries the real terms.
  */
 export default function ProtectedImage({
