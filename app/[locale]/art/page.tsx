@@ -26,9 +26,9 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: "/assets/art/city-of-dreams.jpg",
-          width: 1200,
-          height: 800,
+          url: "/assets/art/wizzy.webp",
+          width: 2200,
+          height: 2200,
           alt: t("art.title"),
         },
       ],
@@ -37,7 +37,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("art.title"),
       description: t("art.description"),
-      images: ["/assets/art/city-of-dreams.jpg"],
+      images: ["/assets/art/wizzy.webp"],
     },
   };
 }
