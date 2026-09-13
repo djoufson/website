@@ -20,8 +20,8 @@ import CommissionRequestForm from "@/components/art/CommissionRequestForm";
  * the gallery so visitors can see the direction at a glance.
  */
 const STYLE_GROUPS = [
-  { key: "vector", src: "/assets/art/kambeul.webp", alt: "Kambeul", value: "Vector Portrait" },
-  { key: "painted", src: "/assets/art/berka.webp", alt: "Berka", value: "Digital Painting" },
+  { key: "vector", src: "/assets/art/irvin.webp", alt: "Kambeul", value: "Vector Portrait" },
+  { key: "painted", src: "/assets/art/warren.webp", alt: "Berka", value: "Digital Painting" },
   { key: "character", src: "/assets/art/hatik-red.webp", alt: "Hatik", value: "Character & Fan Art" },
 ] as const;
 
