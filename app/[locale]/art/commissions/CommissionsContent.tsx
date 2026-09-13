@@ -13,7 +13,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import ProtectedImage from "@/components/art/ProtectedImage";
-import CommissionRequestForm from "../request/CommissionRequestForm";
+import CommissionRequestForm from "@/components/art/CommissionRequestForm";
 
 /**
  * Three primary styles, each represented by a single hand-picked piece from

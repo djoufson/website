@@ -31,10 +31,6 @@
     "commissions": {
       "title": "Commander une Œuvre Numérique",
       "description": "Commandez des illustrations numériques originales créées spécialement pour vous. Portraits, character art et projets sur mesure par Djoufson Che."
-    },
-    "commissionRequest": {
-      "title": "Demander une Commande",
-      "description": "Parlez-moi de votre idée d'œuvre sur mesure et recevez un devis personnalisé. Commandes de portraits, demi-corps, corps entier et illustrations personnalisées."
     }
   },
   "Navigation": {
@@ -380,7 +376,6 @@
     "successMessage": "Merci - je l'étudie et vous réponds par e-mail, généralement sous quelques jours.",
     "successReference": "Votre référence : {id}",
     "sendAnother": "Envoyer une autre demande",
-    "backToCommissions": "Retour aux informations de commande",
     "errorMessage": "Une erreur s'est produite. Réessayez, ou écrivez-moi directement à djouflegran@gmail.com."
   }
 }
