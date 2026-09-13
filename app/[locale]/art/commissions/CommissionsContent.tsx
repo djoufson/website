@@ -34,7 +34,7 @@ const getServerCurrency = (): Currency => "USD";
  */
 const STYLE_GROUPS = [
   { key: "vector", src: "/assets/art/irvin.webp", alt: "Kambeul", value: "Vector Portrait" },
-  { key: "painted", src: "/assets/art/warren.webp", alt: "Berka", value: "Digital Painting" },
+  { key: "painted", src: "/assets/art/yvan.webp", alt: "Berka", value: "Digital Painting" },
   { key: "character", src: "/assets/art/hatik-red.webp", alt: "Hatik", value: "Character & Fan Art" },
 ] as const;
 
