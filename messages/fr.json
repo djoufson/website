@@ -278,22 +278,20 @@
       "items": {
         "vector": {
           "name": "Portraits Vectoriels",
-          "price": "40 $",
           "description": "Portraits graphiques, épurés et hauts en couleur, aux formes nettes. Parfaits pour les avatars, photos de profil et l'image de marque personnelle."
         },
         "painted": {
           "name": "Peintures Numériques",
-          "price": "70 $",
           "description": "Portraits et illustrations peints avec soin, pleins de profondeur, de lumière et de texture."
         },
         "character": {
           "name": "Personnages & Fan Art",
-          "price": "120 $",
           "description": "Personnages expressifs et fan art - de l'étude au trait aux illustrations entièrement colorées."
         }
       },
       "note": "Les projets plus grands ou atypiques - affiches, feuilles de personnage, scènes complètes - font l'objet d'un devis personnalisé.",
-      "requestCta": "Commander ce style"
+      "requestCta": "Commander ce style",
+      "currencyLabel": "Devise"
     },
     "process": {
       "heading": "Comment Ça Marche",

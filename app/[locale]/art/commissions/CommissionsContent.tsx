@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
@@ -14,6 +14,18 @@ import {
 } from "@/components/ui/dialog";
 import ProtectedImage from "@/components/art/ProtectedImage";
 import CommissionRequestForm from "@/components/art/CommissionRequestForm";
+import {
+  CURRENCIES,
+  CURRENCY_LABEL,
+  STYLE_PRICES,
+  formatPrice,
+  detectCurrency,
+  type Currency,
+} from "@/lib/pricing";
+
+/** No-op store: currency never changes after the first client read. */
+const subscribe = () => () => {};
+const getServerCurrency = (): Currency => "USD";
 
 /**
  * Three primary styles, each represented by a single hand-picked piece from
@@ -32,6 +44,11 @@ export default function CommissionsContent() {
   const tReq = useTranslations("CommissionRequest");
   const [open, setOpen] = useState(false);
   const [style, setStyle] = useState("");
+
+  // Auto-detect the currency after hydration; the toggle override always wins.
+  const detected = useSyncExternalStore(subscribe, detectCurrency, getServerCurrency);
+  const [override, setOverride] = useState<Currency | null>(null);
+  const currency = override ?? detected;
 
   function requestStyle(styleValue = "") {
     setStyle(styleValue);
@@ -69,8 +86,34 @@ export default function CommissionsContent() {
 
         {/* Styles & pricing */}
         <section className="mb-24">
-          <h2 className="text-2xl font-semibold tracking-tight">{t("types.heading")}</h2>
-          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t("types.subheading")}</p>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h2 className="text-2xl font-semibold tracking-tight">{t("types.heading")}</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                {t("types.subheading")}
+              </p>
+            </div>
+            <div
+              role="group"
+              aria-label={t("types.currencyLabel")}
+              className="inline-flex shrink-0 rounded-md border border-border p-0.5"
+            >
+              {CURRENCIES.map((c) => (
+                <button
+                  key={c}
+                  onClick={() => setOverride(c)}
+                  aria-pressed={currency === c}
+                  className={`rounded px-3 py-1 text-xs font-medium transition-colors ${
+                    currency === c
+                      ? "bg-foreground text-background"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {CURRENCY_LABEL[c]}
+                </button>
+              ))}
+            </div>
+          </div>
 
           <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-3">
             {STYLE_GROUPS.map((group) => (
@@ -88,7 +131,7 @@ export default function CommissionsContent() {
                   <p className="text-sm text-muted-foreground">
                     {t("types.startingFrom")}{" "}
                     <span className="font-semibold text-foreground">
-                      {t(`types.items.${group.key}.price`)}
+                      {formatPrice(STYLE_PRICES[group.key][currency], currency)}
                     </span>
                   </p>
                 </div>

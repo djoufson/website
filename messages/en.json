@@ -278,22 +278,20 @@
       "items": {
         "vector": {
           "name": "Vector Portraits",
-          "price": "$40",
           "description": "Bold, flat, graphic portraits with clean shapes and striking color. Great for avatars, profile pictures, and personal branding."
         },
         "painted": {
           "name": "Digital Paintings",
-          "price": "$70",
           "description": "Richly rendered, painterly portraits and illustrations with real depth, light, and texture."
         },
         "character": {
           "name": "Character & Fan Art",
-          "price": "$120",
           "description": "Expressive character pieces and fan art - from line and tonal studies to fully colored illustrations."
         }
       },
       "note": "Bigger or unusual projects - posters, character sheets, full scenes - are quoted individually.",
-      "requestCta": "Request this style"
+      "requestCta": "Request this style",
+      "currencyLabel": "Currency"
     },
     "process": {
       "heading": "How It Works",
