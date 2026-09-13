@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/dialog";
 import ProtectedImage from "@/components/art/ProtectedImage";
 import CommissionRequestForm from "@/components/art/CommissionRequestForm";
+import LottieAnimation from "@/components/LottieAnimation";
 import {
   CURRENCIES,
   CURRENCY_LABEL,
@@ -73,14 +74,8 @@ export default function CommissionsContent() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto aspect-square w-full max-w-sm md:ml-auto">
-            <ProtectedImage
-              src="/assets/art/wizzy.webp"
-              alt={t("hero.title")}
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 400px"
-            />
+          <div className="mx-auto w-full max-w-sm md:ml-auto">
+            <LottieAnimation animationPath="/animations/pen-draw.json" />
           </div>
         </section>
 
