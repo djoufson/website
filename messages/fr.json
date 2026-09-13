@@ -277,7 +277,7 @@
     },
     "types": {
       "heading": "Styles & Tarifs",
-      "subheading": "Trois styles que je pratique le plus. Les prix sont un point de départ — le devis final dépend de la complexité, du niveau de détail et de l'usage.",
+      "subheading": "Trois styles que je pratique le plus. Les prix sont un point de départ - le devis final dépend de la complexité, du niveau de détail et de l'usage.",
       "startingFrom": "À partir de",
       "items": {
         "vector": {
@@ -293,10 +293,11 @@
         "character": {
           "name": "Personnages & Fan Art",
           "price": "120 $",
-          "description": "Personnages expressifs et fan art — de l'étude au trait aux illustrations entièrement colorées."
+          "description": "Personnages expressifs et fan art - de l'étude au trait aux illustrations entièrement colorées."
         }
       },
-      "note": "Les projets plus grands ou atypiques — affiches, feuilles de personnage, scènes complètes — font l'objet d'un devis personnalisé."
+      "note": "Les projets plus grands ou atypiques - affiches, feuilles de personnage, scènes complètes - font l'objet d'un devis personnalisé.",
+      "requestCta": "Commander ce style"
     },
     "process": {
       "heading": "Comment Ça Marche",
@@ -341,74 +342,45 @@
   },
   "CommissionRequest": {
     "heading": "Demander une Commande",
-    "description": "Remplissez les détails ci-dessous et je vous répondrai par e-mail avec un devis personnalisé. Tout est convenu à l'avance - aucun paiement n'a lieu sur ce site.",
-    "referenceLabel": "Votre référence",
+    "description": "L'essentiel seulement - je reviens vers vous par e-mail pour les détails et un devis.",
     "fields": {
-      "type": {
-        "label": "Type de Commande",
-        "placeholder": "Choisissez un type",
+      "style": {
+        "label": "Style",
+        "placeholder": "Choisissez un style",
         "options": {
-          "portrait": "Portrait",
-          "halfBody": "Demi-Corps",
-          "fullBody": "Corps Entier",
-          "custom": "Projet Sur Mesure"
+          "vector": "Portrait Vectoriel",
+          "painted": "Peinture Numérique",
+          "character": "Personnage & Fan Art",
+          "other": "Autre chose"
         }
       },
       "name": {
-        "label": "Nom Complet",
+        "label": "Nom",
         "placeholder": "Votre nom"
       },
       "email": {
-        "label": "Adresse E-mail",
+        "label": "E-mail",
         "placeholder": "votre@email.com"
       },
-      "country": {
-        "label": "Pays",
-        "placeholder": "Où êtes-vous basé ?"
-      },
-      "budget": {
-        "label": "Budget",
-        "placeholder": "Choisissez une fourchette",
-        "options": {
-          "under50": "Moins de 50 $",
-          "50to100": "50 $ - 100 $",
-          "100to250": "100 $ - 250 $",
-          "over250": "250 $ et plus"
-        }
-      },
-      "use": {
-        "label": "Usage Prévu",
-        "placeholder": "Choisissez une option",
-        "options": {
-          "personal": "Personnel",
-          "social": "Réseaux Sociaux",
-          "commercial": "Commercial",
-          "other": "Autre"
-        }
-      },
       "description": {
-        "label": "Description",
-        "placeholder": "Décrivez votre projet avec le plus de détails possible."
-      },
-      "deadline": {
-        "label": "Date Limite"
+        "label": "Votre idée",
+        "placeholder": "Décrivez ce que vous souhaitez - sujet, ambiance, références et usage prévu."
       },
       "references": {
-        "label": "Images de Référence",
-        "hint": "JPG, PNG ou WebP. Vous pouvez en envoyer plusieurs.",
-        "cta": "Choisir des images",
+        "label": "Images de référence",
+        "hint": "JPG, PNG ou WebP.",
+        "cta": "Ajouter des images",
         "selected": "{count} fichier(s) sélectionné(s)"
       }
     },
-    "required": "Requis",
     "optional": "Facultatif",
     "submit": "Envoyer la Demande",
     "submitting": "Envoi...",
     "successTitle": "Demande reçue !",
-    "successMessage": "Merci - je vais étudier votre demande et vous répondre par e-mail, généralement sous quelques jours.",
-    "successReference": "Conservez cette référence : {id}",
+    "successMessage": "Merci - je l'étudie et vous réponds par e-mail, généralement sous quelques jours.",
+    "successReference": "Votre référence : {id}",
     "sendAnother": "Envoyer une autre demande",
-    "errorMessage": "Une erreur s'est produite. Réessayez, ou écrivez-moi directement à djouflegran@gmail.com.",
-    "backToCommissions": "Retour aux informations de commande"
+    "backToCommissions": "Retour aux informations de commande",
+    "errorMessage": "Une erreur s'est produite. Réessayez, ou écrivez-moi directement à djouflegran@gmail.com."
   }
 }

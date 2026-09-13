@@ -277,7 +277,7 @@
     },
     "types": {
       "heading": "Styles & Pricing",
-      "subheading": "Three styles I work in most. Prices are a starting point — the final quote depends on complexity, detail, and usage.",
+      "subheading": "Three styles I work in most. Prices are a starting point - the final quote depends on complexity, detail, and usage.",
       "startingFrom": "From",
       "items": {
         "vector": {
@@ -293,10 +293,11 @@
         "character": {
           "name": "Character & Fan Art",
           "price": "$120",
-          "description": "Expressive character pieces and fan art — from line and tonal studies to fully colored illustrations."
+          "description": "Expressive character pieces and fan art - from line and tonal studies to fully colored illustrations."
         }
       },
-      "note": "Bigger or unusual projects — posters, character sheets, full scenes — are quoted individually."
+      "note": "Bigger or unusual projects - posters, character sheets, full scenes - are quoted individually.",
+      "requestCta": "Request this style"
     },
     "process": {
       "heading": "How It Works",
@@ -341,74 +342,45 @@
   },
   "CommissionRequest": {
     "heading": "Request a Commission",
-    "description": "Fill in the details below and I'll reply by email with a personal quote. Everything is agreed upfront - no payment happens on this site.",
-    "referenceLabel": "Your reference",
+    "description": "Just the essentials - I'll follow up by email with any details and a quote.",
     "fields": {
-      "type": {
-        "label": "Commission Type",
-        "placeholder": "Select a type",
+      "style": {
+        "label": "Style",
+        "placeholder": "Pick a style",
         "options": {
-          "portrait": "Portrait",
-          "halfBody": "Half Body",
-          "fullBody": "Full Body",
-          "custom": "Custom Project"
+          "vector": "Vector Portrait",
+          "painted": "Digital Painting",
+          "character": "Character & Fan Art",
+          "other": "Something else"
         }
       },
       "name": {
-        "label": "Full Name",
+        "label": "Name",
         "placeholder": "Your name"
       },
       "email": {
-        "label": "Email Address",
+        "label": "Email",
         "placeholder": "your@email.com"
       },
-      "country": {
-        "label": "Country",
-        "placeholder": "Where are you based?"
-      },
-      "budget": {
-        "label": "Budget Range",
-        "placeholder": "Select a range",
-        "options": {
-          "under50": "Under $50",
-          "50to100": "$50 - $100",
-          "100to250": "$100 - $250",
-          "over250": "$250+"
-        }
-      },
-      "use": {
-        "label": "Intended Use",
-        "placeholder": "Select an option",
-        "options": {
-          "personal": "Personal",
-          "social": "Social Media",
-          "commercial": "Commercial",
-          "other": "Other"
-        }
-      },
       "description": {
-        "label": "Description",
-        "placeholder": "Describe your project in as much detail as possible."
-      },
-      "deadline": {
-        "label": "Deadline"
+        "label": "Your idea",
+        "placeholder": "Describe what you'd like - subject, mood, references, and how you'll use it."
       },
       "references": {
-        "label": "Reference Images",
-        "hint": "JPG, PNG, or WebP. You can upload several.",
-        "cta": "Choose images",
+        "label": "Reference images",
+        "hint": "JPG, PNG, or WebP.",
+        "cta": "Add images",
         "selected": "{count} file(s) selected"
       }
     },
-    "required": "Required",
     "optional": "Optional",
     "submit": "Send Request",
     "submitting": "Sending...",
     "successTitle": "Request received!",
-    "successMessage": "Thank you - I'll review your request and reply by email, usually within a couple of days.",
-    "successReference": "Keep this reference for your records: {id}",
+    "successMessage": "Thanks - I'll review it and reply by email, usually within a couple of days.",
+    "successReference": "Your reference: {id}",
     "sendAnother": "Submit another request",
-    "errorMessage": "Something went wrong. Please try again, or email me directly at djouflegran@gmail.com.",
-    "backToCommissions": "Back to commission info"
+    "backToCommissions": "Back to commission info",
+    "errorMessage": "Something went wrong. Please try again, or email me directly at djouflegran@gmail.com."
   }
 }

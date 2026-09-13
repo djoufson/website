@@ -3,39 +3,26 @@
 import { useState, FormEvent } from "react";
 import { Send, CheckCircle, AlertCircle, Upload } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/routing";
 import { generateTrackingId } from "@/lib/commission";
 
 /**
- * Canonical (English) option values submitted to Formspree, kept separate from
+ * Canonical (English) style values submitted to Formspree, kept separate from
  * the localized labels shown to the visitor - so the artist's inbox reads the
- * same regardless of the visitor's language.
+ * same regardless of the visitor's language. These mirror the styles shown on
+ * the commissions page, plus an open-ended option.
  */
-const TYPE_OPTIONS = [
-  { key: "portrait", value: "Portrait" },
-  { key: "halfBody", value: "Half Body" },
-  { key: "fullBody", value: "Full Body" },
-  { key: "custom", value: "Custom Project" },
-] as const;
-
-const BUDGET_OPTIONS = [
-  { key: "under50", value: "Under $50" },
-  { key: "50to100", value: "$50 - $100" },
-  { key: "100to250", value: "$100 - $250" },
-  { key: "over250", value: "$250+" },
-] as const;
-
-const USE_OPTIONS = [
-  { key: "personal", value: "Personal" },
-  { key: "social", value: "Social Media" },
-  { key: "commercial", value: "Commercial" },
-  { key: "other", value: "Other" },
+const STYLE_OPTIONS = [
+  { key: "vector", value: "Vector Portrait" },
+  { key: "painted", value: "Digital Painting" },
+  { key: "character", value: "Character & Fan Art" },
+  { key: "other", value: "Something else" },
 ] as const;
 
 const inputClass =
   "w-full px-4 py-2.5 rounded-lg border bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-colors";
 
-export default function CommissionRequestForm() {
+/** `defaultStyle` preselects a style, e.g. when opened from a specific style card. */
+export default function CommissionRequestForm({ defaultStyle = "" }: { defaultStyle?: string }) {
   const t = useTranslations("CommissionRequest");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [fileCount, setFileCount] = useState(0);
@@ -59,10 +46,10 @@ export default function CommissionRequestForm() {
     setTrackingId(id);
     data.set("Tracking ID", id);
 
-    // Build a searchable email subject: [ART-2026-XXXX] Commission Request: Type - Name
-    const type = String(data.get("Commission Type") ?? "");
-    const name = String(data.get("Full Name") ?? "");
-    data.set("_subject", `[${id}] Commission Request: ${type} - ${name}`);
+    // Build a searchable email subject: [ART-2026-XXXX] Commission Request: Style - Name
+    const style = String(data.get("Style") ?? "");
+    const name = String(data.get("Name") ?? "");
+    data.set("_subject", `[${id}] Commission Request: ${style} - ${name}`);
 
     try {
       const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
@@ -85,7 +72,7 @@ export default function CommissionRequestForm() {
 
   if (status === "success") {
     return (
-      <div className="space-y-4 py-12 text-center">
+      <div className="space-y-4 py-8 text-center">
         <CheckCircle className="mx-auto h-12 w-12 text-green-500" />
         <h3 className="text-xl font-medium">{t("successTitle")}</h3>
         <p className="mx-auto max-w-md text-muted-foreground">{t("successMessage")}</p>
@@ -94,29 +81,18 @@ export default function CommissionRequestForm() {
             {t("successReference", { id: trackingId })}
           </p>
         )}
-        <div className="flex flex-wrap justify-center gap-4 pt-2">
-          <button
-            onClick={() => {
-              setTrackingId(generateTrackingId());
-              setStatus("idle");
-            }}
-            className="text-sm text-muted-foreground underline transition-colors hover:text-foreground"
-          >
-            {t("sendAnother")}
-          </button>
-          <Link
-            href="/art/commissions"
-            className="text-sm text-muted-foreground underline transition-colors hover:text-foreground"
-          >
-            {t("backToCommissions")}
-          </Link>
-        </div>
+        <button
+          onClick={() => setStatus("idle")}
+          className="text-sm text-muted-foreground underline transition-colors hover:text-foreground"
+        >
+          {t("sendAnother")}
+        </button>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Honeypot - hidden from humans; Formspree drops any submission that fills it. */}
       <input
         type="text"
@@ -126,38 +102,41 @@ export default function CommissionRequestForm() {
         aria-hidden="true"
         className="!absolute -left-[9999px] h-0 w-0 opacity-0"
       />
-      {/* Commission type */}
-      <Field htmlFor="commission-type" label={t("fields.type.label")} required requiredText={t("required")}>
-        <select
-          id="commission-type"
-          name="Commission Type"
-          required
-          defaultValue=""
-          className={inputClass}
-        >
+
+      <div>
+        <label htmlFor="style" className="mb-2 block text-sm font-medium">
+          {t("fields.style.label")}
+        </label>
+        <select id="style" name="Style" required defaultValue={defaultStyle} className={inputClass}>
           <option value="" disabled>
-            {t("fields.type.placeholder")}
+            {t("fields.style.placeholder")}
           </option>
-          {TYPE_OPTIONS.map((o) => (
+          {STYLE_OPTIONS.map((o) => (
             <option key={o.key} value={o.value}>
-              {t(`fields.type.options.${o.key}`)}
+              {t(`fields.style.options.${o.key}`)}
             </option>
           ))}
         </select>
-      </Field>
+      </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Field htmlFor="full-name" label={t("fields.name.label")} required requiredText={t("required")}>
+      <div className="grid gap-5 sm:grid-cols-2">
+        <div>
+          <label htmlFor="name" className="mb-2 block text-sm font-medium">
+            {t("fields.name.label")}
+          </label>
           <input
             type="text"
-            id="full-name"
-            name="Full Name"
+            id="name"
+            name="Name"
             required
             className={inputClass}
             placeholder={t("fields.name.placeholder")}
           />
-        </Field>
-        <Field htmlFor="email" label={t("fields.email.label")} required requiredText={t("required")}>
+        </div>
+        <div>
+          <label htmlFor="email" className="mb-2 block text-sm font-medium">
+            {t("fields.email.label")}
+          </label>
           <input
             type="email"
             id="email"
@@ -166,60 +145,22 @@ export default function CommissionRequestForm() {
             className={inputClass}
             placeholder={t("fields.email.placeholder")}
           />
-        </Field>
+        </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2">
-        <Field htmlFor="country" label={t("fields.country.label")} optionalText={t("optional")}>
-          <input
-            type="text"
-            id="country"
-            name="Country"
-            className={inputClass}
-            placeholder={t("fields.country.placeholder")}
-          />
-        </Field>
-        <Field htmlFor="budget" label={t("fields.budget.label")} required requiredText={t("required")}>
-          <select id="budget" name="Budget Range" required defaultValue="" className={inputClass}>
-            <option value="" disabled>
-              {t("fields.budget.placeholder")}
-            </option>
-            {BUDGET_OPTIONS.map((o) => (
-              <option key={o.key} value={o.value}>
-                {t(`fields.budget.options.${o.key}`)}
-              </option>
-            ))}
-          </select>
-        </Field>
-      </div>
-
-      <Field htmlFor="intended-use" label={t("fields.use.label")} required requiredText={t("required")}>
-        <select id="intended-use" name="Intended Use" required defaultValue="" className={inputClass}>
-          <option value="" disabled>
-            {t("fields.use.placeholder")}
-          </option>
-          {USE_OPTIONS.map((o) => (
-            <option key={o.key} value={o.value}>
-              {t(`fields.use.options.${o.key}`)}
-            </option>
-          ))}
-        </select>
-      </Field>
-
-      <Field htmlFor="description" label={t("fields.description.label")} required requiredText={t("required")}>
+      <div>
+        <label htmlFor="description" className="mb-2 block text-sm font-medium">
+          {t("fields.description.label")}
+        </label>
         <textarea
           id="description"
           name="Description"
           required
-          rows={6}
+          rows={5}
           className={`${inputClass} resize-none`}
           placeholder={t("fields.description.placeholder")}
         />
-      </Field>
-
-      <Field htmlFor="deadline" label={t("fields.deadline.label")} optionalText={t("optional")}>
-        <input type="date" id="deadline" name="Deadline" className={inputClass} />
-      </Field>
+      </div>
 
       {/* Reference images */}
       <div>
@@ -237,7 +178,7 @@ export default function CommissionRequestForm() {
           <span>
             {fileCount > 0
               ? t("fields.references.selected", { count: fileCount })
-              : t("fields.references.cta")}
+              : `${t("fields.references.cta")} · ${t("fields.references.hint")}`}
           </span>
         </label>
         <input
@@ -249,7 +190,6 @@ export default function CommissionRequestForm() {
           className="sr-only"
           onChange={(e) => setFileCount(e.currentTarget.files?.length ?? 0)}
         />
-        <p className="mt-2 text-xs text-muted-foreground">{t("fields.references.hint")}</p>
       </div>
 
       {status === "error" && (
@@ -268,37 +208,5 @@ export default function CommissionRequestForm() {
         {status === "submitting" ? t("submitting") : t("submit")}
       </button>
     </form>
-  );
-}
-
-function Field({
-  htmlFor,
-  label,
-  required,
-  requiredText,
-  optionalText,
-  children,
-}: {
-  htmlFor: string;
-  label: string;
-  required?: boolean;
-  requiredText?: string;
-  optionalText?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div>
-      <div className="mb-2 flex items-center gap-2">
-        <label htmlFor={htmlFor} className="block text-sm font-medium">
-          {label}
-        </label>
-        {required ? (
-          <span className="text-xs text-muted-foreground">{requiredText}</span>
-        ) : optionalText ? (
-          <span className="text-xs text-muted-foreground">{optionalText}</span>
-        ) : null}
-      </div>
-      {children}
-    </div>
   );
 }

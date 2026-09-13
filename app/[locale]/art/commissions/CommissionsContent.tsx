@@ -1,25 +1,42 @@
 "use client";
 
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import ProtectedImage from "@/components/art/ProtectedImage";
+import CommissionRequestForm from "../request/CommissionRequestForm";
 
 /**
  * Three primary styles, each represented by a single hand-picked piece from
  * the gallery so visitors can see the direction at a glance.
  */
 const STYLE_GROUPS = [
-  { key: "vector", src: "/assets/art/kambeul.webp", alt: "Kambeul" },
-  { key: "painted", src: "/assets/art/berka.webp", alt: "Berka" },
-  { key: "character", src: "/assets/art/hatik-red.webp", alt: "Hatik" },
+  { key: "vector", src: "/assets/art/kambeul.webp", alt: "Kambeul", value: "Vector Portrait" },
+  { key: "painted", src: "/assets/art/berka.webp", alt: "Berka", value: "Digital Painting" },
+  { key: "character", src: "/assets/art/hatik-red.webp", alt: "Hatik", value: "Character & Fan Art" },
 ] as const;
 
 const PROCESS_STEPS = ["submit", "discuss", "approve", "deposit", "creation", "delivery"] as const;
 
 export default function CommissionsContent() {
   const t = useTranslations("Commissions");
+  const tReq = useTranslations("CommissionRequest");
+  const [open, setOpen] = useState(false);
+  const [style, setStyle] = useState("");
+
+  function requestStyle(styleValue = "") {
+    setStyle(styleValue);
+    setOpen(true);
+  }
 
   return (
     <div className="w-full px-6 py-20 lg:px-12">
@@ -30,11 +47,9 @@ export default function CommissionsContent() {
             <h1 className="mb-4 text-3xl font-semibold">{t("hero.title")}</h1>
             <p className="leading-relaxed text-muted-foreground">{t("hero.subtitle")}</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Button asChild>
-                <Link href="/art/request">
-                  {t("hero.cta")}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
+              <Button onClick={() => requestStyle()}>
+                {t("hero.cta")}
+                <ArrowRight className="h-4 w-4" />
               </Button>
               <Button asChild variant="ghost">
                 <Link href="/art">{t("hero.secondary")}</Link>
@@ -80,6 +95,13 @@ export default function CommissionsContent() {
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {t(`types.items.${group.key}.description`)}
                 </p>
+                <button
+                  onClick={() => requestStyle(group.value)}
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--custom-blue)] transition-colors hover:opacity-80"
+                >
+                  {t("types.requestCta")}
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </button>
               </div>
             ))}
           </div>
@@ -87,7 +109,7 @@ export default function CommissionsContent() {
           <p className="mt-10 text-sm text-muted-foreground">{t("types.note")}</p>
         </section>
 
-        {/* Process — vertical timeline */}
+        {/* Process - vertical timeline */}
         <section className="mb-24">
           <h2 className="mb-10 text-2xl font-semibold tracking-tight">{t("process.heading")}</h2>
 
@@ -130,14 +152,23 @@ export default function CommissionsContent() {
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
             {t("finalCta.body")}
           </p>
-          <Button asChild size="lg" className="mt-8">
-            <Link href="/art/request">
-              {t("finalCta.button")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
+          <Button size="lg" className="mt-8" onClick={() => requestStyle()}>
+            {t("finalCta.button")}
+            <ArrowRight className="h-4 w-4" />
           </Button>
         </section>
       </div>
+
+      {/* Request form modal - keeps the whole interaction on one focused page. */}
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="max-h-[90vh] overflow-y-auto sm:max-w-lg">
+          <DialogHeader>
+            <DialogTitle>{tReq("heading")}</DialogTitle>
+            <DialogDescription>{tReq("description")}</DialogDescription>
+          </DialogHeader>
+          <CommissionRequestForm defaultStyle={style} />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
