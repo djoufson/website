@@ -172,6 +172,21 @@ export default function ArtworkViewer({
           {artwork.process && <Field label={t("detail.process")} value={artwork.process} />}
         </dl>
 
+        {artwork.commissionable && (
+          <div className="mt-10 rounded-xl border border-border bg-muted/40 p-5">
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {t("detail.commissionPrompt")}
+            </p>
+            <Link
+              href="/art/commissions"
+              className="mt-3 inline-flex items-center gap-2 text-sm font-medium text-[var(--custom-blue)] transition-colors hover:opacity-80"
+            >
+              {t("detail.commissionCta")}
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </div>
+        )}
+
         <p className="mt-10 text-xs leading-relaxed text-muted-foreground">
           {t("detail.copyright")}
         </p>

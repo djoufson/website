@@ -2,9 +2,12 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
+import { Link } from "@/i18n/routing";
 import { Artwork, ArtworkCategory } from "@/types/Artwork";
 import { CATEGORY_LABEL_KEY } from "@/lib/art";
 import ArtworkGrid from "@/components/art/ArtworkGrid";
+import { Button } from "@/components/ui/button";
 
 interface ArtGalleryContentProps {
   artworks: Artwork[];
@@ -19,9 +22,17 @@ export default function ArtGalleryContent({ artworks, categories }: ArtGalleryCo
 
   return (
     <div className="w-full px-6 py-20 lg:px-12">
-      <header className="mb-14 max-w-2xl">
-        <h1 className="mb-3 text-3xl font-semibold">{t("hero.title")}</h1>
-        <p className="leading-relaxed text-muted-foreground">{t("hero.description")}</p>
+      <header className="mb-14 flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
+        <div className="max-w-2xl">
+          <h1 className="mb-3 text-3xl font-semibold">{t("hero.title")}</h1>
+          <p className="leading-relaxed text-muted-foreground">{t("hero.description")}</p>
+        </div>
+        <Button asChild className="shrink-0">
+          <Link href="/art/commissions">
+            {t("commission.commissionMe")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
       </header>
 
       <div className="mb-12 flex flex-wrap gap-2">
@@ -45,6 +56,19 @@ export default function ArtGalleryContent({ artworks, categories }: ArtGalleryCo
       ) : (
         <ArtworkGrid artworks={filtered} />
       )}
+
+      <section className="mt-24 rounded-2xl border border-border bg-muted/40 px-8 py-12 text-center sm:px-12">
+        <h2 className="text-2xl font-semibold tracking-tight">{t("commission.bannerTitle")}</h2>
+        <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted-foreground">
+          {t("commission.bannerBody")}
+        </p>
+        <Button asChild size="lg" className="mt-8">
+          <Link href="/art/commissions">
+            {t("commission.bannerCta")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
+      </section>
     </div>
   );
 }
