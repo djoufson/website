@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { Github, Linkedin, X, Rss } from 'lucide-react';
+import { Github, Linkedin, Twitter, Rss } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import BehanceIcon from '@/components/icons/BehanceIcon';
 
