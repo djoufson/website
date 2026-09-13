@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Mail, Github, Linkedin, Twitter } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import ContactForm from "./ContactForm";
+import BehanceIcon from "@/components/icons/BehanceIcon";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
@@ -44,6 +45,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
       href: "https://x.com/djouf_legran",
       icon: Twitter,
       value: "@djouf_legran",
+    },
+    {
+      name: "Behance",
+      href: "https://www.behance.net/legrandjouf",
+      icon: BehanceIcon,
+      value: "behance.net/legrandjouf",
     },
   ];
 
