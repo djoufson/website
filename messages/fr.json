@@ -43,7 +43,8 @@
     "contact": "Contact",
     "work": "Travaux",
     "more": "Plus",
-    "soon": "Bientôt"
+    "soon": "Bientôt",
+    "commissions": "Commandes"
   },
   "Footer": {
     "connectWithMe": "Me suivre",
@@ -57,7 +58,8 @@
     "githubTitle": "Profil GitHub",
     "linkedinTitle": "Profil LinkedIn",
     "emailTitle": "Email",
-    "mediumTitle": "Blog Medium"
+    "mediumTitle": "Blog Medium",
+    "behanceTitle": "Portfolio Behance"
   },
   "Activity": {
     "heading": "Ce qui se passe",

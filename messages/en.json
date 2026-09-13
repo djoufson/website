@@ -43,7 +43,8 @@
     "contact": "Contact",
     "work": "Work",
     "more": "More",
-    "soon": "Soon"
+    "soon": "Soon",
+    "commissions": "Commissions"
   },
   "Footer": {
     "connectWithMe": "Connect with me",
@@ -57,7 +58,8 @@
     "githubTitle": "GitHub Profile",
     "linkedinTitle": "LinkedIn Profile",
     "emailTitle": "Email",
-    "mediumTitle": "Medium Blog"
+    "mediumTitle": "Medium Blog",
+    "behanceTitle": "Behance Portfolio"
   },
   "Activity": {
     "heading": "What I'm up to",

@@ -34,6 +34,7 @@ export default function NavBar() {
       items: [
         { href: "/projects", label: t("projects") },
         { href: "/art", label: t("art") },
+        { href: "/art/commissions", label: t("commissions") },
       ],
     },
     { href: "/blog", label: t("blog") },
