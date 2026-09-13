@@ -18,9 +18,9 @@ export const CURRENCY_LABEL: Record<Currency, string> = {
 
 /** Base "starting from" price per style, per currency. */
 export const STYLE_PRICES: Record<string, Record<Currency, number>> = {
-  vector: { USD: 40, EUR: 38, XAF: 10000 },
-  painted: { USD: 70, EUR: 65, XAF: 15000 },
-  character: { USD: 120, EUR: 110, XAF: 25000 },
+  vector: { USD: 20, EUR: 18, XAF: 10000 },
+  painted: { USD: 35, EUR: 30, XAF: 15000 },
+  character: { USD: 60, EUR: 52, XAF: 25000 },
 };
 
 export function formatPrice(amount: number, currency: Currency): string {
