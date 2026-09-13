@@ -62,14 +62,13 @@ export default function CommissionsContent() {
               </Button>
             </div>
           </div>
-          <div className="relative mx-auto aspect-square w-full max-w-sm overflow-hidden rounded-2xl md:ml-auto">
+          <div className="relative mx-auto aspect-square w-full max-w-sm md:ml-auto">
             <ProtectedImage
               src="/assets/art/wizzy.webp"
               alt={t("hero.title")}
               fill
               priority
               sizes="(max-width: 768px) 100vw, 400px"
-              className="!object-cover"
             />
           </div>
         </section>
@@ -84,16 +83,12 @@ export default function CommissionsContent() {
               <div key={group.key}>
                 <div className="grid grid-cols-3 gap-3 sm:gap-5">
                   {group.images.map((img) => (
-                    <div
-                      key={img.src}
-                      className="relative aspect-square overflow-hidden rounded-lg"
-                    >
+                    <div key={img.src} className="relative aspect-square w-full">
                       <ProtectedImage
                         src={img.src}
                         alt={img.alt}
                         fill
                         sizes="(max-width: 640px) 30vw, 220px"
-                        className="!object-cover transition-transform duration-500 hover:scale-105"
                       />
                     </div>
                   ))}
