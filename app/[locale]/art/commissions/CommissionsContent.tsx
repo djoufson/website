@@ -7,34 +7,13 @@ import { Button } from "@/components/ui/button";
 import ProtectedImage from "@/components/art/ProtectedImage";
 
 /**
- * Three primary styles, each illustrated with reference pieces pulled from the
- * gallery so visitors can see what a commission in that direction looks like.
+ * Three primary styles, each represented by a single hand-picked piece from
+ * the gallery so visitors can see the direction at a glance.
  */
 const STYLE_GROUPS = [
-  {
-    key: "vector",
-    images: [
-      { src: "/assets/art/kambeul.webp", alt: "Kambeul" },
-      { src: "/assets/art/wizzy.webp", alt: "Wizzy" },
-      { src: "/assets/art/djouf.webp", alt: "Djouf" },
-    ],
-  },
-  {
-    key: "painted",
-    images: [
-      { src: "/assets/art/berka.webp", alt: "Berka" },
-      { src: "/assets/art/warren.webp", alt: "Warren in Red" },
-      { src: "/assets/art/panther.webp", alt: "Panther" },
-    ],
-  },
-  {
-    key: "character",
-    images: [
-      { src: "/assets/art/hatik-red.webp", alt: "Hatik" },
-      { src: "/assets/art/irvin.webp", alt: "Kyrie" },
-      { src: "/assets/art/tiger.webp", alt: "Tiger" },
-    ],
-  },
+  { key: "vector", src: "/assets/art/kambeul.webp", alt: "Kambeul" },
+  { key: "painted", src: "/assets/art/berka.webp", alt: "Berka" },
+  { key: "character", src: "/assets/art/hatik-red.webp", alt: "Hatik" },
 ] as const;
 
 const PROCESS_STEPS = ["submit", "discuss", "approve", "deposit", "creation", "delivery"] as const;
@@ -78,23 +57,19 @@ export default function CommissionsContent() {
           <h2 className="text-2xl font-semibold tracking-tight">{t("types.heading")}</h2>
           <p className="mt-2 max-w-2xl text-sm text-muted-foreground">{t("types.subheading")}</p>
 
-          <div className="mt-12 space-y-16">
+          <div className="mt-10 grid gap-x-8 gap-y-10 sm:grid-cols-3">
             {STYLE_GROUPS.map((group) => (
               <div key={group.key}>
-                <div className="grid grid-cols-3 gap-3 sm:gap-5">
-                  {group.images.map((img) => (
-                    <div key={img.src} className="relative aspect-square w-full">
-                      <ProtectedImage
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        sizes="(max-width: 640px) 30vw, 220px"
-                      />
-                    </div>
-                  ))}
+                <div className="relative aspect-square w-full">
+                  <ProtectedImage
+                    src={group.src}
+                    alt={group.alt}
+                    fill
+                    sizes="(max-width: 640px) 90vw, 30vw"
+                  />
                 </div>
-                <div className="mt-5 flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                  <h3 className="text-lg font-medium">{t(`types.items.${group.key}.name`)}</h3>
+                <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-0.5">
+                  <h3 className="font-medium">{t(`types.items.${group.key}.name`)}</h3>
                   <p className="text-sm text-muted-foreground">
                     {t("types.startingFrom")}{" "}
                     <span className="font-semibold text-foreground">
@@ -102,14 +77,14 @@ export default function CommissionsContent() {
                     </span>
                   </p>
                 </div>
-                <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                   {t(`types.items.${group.key}.description`)}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="mt-12 text-sm text-muted-foreground">{t("types.note")}</p>
+          <p className="mt-10 text-sm text-muted-foreground">{t("types.note")}</p>
         </section>
 
         {/* Process — vertical timeline */}
