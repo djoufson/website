@@ -27,6 +27,14 @@
     "art": {
       "title": "Digital Art & Illustration",
       "description": "A curated gallery of digital artwork, illustrations, character designs, and creative explorations by Djoufson Che."
+    },
+    "commissions": {
+      "title": "Commission Custom Digital Art",
+      "description": "Commission original digital illustrations created specifically for you. Portraits, character art, and custom projects by Djoufson Che."
+    },
+    "commissionRequest": {
+      "title": "Request a Commission",
+      "description": "Tell me about your custom artwork idea and get a personal quote. Portraits, half body, full body, and custom digital illustration commissions."
     }
   },
   "Navigation": {
@@ -228,8 +236,16 @@
       "inspiration": "Inspiration",
       "process": "Process",
       "commissionPrompt": "This piece is available for commission-style work in a similar direction.",
-      "commissionCta": "Get in touch",
+      "commissionCta": "Commission a similar piece",
       "copyright": "All artworks are copyright protected and may not be reproduced, redistributed, or used commercially without permission."
+    },
+    "commission": {
+      "requestSimilar": "Request Similar Artwork",
+      "commissionMe": "Commission Me",
+      "getYourOwn": "Get Your Own Illustration",
+      "bannerTitle": "Want a piece made just for you?",
+      "bannerBody": "Commission an original digital illustration in a style like this.",
+      "bannerCta": "Commission Me"
     }
   },
   "Error": {
@@ -251,5 +267,192 @@
   "LanguageSwitcher": {
     "en": "English",
     "fr": "French"
+  },
+  "Commissions": {
+    "hero": {
+      "title": "Custom Digital Artwork",
+      "subtitle": "Commission original digital illustrations created specifically for you.",
+      "cta": "Request a Commission",
+      "secondary": "See the gallery"
+    },
+    "types": {
+      "heading": "Commission Types",
+      "subheading": "Pricing is a starting point - the final quote depends on complexity, detail, and usage.",
+      "startingFrom": "Starting from",
+      "items": {
+        "portrait": {
+          "name": "Portrait",
+          "price": "$40",
+          "description": "Head-and-shoulders illustration. Ideal for profile pictures, social media, and personal branding."
+        },
+        "halfBody": {
+          "name": "Half Body",
+          "price": "$70",
+          "description": "Waist-up illustration with more room for pose, outfit, and personality."
+        },
+        "fullBody": {
+          "name": "Full Body",
+          "price": "$120",
+          "description": "Full-figure illustration with complete pose, outfit, and character detail."
+        },
+        "custom": {
+          "name": "Custom Project",
+          "price": "Custom Quote",
+          "description": "Character design, fan art, posters, and special requests. Priced per project."
+        }
+      }
+    },
+    "process": {
+      "heading": "How It Works",
+      "steps": {
+        "submit": {
+          "title": "Submit Request",
+          "description": "Send your idea through the commission form with as much detail as possible."
+        },
+        "discuss": {
+          "title": "Discuss Details",
+          "description": "We clarify the concept, scope, and references over email."
+        },
+        "approve": {
+          "title": "Approve Quote",
+          "description": "You receive a final quote and timeline to approve."
+        },
+        "deposit": {
+          "title": "Pay Deposit",
+          "description": "A deposit is paid via a secure payment link before work starts."
+        },
+        "creation": {
+          "title": "Artwork Creation",
+          "description": "I create your piece and share progress, with revisions along the way."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "description": "After final payment, you receive the high-resolution artwork."
+        }
+      }
+    },
+    "details": {
+      "heading": "What to Expect",
+      "delivery": {
+        "title": "Delivery Time",
+        "description": "Usually between 1 and 4 weeks depending on complexity."
+      },
+      "revisions": {
+        "title": "Revisions",
+        "description": "A limited number of revisions is included with every commission."
+      },
+      "payment": {
+        "title": "Before Work Begins",
+        "description": "Work starts only after the deposit is received - never before."
+      }
+    },
+    "payment": {
+      "heading": "Payment Policy",
+      "deposit": "The recommended terms are 50% upfront and 50% before final delivery. Smaller commissions may be paid 100% upfront.",
+      "methods": "Payment is handled through a secure payment link sent by email. Supported methods include Visa, Mastercard, MTN Mobile Money, and Orange Money.",
+      "note": "No payment is processed on this website - everything is agreed by email first."
+    },
+    "faq": {
+      "heading": "Frequently Asked Questions",
+      "items": {
+        "time": {
+          "question": "How long does it take?",
+          "answer": "Usually between 1 and 4 weeks depending on complexity."
+        },
+        "revisions": {
+          "question": "Do you accept revisions?",
+          "answer": "Yes, limited revisions are included."
+        },
+        "beforePayment": {
+          "question": "Do you start before payment?",
+          "answer": "No. Work begins only after the deposit is received."
+        },
+        "commercial": {
+          "question": "Can I use the artwork commercially?",
+          "answer": "Yes, commercial licensing can be arranged - mention it in your request so it can be included in the quote."
+        },
+        "methods": {
+          "question": "What payment methods can I use?",
+          "answer": "Visa, Mastercard, MTN Mobile Money, and Orange Money, via a secure payment link."
+        }
+      }
+    },
+    "finalCta": {
+      "heading": "Ready to bring your idea to life?",
+      "body": "Tell me about your project and I'll reply with a personal quote.",
+      "button": "Request a Commission"
+    }
+  },
+  "CommissionRequest": {
+    "heading": "Request a Commission",
+    "description": "Fill in the details below and I'll reply by email with a personal quote. Everything is agreed upfront - no payment happens on this site.",
+    "referenceLabel": "Your reference",
+    "fields": {
+      "type": {
+        "label": "Commission Type",
+        "placeholder": "Select a type",
+        "options": {
+          "portrait": "Portrait",
+          "halfBody": "Half Body",
+          "fullBody": "Full Body",
+          "custom": "Custom Project"
+        }
+      },
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "your@email.com"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Where are you based?"
+      },
+      "budget": {
+        "label": "Budget Range",
+        "placeholder": "Select a range",
+        "options": {
+          "under50": "Under $50",
+          "50to100": "$50 - $100",
+          "100to250": "$100 - $250",
+          "over250": "$250+"
+        }
+      },
+      "use": {
+        "label": "Intended Use",
+        "placeholder": "Select an option",
+        "options": {
+          "personal": "Personal",
+          "social": "Social Media",
+          "commercial": "Commercial",
+          "other": "Other"
+        }
+      },
+      "description": {
+        "label": "Description",
+        "placeholder": "Describe your project in as much detail as possible."
+      },
+      "deadline": {
+        "label": "Deadline"
+      },
+      "references": {
+        "label": "Reference Images",
+        "hint": "JPG, PNG, or WebP. You can upload several.",
+        "cta": "Choose images",
+        "selected": "{count} file(s) selected"
+      }
+    },
+    "required": "Required",
+    "optional": "Optional",
+    "submit": "Send Request",
+    "submitting": "Sending...",
+    "successTitle": "Request received!",
+    "successMessage": "Thank you - I'll review your request and reply by email, usually within a couple of days.",
+    "successReference": "Keep this reference for your records: {id}",
+    "sendAnother": "Submit another request",
+    "errorMessage": "Something went wrong. Please try again, or email me directly at djouflegran@gmail.com.",
+    "backToCommissions": "Back to commission info"
   }
 }
