@@ -276,31 +276,27 @@
       "secondary": "See the gallery"
     },
     "types": {
-      "heading": "Commission Types",
-      "subheading": "Pricing is a starting point - the final quote depends on complexity, detail, and usage.",
-      "startingFrom": "Starting from",
+      "heading": "Styles & Pricing",
+      "subheading": "Three styles I work in most. Prices are a starting point — the final quote depends on complexity, detail, and usage.",
+      "startingFrom": "From",
       "items": {
-        "portrait": {
-          "name": "Portrait",
+        "vector": {
+          "name": "Vector Portraits",
           "price": "$40",
-          "description": "Head-and-shoulders illustration. Ideal for profile pictures, social media, and personal branding."
+          "description": "Bold, flat, graphic portraits with clean shapes and striking color. Great for avatars, profile pictures, and personal branding."
         },
-        "halfBody": {
-          "name": "Half Body",
+        "painted": {
+          "name": "Digital Paintings",
           "price": "$70",
-          "description": "Waist-up illustration with more room for pose, outfit, and personality."
+          "description": "Richly rendered, painterly portraits and illustrations with real depth, light, and texture."
         },
-        "fullBody": {
-          "name": "Full Body",
+        "character": {
+          "name": "Character & Fan Art",
           "price": "$120",
-          "description": "Full-figure illustration with complete pose, outfit, and character detail."
-        },
-        "custom": {
-          "name": "Custom Project",
-          "price": "Custom Quote",
-          "description": "Character design, fan art, posters, and special requests. Priced per project."
+          "description": "Expressive character pieces and fan art — from line and tonal studies to fully colored illustrations."
         }
-      }
+      },
+      "note": "Bigger or unusual projects — posters, character sheets, full scenes — are quoted individually."
     },
     "process": {
       "heading": "How It Works",
@@ -331,51 +327,11 @@
         }
       }
     },
-    "details": {
-      "heading": "What to Expect",
-      "delivery": {
-        "title": "Delivery Time",
-        "description": "Usually between 1 and 4 weeks depending on complexity."
-      },
-      "revisions": {
-        "title": "Revisions",
-        "description": "A limited number of revisions is included with every commission."
-      },
-      "payment": {
-        "title": "Before Work Begins",
-        "description": "Work starts only after the deposit is received - never before."
-      }
-    },
     "payment": {
       "heading": "Payment Policy",
       "deposit": "The recommended terms are 50% upfront and 50% before final delivery. Smaller commissions may be paid 100% upfront.",
       "methods": "Payment is handled through a secure payment link sent by email. Supported methods include Visa, Mastercard, MTN Mobile Money, and Orange Money.",
       "note": "No payment is processed on this website - everything is agreed by email first."
-    },
-    "faq": {
-      "heading": "Frequently Asked Questions",
-      "items": {
-        "time": {
-          "question": "How long does it take?",
-          "answer": "Usually between 1 and 4 weeks depending on complexity."
-        },
-        "revisions": {
-          "question": "Do you accept revisions?",
-          "answer": "Yes, limited revisions are included."
-        },
-        "beforePayment": {
-          "question": "Do you start before payment?",
-          "answer": "No. Work begins only after the deposit is received."
-        },
-        "commercial": {
-          "question": "Can I use the artwork commercially?",
-          "answer": "Yes, commercial licensing can be arranged - mention it in your request so it can be included in the quote."
-        },
-        "methods": {
-          "question": "What payment methods can I use?",
-          "answer": "Visa, Mastercard, MTN Mobile Money, and Orange Money, via a secure payment link."
-        }
-      }
     },
     "finalCta": {
       "heading": "Ready to bring your idea to life?",

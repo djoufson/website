@@ -276,31 +276,27 @@
       "secondary": "Voir la galerie"
     },
     "types": {
-      "heading": "Types de Commandes",
-      "subheading": "Les prix sont un point de départ - le devis final dépend de la complexité, du niveau de détail et de l'usage.",
+      "heading": "Styles & Tarifs",
+      "subheading": "Trois styles que je pratique le plus. Les prix sont un point de départ — le devis final dépend de la complexité, du niveau de détail et de l'usage.",
       "startingFrom": "À partir de",
       "items": {
-        "portrait": {
-          "name": "Portrait",
+        "vector": {
+          "name": "Portraits Vectoriels",
           "price": "40 $",
-          "description": "Illustration buste. Idéale pour les photos de profil, les réseaux sociaux et l'image de marque personnelle."
+          "description": "Portraits graphiques, épurés et hauts en couleur, aux formes nettes. Parfaits pour les avatars, photos de profil et l'image de marque personnelle."
         },
-        "halfBody": {
-          "name": "Demi-Corps",
+        "painted": {
+          "name": "Peintures Numériques",
           "price": "70 $",
-          "description": "Illustration jusqu'à la taille, avec plus de place pour la pose, la tenue et la personnalité."
+          "description": "Portraits et illustrations peints avec soin, pleins de profondeur, de lumière et de texture."
         },
-        "fullBody": {
-          "name": "Corps Entier",
+        "character": {
+          "name": "Personnages & Fan Art",
           "price": "120 $",
-          "description": "Illustration en pied avec pose complète, tenue et détails du personnage."
-        },
-        "custom": {
-          "name": "Projet Sur Mesure",
-          "price": "Devis Personnalisé",
-          "description": "Character design, fan art, affiches et demandes spéciales. Tarif par projet."
+          "description": "Personnages expressifs et fan art — de l'étude au trait aux illustrations entièrement colorées."
         }
-      }
+      },
+      "note": "Les projets plus grands ou atypiques — affiches, feuilles de personnage, scènes complètes — font l'objet d'un devis personnalisé."
     },
     "process": {
       "heading": "Comment Ça Marche",
@@ -331,51 +327,11 @@
         }
       }
     },
-    "details": {
-      "heading": "À Quoi S'Attendre",
-      "delivery": {
-        "title": "Délai de Livraison",
-        "description": "Généralement entre 1 et 4 semaines selon la complexité."
-      },
-      "revisions": {
-        "title": "Révisions",
-        "description": "Un nombre limité de révisions est inclus dans chaque commande."
-      },
-      "payment": {
-        "title": "Avant de Commencer",
-        "description": "Le travail commence uniquement après réception de l'acompte - jamais avant."
-      }
-    },
     "payment": {
       "heading": "Politique de Paiement",
       "deposit": "Les conditions recommandées sont 50 % à l'avance et 50 % avant la livraison finale. Les petites commandes peuvent être réglées à 100 % à l'avance.",
       "methods": "Le paiement se fait via un lien sécurisé envoyé par e-mail. Les méthodes prises en charge incluent Visa, Mastercard, MTN Mobile Money et Orange Money.",
       "note": "Aucun paiement n'est traité sur ce site - tout est convenu par e-mail au préalable."
-    },
-    "faq": {
-      "heading": "Questions Fréquentes",
-      "items": {
-        "time": {
-          "question": "Combien de temps cela prend-il ?",
-          "answer": "Généralement entre 1 et 4 semaines selon la complexité."
-        },
-        "revisions": {
-          "question": "Acceptez-vous les révisions ?",
-          "answer": "Oui, des révisions limitées sont incluses."
-        },
-        "beforePayment": {
-          "question": "Commencez-vous avant le paiement ?",
-          "answer": "Non. Le travail commence uniquement après réception de l'acompte."
-        },
-        "commercial": {
-          "question": "Puis-je utiliser l'œuvre à des fins commerciales ?",
-          "answer": "Oui, une licence commerciale peut être prévue - mentionnez-le dans votre demande pour l'inclure au devis."
-        },
-        "methods": {
-          "question": "Quels moyens de paiement puis-je utiliser ?",
-          "answer": "Visa, Mastercard, MTN Mobile Money et Orange Money, via un lien de paiement sécurisé."
-        }
-      }
     },
     "finalCta": {
       "heading": "Prêt à donner vie à votre idée ?",
