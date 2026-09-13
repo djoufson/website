@@ -622,5 +622,5 @@ Feature is complete when:
 
 Success is measured by receiving commission requests, not by technical sophistication.
 
-[1]: https://help.formspree.io/articles/building-your-form/file-uploads?utm_source=chatgpt.com "File uploads — Formspree Docs"
+[1]: https://help.formspree.io/articles/building-your-form/file-uploads?utm_source=chatgpt.com "File uploads - Formspree Docs"
 [2]: https://formspree.io/?utm_source=chatgpt.com "Custom Forms with No Server Code | Formspree | Formspree"
