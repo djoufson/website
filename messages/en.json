@@ -27,6 +27,10 @@
     "art": {
       "title": "Digital Art & Illustration",
       "description": "A curated gallery of digital artwork, illustrations, character designs, and creative explorations by Djoufson Che."
+    },
+    "commissions": {
+      "title": "Commission Custom Digital Art",
+      "description": "Commission original digital illustrations created specifically for you. Portraits, character art, and custom projects by Djoufson Che."
     }
   },
   "Navigation": {
@@ -39,7 +43,8 @@
     "contact": "Contact",
     "work": "Work",
     "more": "More",
-    "soon": "Soon"
+    "soon": "Soon",
+    "commissions": "Commissions"
   },
   "Footer": {
     "connectWithMe": "Connect with me",
@@ -53,7 +58,8 @@
     "githubTitle": "GitHub Profile",
     "linkedinTitle": "LinkedIn Profile",
     "emailTitle": "Email",
-    "mediumTitle": "Medium Blog"
+    "mediumTitle": "Medium Blog",
+    "behanceTitle": "Behance Portfolio"
   },
   "Activity": {
     "heading": "What I'm up to",
@@ -228,8 +234,16 @@
       "inspiration": "Inspiration",
       "process": "Process",
       "commissionPrompt": "This piece is available for commission-style work in a similar direction.",
-      "commissionCta": "Get in touch",
+      "commissionCta": "Commission a similar piece",
       "copyright": "All artworks are copyright protected and may not be reproduced, redistributed, or used commercially without permission."
+    },
+    "commission": {
+      "requestSimilar": "Request Similar Artwork",
+      "commissionMe": "Commission Me",
+      "getYourOwn": "Get Your Own Illustration",
+      "bannerTitle": "Want a piece made just for you?",
+      "bannerBody": "Commission an original digital illustration in a style like this.",
+      "bannerCta": "Commission Me"
     }
   },
   "Error": {
@@ -251,5 +265,116 @@
   "LanguageSwitcher": {
     "en": "English",
     "fr": "French"
+  },
+  "Commissions": {
+    "hero": {
+      "title": "Custom Digital Artwork",
+      "subtitle": "Commission original digital illustrations created specifically for you.",
+      "cta": "Request a Commission",
+      "secondary": "See the gallery"
+    },
+    "types": {
+      "heading": "Styles & Pricing",
+      "subheading": "Three styles I work in most. Prices are a starting point - the final quote depends on complexity, detail, and usage.",
+      "startingFrom": "From",
+      "items": {
+        "vector": {
+          "name": "Vector Portraits",
+          "description": "Bold, flat, graphic portraits with clean shapes and striking color. Great for avatars, profile pictures, and personal branding."
+        },
+        "painted": {
+          "name": "Digital Paintings",
+          "description": "Richly rendered, painterly portraits and illustrations with real depth, light, and texture."
+        },
+        "character": {
+          "name": "Character & Fan Art",
+          "description": "Expressive character pieces and fan art - from line and tonal studies to fully colored illustrations."
+        }
+      },
+      "note": "Bigger or unusual projects - posters, character sheets, full scenes - are quoted individually.",
+      "requestCta": "Request this style"
+    },
+    "process": {
+      "heading": "How It Works",
+      "steps": {
+        "submit": {
+          "title": "Submit Request",
+          "description": "Send your idea through the commission form with as much detail as possible."
+        },
+        "discuss": {
+          "title": "Discuss Details",
+          "description": "We clarify the concept, scope, and references over email."
+        },
+        "approve": {
+          "title": "Approve Quote",
+          "description": "You receive a final quote and timeline to approve."
+        },
+        "deposit": {
+          "title": "Pay Deposit",
+          "description": "A deposit is paid via a secure payment link before work starts."
+        },
+        "creation": {
+          "title": "Artwork Creation",
+          "description": "I create your piece and share progress, with revisions along the way."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "description": "After final payment, you receive the high-resolution artwork."
+        }
+      }
+    },
+    "payment": {
+      "heading": "Payment Policy",
+      "deposit": "The recommended terms are 50% upfront and 50% before final delivery. Smaller commissions may be paid 100% upfront.",
+      "methods": "Payment is handled through a secure payment link sent by email. Supported methods include Visa, Mastercard, MTN Mobile Money, and Orange Money.",
+      "note": "No payment is processed on this website - everything is agreed by email first."
+    },
+    "finalCta": {
+      "heading": "Ready to bring your idea to life?",
+      "body": "Tell me about your project and I'll reply with a personal quote.",
+      "button": "Request a Commission"
+    }
+  },
+  "CommissionRequest": {
+    "heading": "Request a Commission",
+    "description": "Just the essentials - I'll follow up by email with any details and a quote.",
+    "fields": {
+      "style": {
+        "label": "Style",
+        "placeholder": "Pick a style",
+        "options": {
+          "vector": "Vector Portrait",
+          "painted": "Digital Painting",
+          "character": "Character & Fan Art",
+          "other": "Something else"
+        }
+      },
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com"
+      },
+      "description": {
+        "label": "Your idea",
+        "placeholder": "Describe what you'd like - subject, mood, references, and how you'll use it."
+      },
+      "references": {
+        "label": "Reference images",
+        "hint": "JPG, PNG, or WebP.",
+        "cta": "Add images",
+        "selected": "{count} file(s) selected"
+      }
+    },
+    "optional": "Optional",
+    "submit": "Send Request",
+    "submitting": "Sending...",
+    "successTitle": "Request received!",
+    "successMessage": "Thanks - I'll review it and reply by email, usually within a couple of days.",
+    "successReference": "Your reference: {id}",
+    "sendAnother": "Submit another request",
+    "errorMessage": "Something went wrong. Please try again, or email me directly at djouflegran@gmail.com."
   }
 }

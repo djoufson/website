@@ -3,6 +3,7 @@
 import React from 'react';
 import { Github, Linkedin, Twitter, Rss } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import BehanceIcon from '@/components/icons/BehanceIcon';
 
 export default function Footer() {
   const t = useTranslations('Footer');
@@ -25,6 +26,12 @@ export default function Footer() {
       href: 'https://x.com/djouf_legran',
       icon: Twitter,
       title: "Djoufson Che Bene's Twitter/X"
+    },
+    {
+      name: 'Behance',
+      href: 'https://www.behance.net/legrandjouf',
+      icon: BehanceIcon,
+      title: "Djoufson Che Bene's Behance"
     },
     {
       name: t('rssFeed'),

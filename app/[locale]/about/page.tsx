@@ -99,6 +99,14 @@ export default async function About({ params }: { params: Promise<{ locale: stri
               >
                 GitHub
               </a>
+              <a
+                href="https://www.behance.net/legrandjouf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                Behance
+              </a>
             </div>
           </div>
         </div>

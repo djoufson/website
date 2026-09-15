@@ -27,6 +27,10 @@
     "art": {
       "title": "Art Numérique & Illustration",
       "description": "Une galerie d'œuvres numériques, d'illustrations, de designs de personnages et d'explorations créatives par Djoufson Che."
+    },
+    "commissions": {
+      "title": "Commander une Œuvre Numérique",
+      "description": "Commandez des illustrations numériques originales créées spécialement pour vous. Portraits, character art et projets sur mesure par Djoufson Che."
     }
   },
   "Navigation": {
@@ -39,7 +43,8 @@
     "contact": "Contact",
     "work": "Travaux",
     "more": "Plus",
-    "soon": "Bientôt"
+    "soon": "Bientôt",
+    "commissions": "Commandes"
   },
   "Footer": {
     "connectWithMe": "Me suivre",
@@ -53,7 +58,8 @@
     "githubTitle": "Profil GitHub",
     "linkedinTitle": "Profil LinkedIn",
     "emailTitle": "Email",
-    "mediumTitle": "Blog Medium"
+    "mediumTitle": "Blog Medium",
+    "behanceTitle": "Portfolio Behance"
   },
   "Activity": {
     "heading": "Ce qui se passe",
@@ -228,8 +234,16 @@
       "inspiration": "Inspiration",
       "process": "Processus",
       "commissionPrompt": "Cette œuvre est disponible pour une commande dans une direction similaire.",
-      "commissionCta": "Me contacter",
+      "commissionCta": "Commander une œuvre similaire",
       "copyright": "Toutes les œuvres sont protégées par le droit d'auteur et ne peuvent être reproduites, redistribuées ou utilisées commercialement sans autorisation."
+    },
+    "commission": {
+      "requestSimilar": "Commander une Œuvre Similaire",
+      "commissionMe": "Commandez-moi une Œuvre",
+      "getYourOwn": "Obtenez Votre Illustration",
+      "bannerTitle": "Envie d'une œuvre rien que pour vous ?",
+      "bannerBody": "Commandez une illustration numérique originale dans un style comme celui-ci.",
+      "bannerCta": "Commandez-moi une Œuvre"
     }
   },
   "Error": {
@@ -251,5 +265,116 @@
   "LanguageSwitcher": {
     "en": "Anglais",
     "fr": "Français"
+  },
+  "Commissions": {
+    "hero": {
+      "title": "Œuvre Numérique Sur Mesure",
+      "subtitle": "Commandez des illustrations numériques originales créées spécialement pour vous.",
+      "cta": "Demander une Commande",
+      "secondary": "Voir la galerie"
+    },
+    "types": {
+      "heading": "Styles & Tarifs",
+      "subheading": "Trois styles que je pratique le plus. Les prix sont un point de départ - le devis final dépend de la complexité, du niveau de détail et de l'usage.",
+      "startingFrom": "À partir de",
+      "items": {
+        "vector": {
+          "name": "Portraits Vectoriels",
+          "description": "Portraits graphiques, épurés et hauts en couleur, aux formes nettes. Parfaits pour les avatars, photos de profil et l'image de marque personnelle."
+        },
+        "painted": {
+          "name": "Peintures Numériques",
+          "description": "Portraits et illustrations peints avec soin, pleins de profondeur, de lumière et de texture."
+        },
+        "character": {
+          "name": "Personnages & Fan Art",
+          "description": "Personnages expressifs et fan art - de l'étude au trait aux illustrations entièrement colorées."
+        }
+      },
+      "note": "Les projets plus grands ou atypiques - affiches, feuilles de personnage, scènes complètes - font l'objet d'un devis personnalisé.",
+      "requestCta": "Commander ce style"
+    },
+    "process": {
+      "heading": "Comment Ça Marche",
+      "steps": {
+        "submit": {
+          "title": "Envoyer la Demande",
+          "description": "Envoyez votre idée via le formulaire avec le plus de détails possible."
+        },
+        "discuss": {
+          "title": "Discuter des Détails",
+          "description": "Nous précisons le concept, la portée et les références par e-mail."
+        },
+        "approve": {
+          "title": "Approuver le Devis",
+          "description": "Vous recevez un devis final et un délai à approuver."
+        },
+        "deposit": {
+          "title": "Payer l'Acompte",
+          "description": "Un acompte est réglé via un lien de paiement sécurisé avant le début du travail."
+        },
+        "creation": {
+          "title": "Création de l'Œuvre",
+          "description": "Je réalise votre pièce et partage l'avancement, avec des révisions en cours de route."
+        },
+        "delivery": {
+          "title": "Livraison",
+          "description": "Après le paiement final, vous recevez l'œuvre en haute résolution."
+        }
+      }
+    },
+    "payment": {
+      "heading": "Politique de Paiement",
+      "deposit": "Les conditions recommandées sont 50 % à l'avance et 50 % avant la livraison finale. Les petites commandes peuvent être réglées à 100 % à l'avance.",
+      "methods": "Le paiement se fait via un lien sécurisé envoyé par e-mail. Les méthodes prises en charge incluent Visa, Mastercard, MTN Mobile Money et Orange Money.",
+      "note": "Aucun paiement n'est traité sur ce site - tout est convenu par e-mail au préalable."
+    },
+    "finalCta": {
+      "heading": "Prêt à donner vie à votre idée ?",
+      "body": "Parlez-moi de votre projet et je vous répondrai avec un devis personnalisé.",
+      "button": "Demander une Commande"
+    }
+  },
+  "CommissionRequest": {
+    "heading": "Demander une Commande",
+    "description": "L'essentiel seulement - je reviens vers vous par e-mail pour les détails et un devis.",
+    "fields": {
+      "style": {
+        "label": "Style",
+        "placeholder": "Choisissez un style",
+        "options": {
+          "vector": "Portrait Vectoriel",
+          "painted": "Peinture Numérique",
+          "character": "Personnage & Fan Art",
+          "other": "Autre chose"
+        }
+      },
+      "name": {
+        "label": "Nom",
+        "placeholder": "Votre nom"
+      },
+      "email": {
+        "label": "E-mail",
+        "placeholder": "votre@email.com"
+      },
+      "description": {
+        "label": "Votre idée",
+        "placeholder": "Décrivez ce que vous souhaitez - sujet, ambiance, références et usage prévu."
+      },
+      "references": {
+        "label": "Images de référence",
+        "hint": "JPG, PNG ou WebP.",
+        "cta": "Ajouter des images",
+        "selected": "{count} fichier(s) sélectionné(s)"
+      }
+    },
+    "optional": "Facultatif",
+    "submit": "Envoyer la Demande",
+    "submitting": "Envoi...",
+    "successTitle": "Demande reçue !",
+    "successMessage": "Merci - je l'étudie et vous réponds par e-mail, généralement sous quelques jours.",
+    "successReference": "Votre référence : {id}",
+    "sendAnother": "Envoyer une autre demande",
+    "errorMessage": "Une erreur s'est produite. Réessayez, ou écrivez-moi directement à djouflegran@gmail.com."
   }
 }

@@ -17,7 +17,8 @@ export default function StructuredData({ locale = "en" }: { locale?: string }) {
         "sameAs": [
           "https://github.com/djoufson",
           "https://linkedin.com/in/djoufson",
-          "https://x.com/djouf_legran"
+          "https://x.com/djouf_legran",
+          "https://www.behance.net/legrandjouf"
         ],
         "jobTitle": ["Software Engineer", "Community Builder", "Digital Artist"],
         "worksFor": {

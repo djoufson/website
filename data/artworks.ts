@@ -155,4 +155,18 @@ export const artworks: Artwork[] = [
     commissionable: false,
     medium: "Pixel art",
   },
+  {
+    id: "11",
+    slug: "yvan",
+    title: "Yvan",
+    description:
+      "A portrait carved out in deep reds and blacks, the face caught in dramatic light against jagged, white-edged slashes.",
+    category: "portraits",
+    date: "2025-11-30",
+    images: [{ src: "/assets/art/yvan.webp", width: 1080, height: 1080 }],
+    toolsUsed: ["Procreate"],
+    featured: true,
+    commissionable: true,
+    medium: "Digital painting",
+  },
 ];

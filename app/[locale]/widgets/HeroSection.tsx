@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Github, Linkedin, Mail, Pencil } from "lucide-react";
+import BehanceIcon from "@/components/icons/BehanceIcon";
 import { getTranslations } from "next-intl/server";
 
 export default async function HeroSection() {
@@ -69,6 +70,14 @@ export default async function HeroSection() {
                 title={t('mediumTitle')}
               >
                 <Pencil className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.behance.net/legrandjouf"
+                target="_blank"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+                title={t('behanceTitle')}
+              >
+                <BehanceIcon className="w-5 h-5" />
               </a>
             </div>
           </div>
