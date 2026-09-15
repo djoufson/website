@@ -30,10 +30,7 @@ export default function CommissionRequestForm({ defaultStyle = "" }: { defaultSt
   // during hydration and each submission gets a fresh reference.
   const [trackingId, setTrackingId] = useState("");
 
-  const formspreeId =
-    process.env.NEXT_PUBLIC_FORMSPREE_COMMISSION_ID ??
-    process.env.NEXT_PUBLIC_FORMSPREE_ID ??
-    "xnjbyzbg";
+  const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_COMMISSION_ID ?? "xkjgwrwn";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
