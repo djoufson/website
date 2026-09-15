@@ -1,20 +1,12 @@
 /**
  * Commission base pricing, shown in the visitor's likely local currency.
  *
- * V1 keeps this client-only and network-free: the currency is guessed from the
- * browser time zone and can be overridden with a toggle. Prices are indicative
- * "starting from" figures — edit the amounts below freely.
+ * The currency is resolved on the client: an instant guess from the browser
+ * time zone, then refined by an IP → country lookup (the visitor's browser makes
+ * the call, so it works regardless of where the server is hosted). Prices are
+ * indicative "starting from" figures — edit the amounts below freely.
  */
 export type Currency = "USD" | "EUR" | "XAF";
-
-export const CURRENCIES: Currency[] = ["USD", "EUR", "XAF"];
-
-/** Short label shown on the region/currency toggle. */
-export const CURRENCY_LABEL: Record<Currency, string> = {
-  USD: "USD",
-  EUR: "EUR",
-  XAF: "FCFA",
-};
 
 /** Base "starting from" price per style, per currency. */
 export const STYLE_PRICES: Record<string, Record<Currency, number>> = {
@@ -36,6 +28,26 @@ export function formatPrice(amount: number, currency: Currency): string {
   }
 }
 
+/** CFA-franc-zone countries (Central & West Africa) — displayed as FCFA. */
+const CFA_COUNTRIES = new Set([
+  "CM", "CF", "TD", "CG", "GA", "GQ", // XAF (Central)
+  "BJ", "BF", "CI", "GW", "ML", "NE", "SN", "TG", // XOF (West)
+]);
+
+/** Eurozone countries — displayed in EUR. */
+const EURO_COUNTRIES = new Set([
+  "AT", "BE", "HR", "CY", "EE", "FI", "FR", "DE", "GR", "IE",
+  "IT", "LV", "LT", "LU", "MT", "NL", "PT", "SK", "SI", "ES",
+]);
+
+/** Map an ISO-3166 alpha-2 country code to one of the supported currencies. */
+export function currencyForCountry(code: string): Currency {
+  const cc = code.toUpperCase();
+  if (CFA_COUNTRIES.has(cc)) return "XAF";
+  if (EURO_COUNTRIES.has(cc)) return "EUR";
+  return "USD";
+}
+
 /** CFA-franc-zone (Central & West Africa) IANA time zones — displayed as FCFA. */
 const CFA_TIMEZONES = new Set([
   "Africa/Douala",
@@ -55,8 +67,8 @@ const CFA_TIMEZONES = new Set([
 ]);
 
 /**
- * Best-effort guess of the visitor's currency from the browser time zone — no
- * network call, no IP lookup. Falls back to USD; the toggle always wins.
+ * Instant, network-free guess of the visitor's currency from the browser time
+ * zone. Used as the first paint before the IP lookup resolves. Falls back to USD.
  */
 export function detectCurrency(): Currency {
   try {
@@ -67,4 +79,22 @@ export function detectCurrency(): Currency {
     // Intl unavailable — fall through to USD.
   }
   return "USD";
+}
+
+/**
+ * Resolve the visitor's currency from their IP via GeoJS — a free, key-less,
+ * HTTPS, CORS-enabled endpoint. The call is made from the browser, so it reads
+ * the visitor's IP (not the server's). Returns null on any failure so the
+ * caller can keep the time-zone guess.
+ */
+export async function fetchCurrencyByIp(signal?: AbortSignal): Promise<Currency | null> {
+  try {
+    const res = await fetch("https://get.geojs.io/v1/ip/country.json", { signal });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const code = String(data?.country ?? "");
+    return code ? currencyForCountry(code) : null;
+  } catch {
+    return null;
+  }
 }
